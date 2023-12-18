@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonHoaDon = new System.Windows.Forms.Button();
+            this.buttonPhong = new System.Windows.Forms.Button();
             this.buttonKhachHang = new System.Windows.Forms.Button();
             this.buttonDonDatPhong = new System.Windows.Forms.Button();
-            this.buttonPhong = new System.Windows.Forms.Button();
-            this.buttonHoaDon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 407);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonHoaDon
+            // 
+            this.buttonHoaDon.Location = new System.Drawing.Point(28, 142);
+            this.buttonHoaDon.Name = "buttonHoaDon";
+            this.buttonHoaDon.Size = new System.Drawing.Size(135, 36);
+            this.buttonHoaDon.TabIndex = 3;
+            this.buttonHoaDon.Text = "Hóa đơn";
+            this.buttonHoaDon.UseVisualStyleBackColor = true;
+            this.buttonHoaDon.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // buttonPhong
+            // 
+            this.buttonPhong.Location = new System.Drawing.Point(28, 100);
+            this.buttonPhong.Name = "buttonPhong";
+            this.buttonPhong.Size = new System.Drawing.Size(135, 36);
+            this.buttonPhong.TabIndex = 2;
+            this.buttonPhong.Text = "Phòng";
+            this.buttonPhong.UseVisualStyleBackColor = true;
             // 
             // buttonKhachHang
             // 
@@ -65,25 +84,6 @@
             this.buttonDonDatPhong.Text = "Đơn đặt phòng";
             this.buttonDonDatPhong.UseVisualStyleBackColor = true;
             this.buttonDonDatPhong.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonPhong
-            // 
-            this.buttonPhong.Location = new System.Drawing.Point(28, 100);
-            this.buttonPhong.Name = "buttonPhong";
-            this.buttonPhong.Size = new System.Drawing.Size(135, 36);
-            this.buttonPhong.TabIndex = 2;
-            this.buttonPhong.Text = "Phòng";
-            this.buttonPhong.UseVisualStyleBackColor = true;
-            // 
-            // buttonHoaDon
-            // 
-            this.buttonHoaDon.Location = new System.Drawing.Point(28, 142);
-            this.buttonHoaDon.Name = "buttonHoaDon";
-            this.buttonHoaDon.Size = new System.Drawing.Size(135, 36);
-            this.buttonHoaDon.TabIndex = 3;
-            this.buttonHoaDon.Text = "Hóa đơn";
-            this.buttonHoaDon.UseVisualStyleBackColor = true;
-            this.buttonHoaDon.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
