@@ -9,11 +9,6 @@
       "HeThongQuanLyKhachSan/1.0.0": {
         "runtime": {
           "HeThongQuanLyKhachSan.dll": {}
-        },
-        "resources": {
-          "ca/HeThongQuanLyKhachSan.resources.dll": {
-            "locale": "ca"
-          }
         }
       }
     }

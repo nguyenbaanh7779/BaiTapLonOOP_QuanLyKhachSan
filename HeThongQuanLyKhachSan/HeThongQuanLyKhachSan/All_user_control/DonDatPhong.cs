@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongQuanLyKhachSan
+namespace HeThongQuanLyKhachSan.All_user_control
 {
-    public partial class FormLeTan : Form
+    public partial class useControlDonDatPhong : UserControl
     {
-        public FormLeTan()
+        public useControlDonDatPhong()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            userControlDonDatPhong1.Visible = true;
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void labelDonDatPhong_Click(object sender, EventArgs e)
         {
 
         }
