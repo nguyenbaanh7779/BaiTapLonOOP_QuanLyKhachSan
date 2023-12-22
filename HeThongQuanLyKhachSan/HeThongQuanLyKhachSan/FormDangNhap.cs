@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,9 +37,23 @@ namespace HeThongQuanLyKhachSan
                 FormLeTan formLeTan = new FormLeTan();
                 formLeTan.Show();
             }
+            else
+            {
+                labelTaiKhoanHoacMatKhauKhongDung.Visible = true;
+            }
         }
 
         private void textBoxMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormDangNhap_Load(object sender, EventArgs e)
         {
 
         }

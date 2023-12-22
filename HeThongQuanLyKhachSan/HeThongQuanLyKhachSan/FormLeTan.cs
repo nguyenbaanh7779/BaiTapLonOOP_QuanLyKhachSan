@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeThongQuanLyKhachSan.All_user_control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,22 @@ namespace HeThongQuanLyKhachSan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            useControlPhong.Visible = false;
             userControlDonDatPhong1.Visible = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPhong_Click(object sender, EventArgs e)
+        {
+            userControlDonDatPhong1.Visible = false;
+            useControlPhong.Visible = true;
+        }
+
+        private void useControlPhong_Load(object sender, EventArgs e)
         {
 
         }

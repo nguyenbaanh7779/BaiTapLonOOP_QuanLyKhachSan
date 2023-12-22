@@ -129,6 +129,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormDangNhap";
             this.Text = "FormDangNhap";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

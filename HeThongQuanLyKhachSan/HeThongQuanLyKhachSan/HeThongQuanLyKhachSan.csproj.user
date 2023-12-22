@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="All_user_control\DonDatPhong.cs">
+    <Compile Update="All_user_control\UserControlDonDatPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="All_user_control\Phong.cs">
+    <Compile Update="All_user_control\UserControlPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="FormDangNhap.cs">
