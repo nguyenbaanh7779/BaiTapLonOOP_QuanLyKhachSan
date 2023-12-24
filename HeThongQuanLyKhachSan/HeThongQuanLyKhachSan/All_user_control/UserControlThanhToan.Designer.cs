@@ -38,11 +38,22 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.ColumnThanhToan_SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnThanhToan_SoNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnThanhToan_DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnThanhToan_ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +62,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(338, 25);
+            this.label1.Location = new System.Drawing.Point(340, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 37);
             this.label1.TabIndex = 0;
@@ -123,6 +134,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox3);
@@ -136,14 +151,51 @@
             this.panel1.Size = new System.Drawing.Size(781, 123);
             this.panel1.TabIndex = 10;
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(630, 32);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(148, 23);
+            this.textBox8.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(550, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 15);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Lễ Tân:";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(630, 3);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(148, 23);
+            this.textBox7.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(550, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 15);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Mã hóa đơn:";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnThanhToan_SoPhong,
+            this.ColumnThanhToan_SoNgay,
+            this.ColumnThanhToan_DonGia,
+            this.ColumnThanhToan_ThanhTien});
             this.dataGridView2.Location = new System.Drawing.Point(31, 218);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(781, 111);
+            this.dataGridView2.Size = new System.Drawing.Size(443, 188);
             this.dataGridView2.TabIndex = 11;
             // 
             // label4
@@ -158,7 +210,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 343);
+            this.label7.Location = new System.Drawing.Point(509, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
             this.label7.TabIndex = 12;
@@ -166,24 +218,73 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(111, 340);
+            this.textBox5.Location = new System.Drawing.Point(621, 255);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(148, 23);
             this.textBox5.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(368, 385);
+            this.button1.Location = new System.Drawing.Point(387, 412);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 32);
             this.button1.TabIndex = 13;
             this.button1.Text = "Thanh toán";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(509, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 15);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Ngày thanh toán:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(621, 288);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(148, 23);
+            this.textBox6.TabIndex = 14;
+            // 
+            // ColumnThanhToan_SoPhong
+            // 
+            this.ColumnThanhToan_SoPhong.HeaderText = "Số phòng";
+            this.ColumnThanhToan_SoPhong.Name = "ColumnThanhToan_SoPhong";
+            // 
+            // ColumnThanhToan_SoNgay
+            // 
+            this.ColumnThanhToan_SoNgay.HeaderText = "Số ngày";
+            this.ColumnThanhToan_SoNgay.Name = "ColumnThanhToan_SoNgay";
+            // 
+            // ColumnThanhToan_DonGia
+            // 
+            this.ColumnThanhToan_DonGia.HeaderText = "Đơn giá";
+            this.ColumnThanhToan_DonGia.Name = "ColumnThanhToan_DonGia";
+            // 
+            // ColumnThanhToan_ThanhTien
+            // 
+            this.ColumnThanhToan_ThanhTien.HeaderText = "Thành tiền";
+            this.ColumnThanhToan_ThanhTien.Name = "ColumnThanhToan_ThanhTien";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(509, 218);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 25);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Tổng thanh toán";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label7);
@@ -218,5 +319,16 @@
         private Label label7;
         private TextBox textBox5;
         private Button button1;
+        private Label label8;
+        private TextBox textBox6;
+        private TextBox textBox8;
+        private Label label10;
+        private TextBox textBox7;
+        private Label label9;
+        private DataGridViewTextBoxColumn ColumnThanhToan_SoPhong;
+        private DataGridViewTextBoxColumn ColumnThanhToan_SoNgay;
+        private DataGridViewTextBoxColumn ColumnThanhToan_DonGia;
+        private DataGridViewTextBoxColumn ColumnThanhToan_ThanhTien;
+        private Label label11;
     }
 }

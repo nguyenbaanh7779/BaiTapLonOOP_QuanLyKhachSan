@@ -25,9 +25,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void useControlPhong_Load(object sender, EventArgs e)
         {
-            DanhSachPhong danhSachPhong = new DanhSachPhong();
-            danhSachPhong.LayDanhSachPhong();
-            dataGridViewPhong.DataSource = danhSachPhong.DanhSachPhongs;
+            dataGridViewPhong.DataSource = ChucNangHeThong.timKiemThongTinPhong().Tables[0];
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -57,7 +55,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridViewPhong.DataSource = ChucNangHeThong.timKiemThongTinPhong(textBoxPhong_TimKiemSoPhong.Text, textBoxPhong_TimKiemSoGiuong.Text, comboBoxPhong_TimKiemLoaiPhong.Text, comboBoxPhong_TimKiemTrangThaiPhong.Text);
+            dataGridViewPhong.DataSource = ChucNangHeThong.timKiemThongTinPhong(textBoxPhong_TimKiemSoPhong.Text, textBoxPhong_TimKiemSoGiuong.Text, comboBoxPhong_TimKiemLoaiPhong.Text, comboBoxPhong_TimKiemTrangThaiPhong.Text).Tables[0];
         }
     }
 }

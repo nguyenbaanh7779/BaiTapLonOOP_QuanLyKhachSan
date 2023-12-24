@@ -12,10 +12,16 @@ namespace HeThongQuanLyKhachSan
 {
     internal class ThaoTacVoiSQL
     {
-        private static MySqlConnection tao_connetion()
+        private string truy_van = "";
+        public string Truy_van
+        {
+            get { return truy_van; }
+            set { truy_van = value; }
+        }
+        private MySqlConnection tao_connetion()
         {
             string server = "localhost";
-            string database = "db_quan_ly_khach_san";
+            string database = "quan_ly_khach_san";
             string uid = "root";
             string password = "187801612";
             string constring = "SERVER=" + server + ";DATABASE=" + database + ";UID=" + uid + ";PASSWORD=" + password;
@@ -23,23 +29,33 @@ namespace HeThongQuanLyKhachSan
             return connection;
         }
 
-        public static MySqlDataReader layDuLieu(string query)
+        public DataSet layDuLieuChoGridView()
         {
             MySqlConnection connection = tao_connetion();
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            return dataReader;
+            MySqlCommand cmd = new MySqlCommand(this.truy_van, connection);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            connection.Close();
+            return ds;
+        }
+        public MySqlDataReader layDuLieuChoClass()
+        {
+            MySqlConnection connection = tao_connetion();
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand(this.truy_van, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            return reader;
         }
 
-        public static void cap_nhat_du_lieu(string query)
+        public void capNhatDuLieu()
         {
             MySqlConnection connection = tao_connetion();
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlCommand cmd = new MySqlCommand(this.truy_van, connection);
             cmd.ExecuteNonQuery();
             connection.Close();
         }
-        
     }
 }

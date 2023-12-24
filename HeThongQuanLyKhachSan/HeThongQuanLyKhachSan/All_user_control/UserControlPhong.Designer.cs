@@ -123,9 +123,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(599, 109);
+            this.panel2.Location = new System.Drawing.Point(580, 107);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 360);
+            this.panel2.Size = new System.Drawing.Size(200, 362);
             this.panel2.TabIndex = 7;
             // 
             // textBoxPhong_TimKiemSoGiuong
@@ -225,7 +225,7 @@
             this.Controls.Add(this.dataGridViewPhong);
             this.Controls.Add(this.labelDonDatPhong);
             this.Name = "useControlPhong";
-            this.Size = new System.Drawing.Size(838, 522);
+            this.Size = new System.Drawing.Size(799, 494);
             this.Load += new System.EventHandler(this.useControlPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPhong)).EndInit();
             this.panel2.ResumeLayout(false);

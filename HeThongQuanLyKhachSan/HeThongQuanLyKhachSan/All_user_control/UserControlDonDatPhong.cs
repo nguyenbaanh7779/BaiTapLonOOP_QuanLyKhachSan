@@ -23,7 +23,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridViewDonDatPhong.DataSource = ChucNangHeThong.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiemSoDienThoai.Text);
+            dataGridViewDonDatPhong.DataSource = ChucNangHeThong.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiemSoDienThoai.Text).Tables[0];
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,9 +33,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void useControlDonDatPhong_Load(object sender, EventArgs e)
         {
-            DanhSachDonDatPhong danhSachDonDatPhong = new DanhSachDonDatPhong();
-            danhSachDonDatPhong.LayDanhSachDonDatPhong();
-            dataGridViewDonDatPhong.DataSource = danhSachDonDatPhong.DanhSachDonDatPhongs;
+            dataGridViewDonDatPhong.DataSource = ChucNangHeThong.timKiemThongTinDonDatPhong().Tables[0];
         }
 
         private void dataGridViewDonDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)

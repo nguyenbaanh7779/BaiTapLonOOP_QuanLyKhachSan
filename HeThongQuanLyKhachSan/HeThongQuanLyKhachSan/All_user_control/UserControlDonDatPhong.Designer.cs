@@ -118,7 +118,7 @@
             // 
             // ColumnDonDatPhong_HoTen
             // 
-            this.ColumnDonDatPhong_HoTen.DataPropertyName = "Ho_ten_khach_hang";
+            this.ColumnDonDatPhong_HoTen.DataPropertyName = "Ho_ten";
             this.ColumnDonDatPhong_HoTen.HeaderText = "Họ tên khách hàng";
             this.ColumnDonDatPhong_HoTen.Name = "ColumnDonDatPhong_HoTen";
             this.ColumnDonDatPhong_HoTen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -153,7 +153,7 @@
             // 
             // ColumnDonDatPhong_TrangThaiDon
             // 
-            this.ColumnDonDatPhong_TrangThaiDon.DataPropertyName = "Trang_thai_don_dat_phong";
+            this.ColumnDonDatPhong_TrangThaiDon.DataPropertyName = "Trang_thai_don";
             this.ColumnDonDatPhong_TrangThaiDon.HeaderText = "Trạng thái đơn đặt phòng";
             this.ColumnDonDatPhong_TrangThaiDon.Name = "ColumnDonDatPhong_TrangThaiDon";
             this.ColumnDonDatPhong_TrangThaiDon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -396,7 +396,7 @@
             this.Controls.Add(this.dataGridViewDonDatPhong);
             this.Controls.Add(this.labelDonDatPhong);
             this.Name = "useControlDonDatPhong";
-            this.Size = new System.Drawing.Size(787, 485);
+            this.Size = new System.Drawing.Size(799, 494);
             this.Load += new System.EventHandler(this.useControlDonDatPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonDatPhong)).EndInit();
             this.panel1.ResumeLayout(false);

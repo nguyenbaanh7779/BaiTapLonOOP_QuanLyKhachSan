@@ -30,12 +30,10 @@ namespace HeThongQuanLyKhachSan
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBoxTaiKhoan.Text == "anh.nb203309" && textBoxMatKhau.Text == " ")
+            if(ChucNangHeThong.dangNhap(textBoxTaiKhoan.Text, textBoxMatKhau.Text))
             {
                 labelTaiKhoanHoacMatKhauKhongDung.Visible = false;
                 this.Hide();
-                FormLeTan formLeTan = new FormLeTan();
-                formLeTan.Show();
             }
             else
             {
