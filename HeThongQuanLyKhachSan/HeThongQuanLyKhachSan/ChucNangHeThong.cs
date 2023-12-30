@@ -10,12 +10,6 @@ namespace HeThongQuanLyKhachSan
 {
     internal class ChucNangHeThong
     {
-        private static string ID_nhan_vien = "";
-        public static string ID_Nhan_vien
-        {
-            get { return ID_nhan_vien; }
-            set { ID_nhan_vien = value; }
-        }
         private static int ID_phong ;
         public static int ID_Phong
         {
@@ -28,7 +22,18 @@ namespace HeThongQuanLyKhachSan
             get { return ID_don_dat_phong; }
             set { ID_don_dat_phong = value; }
         }
-        private static LeTan leTan = new LeTan();
+        private static LeTan leTan = new LeTan("-1");
+        public static LeTan GSLeTan // get set LeTan
+        {
+            get { return leTan; }
+            set { leTan = value; }
+        }
+        private static QuanLy quanLy = new QuanLy("-1");
+        public static QuanLy GSQuanLy // get set QuanLy
+        {
+            get { return quanLy; }
+            set { quanLy = value; }
+        }
         public static string dangNhap(string tai_khoan, string mat_khau)
         {
             string truy_van = "select ID_nhan_vien, bo_phan from nhan_vien where tai_khoan = '" + tai_khoan + "' and mat_khau = '" + mat_khau + "'";
@@ -37,8 +42,17 @@ namespace HeThongQuanLyKhachSan
             MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
             if (reader.Read())
             {
-                ID_Nhan_vien = reader.GetString("ID_nhan_vien");
-                return reader.GetString("bo_phan");
+                string ID_nhan_vien = reader.GetString("ID_nhan_vien");
+                string bo_phan = reader.GetString("bo_phan");
+                if (bo_phan == "Lễ tân")
+                {
+                    GSLeTan = new LeTan(ID_nhan_vien);
+                }
+                else
+                {
+                    GSQuanLy = new QuanLy(ID_nhan_vien);
+                }
+                return bo_phan;
             }
             else
             {

@@ -29,14 +29,13 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
             if (textBoxNhanVien_MaNhanVien.Text == "" || textBoxNhanVien_HoTen.Text == "" || textBoxNhanVien_SoCanCuocCongDan.Text == "" || textBoxNhanVien_SoDienThoai.Text == "" || comboBoxNhanVien_GioiTinh.Text == "" || textBoxNhanVien_TienLuong.Text == "" || comboBoxNhanVien_BoPhan.Text == "" || textBoxNhanVien_TaiKhoan.Text == "" || textBoxNhanVien_MatKhau.Text == "")
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             else
             {
                 string ngay_sinh = dateTimePickerNhanVien_NgaySinh.Value.Year.ToString() + "-" + dateTimePickerNhanVien_NgaySinh.Value.Month.ToString() + "-" + dateTimePickerNhanVien_NgaySinh.Value.Day.ToString();
-                quanLy.capNhatNhanVien(textBoxNhanVien_MaNhanVien.Text,textBoxNhanVien_HoTen.Text, textBoxNhanVien_SoCanCuocCongDan.Text, textBoxNhanVien_SoDienThoai.Text, comboBoxNhanVien_GioiTinh.Text, ngay_sinh, textBoxNhanVien_TienLuong.Text, comboBoxNhanVien_BoPhan.Text, textBoxNhanVien_MatKhau.Text);
-                dataGridViewNhanVien.DataSource = quanLy.timKiemNhanVien(textBoxNhanVien_SoDienThoai.Text).Tables[0];
+                ChucNangHeThong.GSQuanLy.capNhatNhanVien(textBoxNhanVien_MaNhanVien.Text,textBoxNhanVien_HoTen.Text, textBoxNhanVien_SoCanCuocCongDan.Text, textBoxNhanVien_SoDienThoai.Text, comboBoxNhanVien_GioiTinh.Text, ngay_sinh, textBoxNhanVien_TienLuong.Text, comboBoxNhanVien_BoPhan.Text, textBoxNhanVien_MatKhau.Text);
+                dataGridViewNhanVien.DataSource = ChucNangHeThong.GSQuanLy.timKiemNhanVien(textBoxNhanVien_SoDienThoai.Text).Tables[0];
             }
         }
 
@@ -49,14 +48,12 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
         {
             if (textBoxNhanVien_TimKiem.Text == "")
                 MessageBox.Show("Vui lòng nhập thông tin cần tìm kiếm!");
-            QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-            dataGridViewNhanVien.DataSource = quanLy.timKiemNhanVien(textBoxNhanVien_TimKiem.Text).Tables[0];
+            dataGridViewNhanVien.DataSource = ChucNangHeThong.GSQuanLy.timKiemNhanVien(textBoxNhanVien_TimKiem.Text).Tables[0];
         }
 
         private void UserControlQuanLy_NhanVien_Load(object sender, EventArgs e)
         {
-            QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-            dataGridViewNhanVien.DataSource = quanLy.timKiemNhanVien(textBoxNhanVien_TimKiem.Text).Tables[0];
+            dataGridViewNhanVien.DataSource = ChucNangHeThong.GSQuanLy.timKiemNhanVien(textBoxNhanVien_TimKiem.Text).Tables[0];
         }
 
         private void dataGridViewNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)

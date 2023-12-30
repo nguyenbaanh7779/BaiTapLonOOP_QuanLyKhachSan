@@ -12,8 +12,6 @@ namespace HeThongQuanLyKhachSan.All_user_control
 {
     public partial class useControlLeTan_DonDatPhong : UserControl
     {
-        private LeTan leTan = new LeTan(ChucNangHeThong.ID_Nhan_vien);
-        
         public useControlLeTan_DonDatPhong()
         {
             InitializeComponent();
@@ -25,14 +23,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBoxDonDatPhong_TimKiemSoDienThoai.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại!");
-            }
-            else
-            {
-                dataGridViewDonDatPhong.DataSource = leTan.timKiemThongTinPhong(textBoxDonDatPhong_TimKiemSoDienThoai.Text);
-            }
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,35 +33,17 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void useControlDonDatPhong_Load(object sender, EventArgs e)
         {
-            dataGridViewDonDatPhong.DataSource = leTan.timKiemThongTinPhong(textBoxDonDatPhong_TimKiemSoDienThoai.Text);
+            dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiemSoDienThoai.Text).Tables[0]; 
         }
 
         private void dataGridViewDonDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridViewDonDatPhong.CurrentRow.Selected = true;
-            textBoxDonDatPhong_MaDon.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_IdDonDatPhong"].Value.ToString();
-            textBoxDonDatPhong_SoPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoPhong"].Value.ToString();
-            textBoxDonDatPhong_HoTen.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_HoTen"].Value.ToString();
-            textBoxDonDatPhong_SoCanCuocCongDan.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoCanCuocCongDan"].Value.ToString();
-            textBoxDonDatPhong_SoDienThoai.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoDienThoai"].Value.ToString();
-            dateTimePickerDonDatPhong_NgayNhanPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayNhanPhong"].Value.ToString();
-            dateTimePickerDonDatPhong_NgayTraPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayTraPhong"].Value.ToString();
-            textBoxDonDatPhong_TrangThaiDon.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_TrangThaiDon"].Value.ToString();
+            
         }
 
         private void buttonNhanPhong_Click(object sender, EventArgs e)
         {
-            ChucNangHeThong.nhanPhong(textBoxDonDatPhong_MaDon.Text);
-            if (textBoxDonDatPhong_MaDon.Text == "")
-            {
-                labelThongBao.Text = "Vui lòng chọn đơn đặt phòng!";
-                labelThongBao.ForeColor = Color.Red;
-            }
-            else
-            {
-                labelThongBao.Text = "Nhận phòng không thành công!";
-                labelThongBao.ForeColor = Color.Green;
-            }
+            
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

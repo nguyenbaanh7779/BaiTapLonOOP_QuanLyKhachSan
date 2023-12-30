@@ -50,8 +50,7 @@ namespace HeThongQuanLyKhachSan
 
         private void FormQuanLy_Load(object sender, EventArgs e)
         {
-            QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-            labelQuanLy_TaiKhoan.Text = quanLy.Ho_Ten;
+            labelQuanLy_TaiKhoan.Text = ChucNangHeThong.GSQuanLy.Ho_Ten;
         }
 
         private void buttonQuanLy_DangXuat_Click(object sender, EventArgs e)

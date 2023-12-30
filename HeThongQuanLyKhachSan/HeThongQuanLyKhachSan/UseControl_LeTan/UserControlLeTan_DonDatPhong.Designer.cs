@@ -30,14 +30,6 @@
         {
             this.labelDonDatPhong = new System.Windows.Forms.Label();
             this.dataGridViewDonDatPhong = new System.Windows.Forms.DataGridView();
-            this.ColumnDonDatPhong_IdDonDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_SoCanCuocCongDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_NgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_NgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDonDatPhong_TrangThaiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonDonDatPhong_TimKiem = new System.Windows.Forms.Button();
             this.textBoxDonDatPhong_TimKiemSoDienThoai = new System.Windows.Forms.TextBox();
@@ -63,6 +55,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ColumnDonDatPhong_IdDonDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDonDatPhong_HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDonDatPhong_SoCanCuocCongDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDonDatPhong_SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDonDatPhong_NgayNhanPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDonDatPhong_NgayTraPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDonDatPhong_TrangThaiDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDonDatPhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,7 +85,6 @@
             this.dataGridViewDonDatPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDonDatPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnDonDatPhong_IdDonDatPhong,
-            this.ColumnDonDatPhong_SoPhong,
             this.ColumnDonDatPhong_HoTen,
             this.ColumnDonDatPhong_SoCanCuocCongDan,
             this.ColumnDonDatPhong_SoDienThoai,
@@ -101,75 +99,6 @@
             this.dataGridViewDonDatPhong.TabIndex = 2;
             this.dataGridViewDonDatPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDonDatPhong_CellClick);
             this.dataGridViewDonDatPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ColumnDonDatPhong_IdDonDatPhong
-            // 
-            this.ColumnDonDatPhong_IdDonDatPhong.DataPropertyName = "ID_Don_dat_phong";
-            this.ColumnDonDatPhong_IdDonDatPhong.HeaderText = "Mã đơn đặt phòng";
-            this.ColumnDonDatPhong_IdDonDatPhong.MinimumWidth = 6;
-            this.ColumnDonDatPhong_IdDonDatPhong.Name = "ColumnDonDatPhong_IdDonDatPhong";
-            this.ColumnDonDatPhong_IdDonDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnDonDatPhong_IdDonDatPhong.Width = 60;
-            // 
-            // ColumnDonDatPhong_SoPhong
-            // 
-            this.ColumnDonDatPhong_SoPhong.DataPropertyName = "So_phong";
-            this.ColumnDonDatPhong_SoPhong.HeaderText = "Số phòng";
-            this.ColumnDonDatPhong_SoPhong.MinimumWidth = 6;
-            this.ColumnDonDatPhong_SoPhong.Name = "ColumnDonDatPhong_SoPhong";
-            this.ColumnDonDatPhong_SoPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnDonDatPhong_SoPhong.Width = 60;
-            // 
-            // ColumnDonDatPhong_HoTen
-            // 
-            this.ColumnDonDatPhong_HoTen.DataPropertyName = "Ho_ten";
-            this.ColumnDonDatPhong_HoTen.HeaderText = "Họ tên khách hàng";
-            this.ColumnDonDatPhong_HoTen.MinimumWidth = 6;
-            this.ColumnDonDatPhong_HoTen.Name = "ColumnDonDatPhong_HoTen";
-            this.ColumnDonDatPhong_HoTen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnDonDatPhong_HoTen.Width = 110;
-            // 
-            // ColumnDonDatPhong_SoCanCuocCongDan
-            // 
-            this.ColumnDonDatPhong_SoCanCuocCongDan.DataPropertyName = "So_can_cuoc_cong_dan";
-            this.ColumnDonDatPhong_SoCanCuocCongDan.HeaderText = "Số căn cước công dân";
-            this.ColumnDonDatPhong_SoCanCuocCongDan.MinimumWidth = 6;
-            this.ColumnDonDatPhong_SoCanCuocCongDan.Name = "ColumnDonDatPhong_SoCanCuocCongDan";
-            this.ColumnDonDatPhong_SoCanCuocCongDan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnDonDatPhong_SoDienThoai
-            // 
-            this.ColumnDonDatPhong_SoDienThoai.DataPropertyName = "So_dien_thoai";
-            this.ColumnDonDatPhong_SoDienThoai.HeaderText = "Số điện thoại";
-            this.ColumnDonDatPhong_SoDienThoai.MinimumWidth = 6;
-            this.ColumnDonDatPhong_SoDienThoai.Name = "ColumnDonDatPhong_SoDienThoai";
-            this.ColumnDonDatPhong_SoDienThoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnDonDatPhong_SoDienThoai.Width = 80;
-            // 
-            // ColumnDonDatPhong_NgayNhanPhong
-            // 
-            this.ColumnDonDatPhong_NgayNhanPhong.DataPropertyName = "Ngay_nhan_phong";
-            this.ColumnDonDatPhong_NgayNhanPhong.HeaderText = "Ngày nhận phòng";
-            this.ColumnDonDatPhong_NgayNhanPhong.MinimumWidth = 6;
-            this.ColumnDonDatPhong_NgayNhanPhong.Name = "ColumnDonDatPhong_NgayNhanPhong";
-            this.ColumnDonDatPhong_NgayNhanPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnDonDatPhong_NgayTraPhong
-            // 
-            this.ColumnDonDatPhong_NgayTraPhong.DataPropertyName = "Ngay_tra_phong";
-            this.ColumnDonDatPhong_NgayTraPhong.HeaderText = "Ngày trả phòng";
-            this.ColumnDonDatPhong_NgayTraPhong.MinimumWidth = 6;
-            this.ColumnDonDatPhong_NgayTraPhong.Name = "ColumnDonDatPhong_NgayTraPhong";
-            this.ColumnDonDatPhong_NgayTraPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnDonDatPhong_TrangThaiDon
-            // 
-            this.ColumnDonDatPhong_TrangThaiDon.DataPropertyName = "So_luong_phong";
-            this.ColumnDonDatPhong_TrangThaiDon.HeaderText = "Số lượng phòng";
-            this.ColumnDonDatPhong_TrangThaiDon.MinimumWidth = 6;
-            this.ColumnDonDatPhong_TrangThaiDon.Name = "ColumnDonDatPhong_TrangThaiDon";
-            this.ColumnDonDatPhong_TrangThaiDon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnDonDatPhong_TrangThaiDon.Width = 90;
             // 
             // panel1
             // 
@@ -402,6 +331,69 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Số phòng:";
             // 
+            // ColumnDonDatPhong_IdDonDatPhong
+            // 
+            this.ColumnDonDatPhong_IdDonDatPhong.DataPropertyName = "ID_Don_dat_phong";
+            this.ColumnDonDatPhong_IdDonDatPhong.HeaderText = "Mã đơn đặt phòng";
+            this.ColumnDonDatPhong_IdDonDatPhong.MinimumWidth = 6;
+            this.ColumnDonDatPhong_IdDonDatPhong.Name = "ColumnDonDatPhong_IdDonDatPhong";
+            this.ColumnDonDatPhong_IdDonDatPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_IdDonDatPhong.Width = 60;
+            // 
+            // ColumnDonDatPhong_HoTen
+            // 
+            this.ColumnDonDatPhong_HoTen.DataPropertyName = "Ho_ten";
+            this.ColumnDonDatPhong_HoTen.HeaderText = "Họ tên khách hàng";
+            this.ColumnDonDatPhong_HoTen.MinimumWidth = 6;
+            this.ColumnDonDatPhong_HoTen.Name = "ColumnDonDatPhong_HoTen";
+            this.ColumnDonDatPhong_HoTen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_HoTen.Width = 120;
+            // 
+            // ColumnDonDatPhong_SoCanCuocCongDan
+            // 
+            this.ColumnDonDatPhong_SoCanCuocCongDan.DataPropertyName = "So_can_cuoc_cong_dan";
+            this.ColumnDonDatPhong_SoCanCuocCongDan.HeaderText = "Số căn cước công dân";
+            this.ColumnDonDatPhong_SoCanCuocCongDan.MinimumWidth = 6;
+            this.ColumnDonDatPhong_SoCanCuocCongDan.Name = "ColumnDonDatPhong_SoCanCuocCongDan";
+            this.ColumnDonDatPhong_SoCanCuocCongDan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_SoCanCuocCongDan.Width = 110;
+            // 
+            // ColumnDonDatPhong_SoDienThoai
+            // 
+            this.ColumnDonDatPhong_SoDienThoai.DataPropertyName = "So_dien_thoai";
+            this.ColumnDonDatPhong_SoDienThoai.HeaderText = "Số điện thoại";
+            this.ColumnDonDatPhong_SoDienThoai.MinimumWidth = 6;
+            this.ColumnDonDatPhong_SoDienThoai.Name = "ColumnDonDatPhong_SoDienThoai";
+            this.ColumnDonDatPhong_SoDienThoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_SoDienThoai.Width = 90;
+            // 
+            // ColumnDonDatPhong_NgayNhanPhong
+            // 
+            this.ColumnDonDatPhong_NgayNhanPhong.DataPropertyName = "Ngay_nhan_phong";
+            this.ColumnDonDatPhong_NgayNhanPhong.HeaderText = "Ngày nhận phòng";
+            this.ColumnDonDatPhong_NgayNhanPhong.MinimumWidth = 6;
+            this.ColumnDonDatPhong_NgayNhanPhong.Name = "ColumnDonDatPhong_NgayNhanPhong";
+            this.ColumnDonDatPhong_NgayNhanPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_NgayNhanPhong.Width = 120;
+            // 
+            // ColumnDonDatPhong_NgayTraPhong
+            // 
+            this.ColumnDonDatPhong_NgayTraPhong.DataPropertyName = "Ngay_tra_phong";
+            this.ColumnDonDatPhong_NgayTraPhong.HeaderText = "Ngày trả phòng";
+            this.ColumnDonDatPhong_NgayTraPhong.MinimumWidth = 6;
+            this.ColumnDonDatPhong_NgayTraPhong.Name = "ColumnDonDatPhong_NgayTraPhong";
+            this.ColumnDonDatPhong_NgayTraPhong.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_NgayTraPhong.Width = 120;
+            // 
+            // ColumnDonDatPhong_TrangThaiDon
+            // 
+            this.ColumnDonDatPhong_TrangThaiDon.DataPropertyName = "So_luong_phong";
+            this.ColumnDonDatPhong_TrangThaiDon.HeaderText = "Số lượng phòng";
+            this.ColumnDonDatPhong_TrangThaiDon.MinimumWidth = 6;
+            this.ColumnDonDatPhong_TrangThaiDon.Name = "ColumnDonDatPhong_TrangThaiDon";
+            this.ColumnDonDatPhong_TrangThaiDon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnDonDatPhong_TrangThaiDon.Width = 80;
+            // 
             // useControlLeTan_DonDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -435,7 +427,6 @@
         private Panel panel2;
         private Button buttonTraPhong;
         private Panel panel3;
-        private useControlLeTan_DatPhong phong1;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -455,7 +446,6 @@
         private DateTimePicker dateTimePickerDonDatPhong_NgayNhanPhong;
         private Button button2;
         private DataGridViewTextBoxColumn ColumnDonDatPhong_IdDonDatPhong;
-        private DataGridViewTextBoxColumn ColumnDonDatPhong_SoPhong;
         private DataGridViewTextBoxColumn ColumnDonDatPhong_HoTen;
         private DataGridViewTextBoxColumn ColumnDonDatPhong_SoCanCuocCongDan;
         private DataGridViewTextBoxColumn ColumnDonDatPhong_SoDienThoai;

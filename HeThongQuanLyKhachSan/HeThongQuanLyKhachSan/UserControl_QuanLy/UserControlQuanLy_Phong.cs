@@ -23,15 +23,13 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
                 MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!");
             else
             {
-                QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-                dataGridViewQuanLy_Phong.DataSource = quanLy.timKiemPhong(textBoxNhanVien_TimKiem.Text).Tables[0];
+                dataGridViewQuanLy_Phong.DataSource = ChucNangHeThong.GSQuanLy.timKiemPhong(textBoxNhanVien_TimKiem.Text).Tables[0];
             }
         }
 
         private void UserControlQuanLy_Phong_Load(object sender, EventArgs e)
         {
-            QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-            dataGridViewQuanLy_Phong.DataSource = quanLy.timKiemPhong(textBoxNhanVien_TimKiem.Text).Tables[0];
+            dataGridViewQuanLy_Phong.DataSource = ChucNangHeThong.GSQuanLy.timKiemPhong(textBoxNhanVien_TimKiem.Text).Tables[0];
         }
 
         private void dataGridViewQuanLy_Phong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -50,9 +48,8 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             else
             {
-                QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-                quanLy.capNhatPhong(textBoxPhong_MaSoPhong.Text, textBoxPhong_SoPhong.Text, comboBoxPhong_So_Giuong.Text, comboBoxPhong_LoaiPhong.Text, textBoxPhong_DonGia.Text);
-                dataGridViewQuanLy_Phong.DataSource = quanLy.timKiemPhong(textBoxNhanVien_TimKiem.Text).Tables[0];
+                ChucNangHeThong.GSQuanLy.capNhatPhong(textBoxPhong_MaSoPhong.Text, textBoxPhong_SoPhong.Text, comboBoxPhong_So_Giuong.Text, comboBoxPhong_LoaiPhong.Text, textBoxPhong_DonGia.Text);
+                dataGridViewQuanLy_Phong.DataSource = ChucNangHeThong.GSQuanLy.timKiemPhong(textBoxNhanVien_TimKiem.Text).Tables[0];
             }
         }
     }

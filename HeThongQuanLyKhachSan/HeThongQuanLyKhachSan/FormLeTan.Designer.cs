@@ -33,7 +33,7 @@
             this.buttonPhong = new System.Windows.Forms.Button();
             this.buttonKhachHang = new System.Windows.Forms.Button();
             this.buttonDonDatPhong = new System.Windows.Forms.Button();
-            this.useControlLeTan_DatPhong = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DatPhong();
+            this.useControlLeTan_DonDatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DonDatPhong();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,22 +84,22 @@
             this.buttonDonDatPhong.Text = "Đơn đặt phòng";
             this.buttonDonDatPhong.UseVisualStyleBackColor = true;
             // 
-            // useControlLeTan_DatPhong
+            // useControlLeTan_DonDatPhong1
             // 
-            this.useControlLeTan_DatPhong.Location = new System.Drawing.Point(160, 13);
-            this.useControlLeTan_DatPhong.Name = "useControlLeTan_DatPhong";
-            this.useControlLeTan_DatPhong.Size = new System.Drawing.Size(799, 494);
-            this.useControlLeTan_DatPhong.TabIndex = 1;
+            this.useControlLeTan_DonDatPhong1.Location = new System.Drawing.Point(160, 12);
+            this.useControlLeTan_DonDatPhong1.Name = "useControlLeTan_DonDatPhong1";
+            this.useControlLeTan_DonDatPhong1.Size = new System.Drawing.Size(799, 494);
+            this.useControlLeTan_DonDatPhong1.TabIndex = 1;
             // 
             // FormLeTan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 519);
-            this.Controls.Add(this.useControlLeTan_DatPhong);
+            this.Controls.Add(this.useControlLeTan_DonDatPhong1);
             this.Controls.Add(this.panel1);
             this.Name = "FormLeTan";
-            this.Text = "Form1";
+            this.Text = "Lễ Tân";
             this.Load += new System.EventHandler(this.FormLeTan_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -113,6 +113,6 @@
         private Button buttonKhachHang;
         private Button buttonHoaDon;
         private Button buttonPhong;
-        private All_user_control.useControlLeTan_DatPhong useControlLeTan_DatPhong;
+        private All_user_control.useControlLeTan_DonDatPhong useControlLeTan_DonDatPhong1;
     }
 }

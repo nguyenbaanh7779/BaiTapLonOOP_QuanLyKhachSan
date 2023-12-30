@@ -28,8 +28,7 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             else
             {
-                QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-                quanLy.themPhong(textBoxThemPhong_SoPhong.Text, comboBoxThemPhong_SoGiuong.Text, comboBoxThemPhong_LoaiPhong.Text, textBoxThemPhong_DonGia.Text);
+                ChucNangHeThong.GSQuanLy.themPhong(textBoxThemPhong_SoPhong.Text, comboBoxThemPhong_SoGiuong.Text, comboBoxThemPhong_LoaiPhong.Text, textBoxThemPhong_DonGia.Text);
             }
         }
     }

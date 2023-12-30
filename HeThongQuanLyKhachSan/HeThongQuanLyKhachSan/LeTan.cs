@@ -188,12 +188,12 @@ namespace HeThongQuanLyKhachSan
             }
             MessageBox.Show("Đặt phòng thành công!");
         }
-        public static DataSet timKiemThongTinDonDatPhong(string so_dien_thoai = "")
+        public DataSet timKiemThongTinDonDatPhong(string so_dien_thoai = "")
         {
             string truy_van = "";
             if (so_dien_thoai == "")
             {
-                truy_van = "select ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(ID_phong) as so_luong_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong group by ID_don_dat_phong";
+                truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where trang_thai_don = 'Đã đặt' group by chi_tiet_don_dat_phong.ID_don_dat_phong";
             }
             else
             {

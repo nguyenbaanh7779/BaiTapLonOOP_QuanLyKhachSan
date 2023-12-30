@@ -13,7 +13,6 @@ namespace HeThongQuanLyKhachSan.All_user_control
 {
     public partial class useControlLeTan_DatPhong : UserControl
     {
-        private LeTan leTan = new LeTan(ChucNangHeThong.ID_Nhan_vien);
         private int ID_Phong;
         private List<int> listID_Phong = new List<int>();
         public useControlLeTan_DatPhong()
@@ -24,12 +23,12 @@ namespace HeThongQuanLyKhachSan.All_user_control
         private void useControlLeTan_DatPhong_Load(object sender, EventArgs e)
         {
             
-            dataGridViewDatPhong_ChonPhong.DataSource = this.leTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
+            dataGridViewDatPhong_ChonPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
         }
 
         private void buttonPhongTimKiem_Click(object sender, EventArgs e)
         {
-            dataGridViewDatPhong_ChonPhong.DataSource = this.leTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
+            dataGridViewDatPhong_ChonPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
         }
 
         private void dataGridViewDatPhong_ChonPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -44,7 +43,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
             {
                 this.listID_Phong.Add(this.ID_Phong);
             }
-            dataGridViewDatPhong_PhongDaChon.DataSource = this.leTan.hienThiPhongDaThem(this.listID_Phong).Tables[0];
+            dataGridViewDatPhong_PhongDaChon.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.listID_Phong).Tables[0];
         }
 
         private void dataGridViewDatPhong_ChonPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,7 +56,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
             dataGridViewDatPhong_PhongDaChon.CurrentRow.Selected = true;
             this.ID_Phong = Convert.ToInt32(dataGridViewDatPhong_PhongDaChon.Rows[e.RowIndex].Cells["CollumnPhongDaChon_MaSoPhong"].FormattedValue.ToString());
             this.listID_Phong.Remove(this.ID_Phong);
-            dataGridViewDatPhong_PhongDaChon.DataSource = this.leTan.hienThiPhongDaThem(this.listID_Phong).Tables[0];
+            dataGridViewDatPhong_PhongDaChon.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.listID_Phong).Tables[0];
         }
 
         private void buttonDatPhong_DatPhong_Click(object sender, EventArgs e)
@@ -76,7 +75,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
                 {
                     string ngay_nhan_phong = dateTimePickerDatPhong_NgayNhanPhong.Value.ToString("yyyy-MM-dd");
                     string ngay_tra_phong = dateTimePickerDatPhong_NgayTraPhong.Value.ToString("yyyy-MM-dd");
-                    this.leTan.datPhong(textBoxDatPhong_HoTen.Text, textBoxDatPhong_SoCanCuocCongDan.Text, textBoxDatPhong_SoDienThoai.Text, ngay_nhan_phong, ngay_tra_phong, this.listID_Phong);
+                    ChucNangHeThong.GSLeTan.datPhong(textBoxDatPhong_HoTen.Text, textBoxDatPhong_SoCanCuocCongDan.Text, textBoxDatPhong_SoDienThoai.Text, ngay_nhan_phong, ngay_tra_phong, this.listID_Phong);
                 }
             }
         }

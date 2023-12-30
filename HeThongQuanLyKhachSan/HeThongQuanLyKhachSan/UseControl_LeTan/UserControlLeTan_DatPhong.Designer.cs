@@ -31,14 +31,14 @@
             this.panelPhong_BoLoc = new System.Windows.Forms.Panel();
             this.comboBoxDatPhong_TrangThai = new System.Windows.Forms.ComboBox();
             this.comboBoxDatPhong_SoGiuong = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonPhongTimKiem = new System.Windows.Forms.Button();
+            this.labelDatPhong_TrangThai = new System.Windows.Forms.Label();
+            this.buttonDatPhong_TimKiem = new System.Windows.Forms.Button();
             this.comboBoxDatPhong_LoaiPhong = new System.Windows.Forms.ComboBox();
             this.textBoxDatPhong_SoPhong = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDatPhong_SoGiuong = new System.Windows.Forms.Label();
+            this.labelSoPhong_LoaiPhong = new System.Windows.Forms.Label();
+            this.labelDatPhong_SoPhong = new System.Windows.Forms.Label();
+            this.labelDatPhong_BoLoc = new System.Windows.Forms.Label();
             this.dataGridViewDatPhong_ChonPhong = new System.Windows.Forms.DataGridView();
             this.CollumnChonPhong_MaSoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CollumnQuanLy_SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,46 +46,46 @@
             this.CollumnQuanLy_LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CollumnQuanLy__DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDonDatPhong = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelDatPhong_ChonPhong = new System.Windows.Forms.Label();
+            this.labelDatPhong_PhongDaChon = new System.Windows.Forms.Label();
             this.dataGridViewDatPhong_PhongDaChon = new System.Windows.Forms.DataGridView();
             this.CollumnPhongDaChon_MaSoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDatPhong_ThongTinKhachHang = new System.Windows.Forms.Panel();
             this.buttonDatPhong_DatPhong = new System.Windows.Forms.Button();
             this.dateTimePickerDatPhong_NgayTraPhong = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDatPhong_NgayNhanPhong = new System.Windows.Forms.DateTimePicker();
             this.textBoxDatPhong_SoDienThoai = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labelDatPhong_SDT = new System.Windows.Forms.Label();
+            this.labelDatPhong_NgayTraPhong = new System.Windows.Forms.Label();
+            this.labelDatPhong_NgayNhanPhong = new System.Windows.Forms.Label();
             this.textBoxDatPhong_HoTen = new System.Windows.Forms.TextBox();
             this.textBoxDatPhong_SoCanCuocCongDan = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.labelDatPhong_HoTen = new System.Windows.Forms.Label();
+            this.labelDatPhong_SoCCCD = new System.Windows.Forms.Label();
+            this.labelDatPhong_ClickVaoPhongMuonDat = new System.Windows.Forms.Label();
+            this.labelDatPhong_ClickVaoPhongMuonXoa = new System.Windows.Forms.Label();
             this.panelPhong_BoLoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatPhong_ChonPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatPhong_PhongDaChon)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelDatPhong_ThongTinKhachHang.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPhong_BoLoc
             // 
             this.panelPhong_BoLoc.Controls.Add(this.comboBoxDatPhong_TrangThai);
             this.panelPhong_BoLoc.Controls.Add(this.comboBoxDatPhong_SoGiuong);
-            this.panelPhong_BoLoc.Controls.Add(this.label6);
-            this.panelPhong_BoLoc.Controls.Add(this.buttonPhongTimKiem);
+            this.panelPhong_BoLoc.Controls.Add(this.labelDatPhong_TrangThai);
+            this.panelPhong_BoLoc.Controls.Add(this.buttonDatPhong_TimKiem);
             this.panelPhong_BoLoc.Controls.Add(this.comboBoxDatPhong_LoaiPhong);
             this.panelPhong_BoLoc.Controls.Add(this.textBoxDatPhong_SoPhong);
-            this.panelPhong_BoLoc.Controls.Add(this.label5);
-            this.panelPhong_BoLoc.Controls.Add(this.label3);
-            this.panelPhong_BoLoc.Controls.Add(this.label2);
-            this.panelPhong_BoLoc.Controls.Add(this.label1);
+            this.panelPhong_BoLoc.Controls.Add(this.labelDatPhong_SoGiuong);
+            this.panelPhong_BoLoc.Controls.Add(this.labelSoPhong_LoaiPhong);
+            this.panelPhong_BoLoc.Controls.Add(this.labelDatPhong_SoPhong);
+            this.panelPhong_BoLoc.Controls.Add(this.labelDatPhong_BoLoc);
             this.panelPhong_BoLoc.Location = new System.Drawing.Point(14, 293);
             this.panelPhong_BoLoc.Name = "panelPhong_BoLoc";
             this.panelPhong_BoLoc.Size = new System.Drawing.Size(384, 183);
@@ -117,24 +117,24 @@
             this.comboBoxDatPhong_SoGiuong.Size = new System.Drawing.Size(143, 23);
             this.comboBoxDatPhong_SoGiuong.TabIndex = 11;
             // 
-            // label6
+            // labelDatPhong_TrangThai
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(218, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Trạng thái";
+            this.labelDatPhong_TrangThai.AutoSize = true;
+            this.labelDatPhong_TrangThai.Location = new System.Drawing.Point(218, 96);
+            this.labelDatPhong_TrangThai.Name = "labelDatPhong_TrangThai";
+            this.labelDatPhong_TrangThai.Size = new System.Drawing.Size(59, 15);
+            this.labelDatPhong_TrangThai.TabIndex = 9;
+            this.labelDatPhong_TrangThai.Text = "Trạng thái";
             // 
-            // buttonPhongTimKiem
+            // buttonDatPhong_TimKiem
             // 
-            this.buttonPhongTimKiem.Location = new System.Drawing.Point(141, 153);
-            this.buttonPhongTimKiem.Name = "buttonPhongTimKiem";
-            this.buttonPhongTimKiem.Size = new System.Drawing.Size(88, 27);
-            this.buttonPhongTimKiem.TabIndex = 3;
-            this.buttonPhongTimKiem.Text = "Tìm kiếm";
-            this.buttonPhongTimKiem.UseVisualStyleBackColor = true;
-            this.buttonPhongTimKiem.Click += new System.EventHandler(this.buttonPhongTimKiem_Click);
+            this.buttonDatPhong_TimKiem.Location = new System.Drawing.Point(141, 153);
+            this.buttonDatPhong_TimKiem.Name = "buttonDatPhong_TimKiem";
+            this.buttonDatPhong_TimKiem.Size = new System.Drawing.Size(88, 27);
+            this.buttonDatPhong_TimKiem.TabIndex = 3;
+            this.buttonDatPhong_TimKiem.Text = "Tìm kiếm";
+            this.buttonDatPhong_TimKiem.UseVisualStyleBackColor = true;
+            this.buttonDatPhong_TimKiem.Click += new System.EventHandler(this.buttonPhongTimKiem_Click);
             // 
             // comboBoxDatPhong_LoaiPhong
             // 
@@ -155,43 +155,43 @@
             this.textBoxDatPhong_SoPhong.Size = new System.Drawing.Size(143, 23);
             this.textBoxDatPhong_SoPhong.TabIndex = 5;
             // 
-            // label5
+            // labelDatPhong_SoGiuong
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 96);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Số giường";
+            this.labelDatPhong_SoGiuong.AutoSize = true;
+            this.labelDatPhong_SoGiuong.Location = new System.Drawing.Point(8, 96);
+            this.labelDatPhong_SoGiuong.Name = "labelDatPhong_SoGiuong";
+            this.labelDatPhong_SoGiuong.Size = new System.Drawing.Size(61, 15);
+            this.labelDatPhong_SoGiuong.TabIndex = 4;
+            this.labelDatPhong_SoGiuong.Text = "Số giường";
             // 
-            // label3
+            // labelSoPhong_LoaiPhong
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Loại phòng";
+            this.labelSoPhong_LoaiPhong.AutoSize = true;
+            this.labelSoPhong_LoaiPhong.Location = new System.Drawing.Point(218, 41);
+            this.labelSoPhong_LoaiPhong.Name = "labelSoPhong_LoaiPhong";
+            this.labelSoPhong_LoaiPhong.Size = new System.Drawing.Size(67, 15);
+            this.labelSoPhong_LoaiPhong.TabIndex = 2;
+            this.labelSoPhong_LoaiPhong.Text = "Loại phòng";
             // 
-            // label2
+            // labelDatPhong_SoPhong
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Số phòng";
+            this.labelDatPhong_SoPhong.AutoSize = true;
+            this.labelDatPhong_SoPhong.Location = new System.Drawing.Point(8, 41);
+            this.labelDatPhong_SoPhong.Name = "labelDatPhong_SoPhong";
+            this.labelDatPhong_SoPhong.Size = new System.Drawing.Size(58, 15);
+            this.labelDatPhong_SoPhong.TabIndex = 1;
+            this.labelDatPhong_SoPhong.Text = "Số phòng";
             // 
-            // label1
+            // labelDatPhong_BoLoc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(158, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bộ lọc";
+            this.labelDatPhong_BoLoc.AutoSize = true;
+            this.labelDatPhong_BoLoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDatPhong_BoLoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelDatPhong_BoLoc.Location = new System.Drawing.Point(158, 5);
+            this.labelDatPhong_BoLoc.Name = "labelDatPhong_BoLoc";
+            this.labelDatPhong_BoLoc.Size = new System.Drawing.Size(52, 21);
+            this.labelDatPhong_BoLoc.TabIndex = 0;
+            this.labelDatPhong_BoLoc.Text = "Bộ lọc";
             // 
             // dataGridViewDatPhong_ChonPhong
             // 
@@ -264,27 +264,27 @@
             this.labelDonDatPhong.TabIndex = 12;
             this.labelDonDatPhong.Text = "Đặt phòng";
             // 
-            // label4
+            // labelDatPhong_ChonPhong
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(155, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 21);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Chọn phòng";
+            this.labelDatPhong_ChonPhong.AutoSize = true;
+            this.labelDatPhong_ChonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDatPhong_ChonPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelDatPhong_ChonPhong.Location = new System.Drawing.Point(155, 49);
+            this.labelDatPhong_ChonPhong.Name = "labelDatPhong_ChonPhong";
+            this.labelDatPhong_ChonPhong.Size = new System.Drawing.Size(96, 21);
+            this.labelDatPhong_ChonPhong.TabIndex = 11;
+            this.labelDatPhong_ChonPhong.Text = "Chọn phòng";
             // 
-            // label7
+            // labelDatPhong_PhongDaChon
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(552, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 21);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Phòng đã chọn";
+            this.labelDatPhong_PhongDaChon.AutoSize = true;
+            this.labelDatPhong_PhongDaChon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDatPhong_PhongDaChon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelDatPhong_PhongDaChon.Location = new System.Drawing.Point(552, 49);
+            this.labelDatPhong_PhongDaChon.Name = "labelDatPhong_PhongDaChon";
+            this.labelDatPhong_PhongDaChon.Size = new System.Drawing.Size(114, 21);
+            this.labelDatPhong_PhongDaChon.TabIndex = 16;
+            this.labelDatPhong_PhongDaChon.Text = "Phòng đã chọn";
             // 
             // dataGridViewDatPhong_PhongDaChon
             // 
@@ -346,23 +346,23 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 90;
             // 
-            // panel1
+            // panelDatPhong_ThongTinKhachHang
             // 
-            this.panel1.Controls.Add(this.buttonDatPhong_DatPhong);
-            this.panel1.Controls.Add(this.dateTimePickerDatPhong_NgayTraPhong);
-            this.panel1.Controls.Add(this.dateTimePickerDatPhong_NgayNhanPhong);
-            this.panel1.Controls.Add(this.textBoxDatPhong_SoDienThoai);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBoxDatPhong_HoTen);
-            this.panel1.Controls.Add(this.textBoxDatPhong_SoCanCuocCongDan);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(404, 293);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(384, 183);
-            this.panel1.TabIndex = 18;
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.buttonDatPhong_DatPhong);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.dateTimePickerDatPhong_NgayTraPhong);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.dateTimePickerDatPhong_NgayNhanPhong);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.textBoxDatPhong_SoDienThoai);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.labelDatPhong_SDT);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.labelDatPhong_NgayTraPhong);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.labelDatPhong_NgayNhanPhong);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.textBoxDatPhong_HoTen);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.textBoxDatPhong_SoCanCuocCongDan);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.labelDatPhong_HoTen);
+            this.panelDatPhong_ThongTinKhachHang.Controls.Add(this.labelDatPhong_SoCCCD);
+            this.panelDatPhong_ThongTinKhachHang.Location = new System.Drawing.Point(404, 293);
+            this.panelDatPhong_ThongTinKhachHang.Name = "panelDatPhong_ThongTinKhachHang";
+            this.panelDatPhong_ThongTinKhachHang.Size = new System.Drawing.Size(384, 183);
+            this.panelDatPhong_ThongTinKhachHang.TabIndex = 18;
             // 
             // buttonDatPhong_DatPhong
             // 
@@ -395,32 +395,32 @@
             this.textBoxDatPhong_SoDienThoai.Size = new System.Drawing.Size(187, 23);
             this.textBoxDatPhong_SoDienThoai.TabIndex = 23;
             // 
-            // label10
+            // labelDatPhong_SDT
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 63);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 15);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Số điện thoại:";
+            this.labelDatPhong_SDT.AutoSize = true;
+            this.labelDatPhong_SDT.Location = new System.Drawing.Point(23, 63);
+            this.labelDatPhong_SDT.Name = "labelDatPhong_SDT";
+            this.labelDatPhong_SDT.Size = new System.Drawing.Size(79, 15);
+            this.labelDatPhong_SDT.TabIndex = 22;
+            this.labelDatPhong_SDT.Text = "Số điện thoại:";
             // 
-            // label11
+            // labelDatPhong_NgayTraPhong
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(23, 123);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 15);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Ngày trả phòng:";
+            this.labelDatPhong_NgayTraPhong.AutoSize = true;
+            this.labelDatPhong_NgayTraPhong.Location = new System.Drawing.Point(23, 123);
+            this.labelDatPhong_NgayTraPhong.Name = "labelDatPhong_NgayTraPhong";
+            this.labelDatPhong_NgayTraPhong.Size = new System.Drawing.Size(93, 15);
+            this.labelDatPhong_NgayTraPhong.TabIndex = 21;
+            this.labelDatPhong_NgayTraPhong.Text = "Ngày trả phòng:";
             // 
-            // label12
+            // labelDatPhong_NgayNhanPhong
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 94);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 15);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Ngày nhận phòng:";
+            this.labelDatPhong_NgayNhanPhong.AutoSize = true;
+            this.labelDatPhong_NgayNhanPhong.Location = new System.Drawing.Point(23, 94);
+            this.labelDatPhong_NgayNhanPhong.Name = "labelDatPhong_NgayNhanPhong";
+            this.labelDatPhong_NgayNhanPhong.Size = new System.Drawing.Size(106, 15);
+            this.labelDatPhong_NgayNhanPhong.TabIndex = 20;
+            this.labelDatPhong_NgayNhanPhong.Text = "Ngày nhận phòng:";
             // 
             // textBoxDatPhong_HoTen
             // 
@@ -436,52 +436,52 @@
             this.textBoxDatPhong_SoCanCuocCongDan.Size = new System.Drawing.Size(187, 23);
             this.textBoxDatPhong_SoCanCuocCongDan.TabIndex = 14;
             // 
-            // label8
+            // labelDatPhong_HoTen
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(23, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 15);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Họ tên khách hàng:";
+            this.labelDatPhong_HoTen.AutoSize = true;
+            this.labelDatPhong_HoTen.Location = new System.Drawing.Point(23, 10);
+            this.labelDatPhong_HoTen.Name = "labelDatPhong_HoTen";
+            this.labelDatPhong_HoTen.Size = new System.Drawing.Size(111, 15);
+            this.labelDatPhong_HoTen.TabIndex = 13;
+            this.labelDatPhong_HoTen.Text = "Họ tên khách hàng:";
             // 
-            // label9
+            // labelDatPhong_SoCCCD
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 36);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 15);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Số căn cước công dân:";
+            this.labelDatPhong_SoCCCD.AutoSize = true;
+            this.labelDatPhong_SoCCCD.Location = new System.Drawing.Point(23, 36);
+            this.labelDatPhong_SoCCCD.Name = "labelDatPhong_SoCCCD";
+            this.labelDatPhong_SoCCCD.Size = new System.Drawing.Size(127, 15);
+            this.labelDatPhong_SoCCCD.TabIndex = 12;
+            this.labelDatPhong_SoCCCD.Text = "Số căn cước công dân:";
             // 
-            // label13
+            // labelDatPhong_ClickVaoPhongMuonDat
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 270);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(232, 15);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "Click vào phòng muốn đặt để chọn phòng";
+            this.labelDatPhong_ClickVaoPhongMuonDat.AutoSize = true;
+            this.labelDatPhong_ClickVaoPhongMuonDat.Location = new System.Drawing.Point(14, 270);
+            this.labelDatPhong_ClickVaoPhongMuonDat.Name = "labelDatPhong_ClickVaoPhongMuonDat";
+            this.labelDatPhong_ClickVaoPhongMuonDat.Size = new System.Drawing.Size(232, 15);
+            this.labelDatPhong_ClickVaoPhongMuonDat.TabIndex = 13;
+            this.labelDatPhong_ClickVaoPhongMuonDat.Text = "Click vào phòng muốn đặt để chọn phòng";
             // 
-            // label14
+            // labelDatPhong_ClickVaoPhongMuonXoa
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(404, 270);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(339, 15);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "Click vào phòng muốn xóa để xóa phòng khỏi danh sách chọn";
+            this.labelDatPhong_ClickVaoPhongMuonXoa.AutoSize = true;
+            this.labelDatPhong_ClickVaoPhongMuonXoa.Location = new System.Drawing.Point(404, 270);
+            this.labelDatPhong_ClickVaoPhongMuonXoa.Name = "labelDatPhong_ClickVaoPhongMuonXoa";
+            this.labelDatPhong_ClickVaoPhongMuonXoa.Size = new System.Drawing.Size(339, 15);
+            this.labelDatPhong_ClickVaoPhongMuonXoa.TabIndex = 19;
+            this.labelDatPhong_ClickVaoPhongMuonXoa.Text = "Click vào phòng muốn xóa để xóa phòng khỏi danh sách chọn";
             // 
             // useControlLeTan_DatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelDatPhong_ClickVaoPhongMuonXoa);
+            this.Controls.Add(this.labelDatPhong_ClickVaoPhongMuonDat);
+            this.Controls.Add(this.panelDatPhong_ThongTinKhachHang);
             this.Controls.Add(this.dataGridViewDatPhong_PhongDaChon);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelDatPhong_PhongDaChon);
+            this.Controls.Add(this.labelDatPhong_ChonPhong);
             this.Controls.Add(this.panelPhong_BoLoc);
             this.Controls.Add(this.dataGridViewDatPhong_ChonPhong);
             this.Controls.Add(this.labelDonDatPhong);
@@ -492,8 +492,8 @@
             this.panelPhong_BoLoc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatPhong_ChonPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatPhong_PhongDaChon)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelDatPhong_ThongTinKhachHang.ResumeLayout(false);
+            this.panelDatPhong_ThongTinKhachHang.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,31 +501,31 @@
 
         #endregion
         private Panel panelPhong_BoLoc;
-        private Label label6;
-        private Button buttonPhongTimKiem;
+        private Label labelDatPhong_TrangThai;
+        private Button buttonDatPhong_TimKiem;
         private ComboBox comboBoxDatPhong_LoaiPhong;
         private TextBox textBoxDatPhong_SoPhong;
-        private Label label5;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label labelDatPhong_SoGiuong;
+        private Label labelSoPhong_LoaiPhong;
+        private Label labelDatPhong_SoPhong;
+        private Label labelDatPhong_BoLoc;
         private DataGridView dataGridViewDatPhong_ChonPhong;
         private Label labelDonDatPhong;
-        private Label label4;
-        private Label label7;
+        private Label labelDatPhong_ChonPhong;
+        private Label labelDatPhong_PhongDaChon;
         private DataGridView dataGridViewDatPhong_PhongDaChon;
-        private Panel panel1;
+        private Panel panelDatPhong_ThongTinKhachHang;
         private TextBox textBoxDatPhong_HoTen;
         private TextBox textBoxDatPhong_SoCanCuocCongDan;
-        private Label label8;
-        private Label label9;
+        private Label labelDatPhong_HoTen;
+        private Label labelDatPhong_SoCCCD;
         private Button buttonDatPhong_DatPhong;
         private DateTimePicker dateTimePickerDatPhong_NgayTraPhong;
         private DateTimePicker dateTimePickerDatPhong_NgayNhanPhong;
         private TextBox textBoxDatPhong_SoDienThoai;
-        private Label label10;
-        private Label label11;
-        private Label label12;
+        private Label labelDatPhong_SDT;
+        private Label labelDatPhong_NgayTraPhong;
+        private Label labelDatPhong_NgayNhanPhong;
         private ComboBox comboBoxDatPhong_TrangThai;
         private ComboBox comboBoxDatPhong_SoGiuong;
         private DataGridViewTextBoxColumn CollumnChonPhong_MaSoPhong;
@@ -538,7 +538,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private Label label13;
-        private Label label14;
+        private Label labelDatPhong_ClickVaoPhongMuonDat;
+        private Label labelDatPhong_ClickVaoPhongMuonXoa;
     }
 }
