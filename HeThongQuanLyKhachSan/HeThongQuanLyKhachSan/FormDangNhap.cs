@@ -30,14 +30,26 @@ namespace HeThongQuanLyKhachSan
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(ChucNangHeThong.dangNhap(textBoxTaiKhoan.Text, textBoxMatKhau.Text))
+            string kiem_tra = ChucNangHeThong.dangNhap(textBoxTaiKhoan.Text, textBoxMatKhau.Text);
+            if (kiem_tra == "")
             {
-                labelTaiKhoanHoacMatKhauKhongDung.Visible = false;
-                this.Hide();
+                labelTaiKhoanHoacMatKhauKhongDung.Visible = true;
             }
             else
             {
-                labelTaiKhoanHoacMatKhauKhongDung.Visible = true;
+                if (kiem_tra == "Quản lý")
+                {
+                   FormQuanLy formQuanLy = new FormQuanLy();
+                    formQuanLy.Show();
+                }
+                if (kiem_tra == "Lễ tân")
+                {
+                    FormLeTan formLeTan = new FormLeTan();
+                    formLeTan.Show();
+                }
+                labelTaiKhoanHoacMatKhauKhongDung.Visible = false;
+                textBoxTaiKhoan.Text = "";
+                textBoxMatKhau.Text = "";
             }
         }
 

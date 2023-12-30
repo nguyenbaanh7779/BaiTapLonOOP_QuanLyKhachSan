@@ -17,10 +17,16 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
             InitializeComponent();
         }
 
-        private void buttonDonDatPhong_NhanPhong_Click(object sender, EventArgs e)
+        private void buttonNhanVien_CapNhat_Click(object sender, EventArgs e)
         {
-            QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
-            quanLy.themNhanVien(textBoxThemNhanVien_HoTen.Text, textBoxThemNhanVien_SoCanCuocCongDan.Text, textBoxThemNhanVien_SoDienThoai.Text, textBoxThemNhanVien_GioiTinh.Text, textBoxThemNhanVien_NgaySinh.Text, textBoxThemNhanVien_TienLuong.Text, textBoxThemNhanVien_BoPhan.Text);
+            if (textBoxThemNhanVien_HoTen.Text == "" || textBoxThemNhanVien_SoCanCuocCongDan.Text == "" || textBoxThemNhanVien_SoDienThoai.Text == "" || comboBoxThemNhanVien_GioiTinh.Text == "" || textBoxThemNhanVien_TienLuong.Text == "" || comboBoxThemNhanVien_BoPhan.Text == "")
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            else
+            {
+                QuanLy quanLy = new QuanLy(ChucNangHeThong.ID_Nhan_vien);
+                string ngay_sinh = dateTimePickerThemNhanVien_NgaySinh.Value.Year.ToString() + "-" + dateTimePickerThemNhanVien_NgaySinh.Value.Month.ToString() + "-" + dateTimePickerThemNhanVien_NgaySinh.Value.Day.ToString();
+                quanLy.themNhanVien(textBoxThemNhanVien_HoTen.Text, textBoxThemNhanVien_SoCanCuocCongDan.Text, textBoxThemNhanVien_SoDienThoai.Text, comboBoxThemNhanVien_GioiTinh.Text, ngay_sinh, textBoxThemNhanVien_TienLuong.Text, comboBoxThemNhanVien_BoPhan.Text);
+            }
         }
     }
 }

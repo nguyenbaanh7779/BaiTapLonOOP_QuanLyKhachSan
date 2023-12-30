@@ -18,24 +18,7 @@ namespace HeThongQuanLyKhachSan
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            useControlPhong.Visible = false;
-            userControlDonDatPhong1.Visible = true;
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonPhong_Click(object sender, EventArgs e)
-        {
-            userControlDonDatPhong1.Visible = false;
-            useControlPhong.Visible = true;
-        }
-
-        private void useControlPhong_Load(object sender, EventArgs e)
+        private void FormLeTan_Load(object sender, EventArgs e)
         {
 
         }

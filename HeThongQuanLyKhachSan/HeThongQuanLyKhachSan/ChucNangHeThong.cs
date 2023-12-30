@@ -16,8 +16,20 @@ namespace HeThongQuanLyKhachSan
             get { return ID_nhan_vien; }
             set { ID_nhan_vien = value; }
         }
+        private static int ID_phong ;
+        public static int ID_Phong
+        {
+            get { return ID_phong; }
+            set { ID_phong = value; }
+        }
+        private static string ID_don_dat_phong = "";
+        public static string ID_Don_dat_phong
+        {
+            get { return ID_don_dat_phong; }
+            set { ID_don_dat_phong = value; }
+        }
         private static LeTan leTan = new LeTan();
-        public static bool dangNhap(string tai_khoan, string mat_khau)
+        public static string dangNhap(string tai_khoan, string mat_khau)
         {
             string truy_van = "select ID_nhan_vien, bo_phan from nhan_vien where tai_khoan = '" + tai_khoan + "' and mat_khau = '" + mat_khau + "'";
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
@@ -26,21 +38,11 @@ namespace HeThongQuanLyKhachSan
             if (reader.Read())
             {
                 ID_Nhan_vien = reader.GetString("ID_nhan_vien");
-                if (reader.GetString("bo_phan") == "Lễ tân")
-                {
-                    FormLeTan formLeTan = new FormLeTan();
-                    formLeTan.Show();
-                }
-                else
-                {
-                    FormQuanLy formQuanLy = new FormQuanLy();
-                    formQuanLy.Show();
-                }
-                return true;
+                return reader.GetString("bo_phan");
             }
             else
             {
-                return false;
+                return "";
             }
         }
         public static DataSet timKiemThongTinPhong(string so_phong = "", string so_giuong = "", string loai_phong = "", string trang_thai = "")
@@ -72,19 +74,7 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();
         }
-        public static DataSet timKiemThongTinDonDatPhong(string so_dien_thoai = "")
-        {
-            string truy_van = "";
-            if (so_dien_thoai == "")
-                truy_van = "select ID_don_dat_phong, so_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, trang_thai_don from don_dat_phong inner join khach_hang on don_dat_phong.ID_khach_hang = khach_hang.ID_khach_hang inner join phong on don_dat_phong.ID_phong = phong.ID_phong where trang_thai_don = 'Đã đặt phòng'";
-            else
-            {
-                truy_van = "select ID_don_dat_phong, so_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, trang_thai_don from don_dat_phong inner join khach_hang on don_dat_phong.ID_khach_hang = khach_hang.ID_khach_hang inner join phong on don_dat_phong.ID_phong = phong.ID_phong where trang_thai_don = 'Đã đặt phòng' and " + "so_dien_thoai = '" + so_dien_thoai + "'";
-            }
-            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
-            thaoTacVoiSQL.Truy_van = truy_van;
-            return thaoTacVoiSQL.layDuLieuChoGridView();
-        }
+        
         public static void nhanPhong (string ID_don_dat_phong)
         {
             if (ID_don_dat_phong == "")

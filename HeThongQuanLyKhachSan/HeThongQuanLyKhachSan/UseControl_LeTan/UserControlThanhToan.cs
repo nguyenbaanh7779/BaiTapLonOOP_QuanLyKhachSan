@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HeThongQuanLyKhachSan.All_user_control
 {
-    public partial class UserControl1 : UserControl
+    public partial class UserControlLeTan_ThanhToan : UserControl
     {
-        public UserControl1()
+        public UserControlLeTan_ThanhToan()
         {
             InitializeComponent();
         }
