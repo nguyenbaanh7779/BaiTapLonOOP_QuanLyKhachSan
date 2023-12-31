@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace HeThongQuanLyKhachSan.All_user_control
 {
-    public partial class UserControlLeTan_ThanhToan : UserControl
+    public partial class UserControlLeTan_HoaDon : UserControl
     {
-        public UserControlLeTan_ThanhToan()
+        public UserControlLeTan_HoaDon()
         {
             InitializeComponent();
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserControlLeTan_HoaDon_Load(object sender, EventArgs e)
         {
 
         }

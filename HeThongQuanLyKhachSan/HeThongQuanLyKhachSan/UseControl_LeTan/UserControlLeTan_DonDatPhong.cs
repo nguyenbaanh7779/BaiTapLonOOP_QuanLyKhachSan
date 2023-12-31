@@ -38,7 +38,16 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void dataGridViewDonDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            // dùng để click vào một hàng và hiện thị thông tin hàng đó ở phía dưới
+            dataGridViewDonDatPhong.CurrentRow.Selected = true;
+            textBoxDonDatPhong_MaDon.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_IdDonDatPhong"].Value.ToString();
+            textBoxDonDatPhong_HoTen.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_HoTen"].Value.ToString();
+            textBoxDonDatPhong_SoCanCuocCongDan.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoCanCuocCongDan"].Value.ToString();
+            textBoxDonDatPhong_SoDienThoai.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoDienThoai"].Value.ToString();
+            dateTimePickerDonDatPhong_NgayNhanPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayNhanPhong"].Value.ToString();
+            dateTimePickerDonDatPhong_NgayTraPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayTraPhong"].Value.ToString();
+            textBoxDonDatPhong_SoLuongPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoLuongPhong"].Value.ToString();
+            ChucNangHeThong.ID_Don_dat_phong = Convert.ToInt32(textBoxDonDatPhong_MaDon.Text);
         }
 
         private void buttonNhanPhong_Click(object sender, EventArgs e)

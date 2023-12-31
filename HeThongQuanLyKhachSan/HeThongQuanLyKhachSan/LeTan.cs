@@ -203,5 +203,17 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();
         }
+        public void nhanPhong(string ID_don_dat_phong)
+        {
+            // thực hiện chức năng nhận phòng
+            string truy_van = "update don_dat_phong set trang_thai_don = 'Đã nhận' where ID_don_dat_phong = " + ID_don_dat_phong;
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            truy_van = "update phong set trang_thai_phong = 'Đã nhận' where ID_phong IN (select ID_phong from chi_tiet_don_dat_phong where ID_don_dat_phong = " + ID_don_dat_phong + ")";
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            MessageBox.Show("Nhận phòng thành công!");
+        }
     }
 }

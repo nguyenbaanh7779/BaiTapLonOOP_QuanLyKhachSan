@@ -47,10 +47,6 @@ namespace HeThongQuanLyKhachSan
             get { return trang_thai_phong; }
             set { trang_thai_phong = value; }
         }
-        public Phong()
-        {
-            
-        }
         public Phong(int ID_phong)
         {
             this.ID_phong = ID_phong;
@@ -67,6 +63,5 @@ namespace HeThongQuanLyKhachSan
                 trang_thai_phong = result.GetString("trang_thai_phong");
             }
         }
-
     }
 }

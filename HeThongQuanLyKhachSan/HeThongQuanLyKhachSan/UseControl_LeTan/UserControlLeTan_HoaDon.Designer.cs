@@ -1,6 +1,6 @@
 ﻿namespace HeThongQuanLyKhachSan.All_user_control
 {
-    partial class UserControlLeTan_ThanhToan
+    partial class UserControlLeTan_HoaDon
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,28 +33,28 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDonDatPhong_NgayNhanPhong = new System.Windows.Forms.DateTimePicker();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ColumnThanhToan_SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnThanhToan_SoNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnThanhToan_DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnThanhToan_ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ColumnThanhToan_SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnThanhToan_SoNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnThanhToan_DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnThanhToan_ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePickerHoaDon_NgayThanhToan = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,11 +64,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(324, 0);
+            this.label1.Location = new System.Drawing.Point(349, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 37);
+            this.label1.Size = new System.Drawing.Size(120, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thanh toán";
+            this.label1.Text = "Hóa đơn";
             // 
             // label2
             // 
@@ -106,36 +106,24 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Ngày trả phòng:";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(116, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 23);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(116, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 23);
-            this.textBox1.TabIndex = 7;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(116, 32);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 23);
+            this.textBox3.Size = new System.Drawing.Size(184, 23);
             this.textBox3.TabIndex = 8;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(116, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 23);
+            this.textBox4.Size = new System.Drawing.Size(184, 23);
             this.textBox4.TabIndex = 9;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dateTimePickerDonDatPhong_NgayNhanPhong);
             this.panel1.Controls.Add(this.textBox8);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.textBox7);
@@ -144,26 +132,38 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(31, 40);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(738, 123);
             this.panel1.TabIndex = 10;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(116, 87);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(184, 23);
+            this.dateTimePicker1.TabIndex = 20;
+            // 
+            // dateTimePickerDonDatPhong_NgayNhanPhong
+            // 
+            this.dateTimePickerDonDatPhong_NgayNhanPhong.Location = new System.Drawing.Point(116, 61);
+            this.dateTimePickerDonDatPhong_NgayNhanPhong.Name = "dateTimePickerDonDatPhong_NgayNhanPhong";
+            this.dateTimePickerDonDatPhong_NgayNhanPhong.Size = new System.Drawing.Size(184, 23);
+            this.dateTimePickerDonDatPhong_NgayNhanPhong.TabIndex = 19;
+            // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(583, 32);
+            this.textBox8.Location = new System.Drawing.Point(548, 32);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(148, 23);
+            this.textBox8.Size = new System.Drawing.Size(183, 23);
             this.textBox8.TabIndex = 13;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(503, 35);
+            this.label10.Location = new System.Drawing.Point(468, 34);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 15);
             this.label10.TabIndex = 12;
@@ -171,15 +171,15 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(583, 3);
+            this.textBox7.Location = new System.Drawing.Point(547, 3);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(148, 23);
+            this.textBox7.Size = new System.Drawing.Size(184, 23);
             this.textBox7.TabIndex = 11;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(503, 6);
+            this.label9.Location = new System.Drawing.Point(468, 6);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 15);
             this.label9.TabIndex = 10;
@@ -199,6 +199,27 @@
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(424, 231);
             this.dataGridView2.TabIndex = 11;
+            // 
+            // ColumnThanhToan_SoPhong
+            // 
+            this.ColumnThanhToan_SoPhong.HeaderText = "Số phòng";
+            this.ColumnThanhToan_SoPhong.Name = "ColumnThanhToan_SoPhong";
+            this.ColumnThanhToan_SoPhong.Width = 80;
+            // 
+            // ColumnThanhToan_SoNgay
+            // 
+            this.ColumnThanhToan_SoNgay.HeaderText = "Số ngày";
+            this.ColumnThanhToan_SoNgay.Name = "ColumnThanhToan_SoNgay";
+            // 
+            // ColumnThanhToan_DonGia
+            // 
+            this.ColumnThanhToan_DonGia.HeaderText = "Đơn giá";
+            this.ColumnThanhToan_DonGia.Name = "ColumnThanhToan_DonGia";
+            // 
+            // ColumnThanhToan_ThanhTien
+            // 
+            this.ColumnThanhToan_ThanhTien.HeaderText = "Thành tiền";
+            this.ColumnThanhToan_ThanhTien.Name = "ColumnThanhToan_ThanhTien";
             // 
             // label4
             // 
@@ -227,7 +248,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(368, 438);
+            this.button1.Location = new System.Drawing.Point(358, 440);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 32);
             this.button1.TabIndex = 13;
@@ -243,13 +264,6 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Ngày thanh toán:";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(118, 81);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 23);
-            this.textBox6.TabIndex = 14;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -262,9 +276,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dateTimePickerHoaDon_NgayThanhToan);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.textBox6);
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(461, 184);
@@ -272,28 +286,14 @@
             this.panel2.Size = new System.Drawing.Size(308, 118);
             this.panel2.TabIndex = 16;
             // 
-            // ColumnThanhToan_SoPhong
+            // dateTimePickerHoaDon_NgayThanhToan
             // 
-            this.ColumnThanhToan_SoPhong.HeaderText = "Số phòng";
-            this.ColumnThanhToan_SoPhong.Name = "ColumnThanhToan_SoPhong";
-            this.ColumnThanhToan_SoPhong.Width = 80;
+            this.dateTimePickerHoaDon_NgayThanhToan.Location = new System.Drawing.Point(117, 78);
+            this.dateTimePickerHoaDon_NgayThanhToan.Name = "dateTimePickerHoaDon_NgayThanhToan";
+            this.dateTimePickerHoaDon_NgayThanhToan.Size = new System.Drawing.Size(149, 23);
+            this.dateTimePickerHoaDon_NgayThanhToan.TabIndex = 21;
             // 
-            // ColumnThanhToan_SoNgay
-            // 
-            this.ColumnThanhToan_SoNgay.HeaderText = "Số ngày";
-            this.ColumnThanhToan_SoNgay.Name = "ColumnThanhToan_SoNgay";
-            // 
-            // ColumnThanhToan_DonGia
-            // 
-            this.ColumnThanhToan_DonGia.HeaderText = "Đơn giá";
-            this.ColumnThanhToan_DonGia.Name = "ColumnThanhToan_DonGia";
-            // 
-            // ColumnThanhToan_ThanhTien
-            // 
-            this.ColumnThanhToan_ThanhTien.HeaderText = "Thành tiền";
-            this.ColumnThanhToan_ThanhTien.Name = "ColumnThanhToan_ThanhTien";
-            // 
-            // UserControlLeTan_ThanhToan
+            // UserControlLeTan_HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,8 +303,9 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Name = "UserControlLeTan_ThanhToan";
+            this.Name = "UserControlLeTan_HoaDon";
             this.Size = new System.Drawing.Size(799, 494);
+            this.Load += new System.EventHandler(this.UserControlLeTan_HoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -322,8 +323,6 @@
         private Label label3;
         private Label label5;
         private Label label6;
-        private TextBox textBox2;
-        private TextBox textBox1;
         private TextBox textBox3;
         private TextBox textBox4;
         private Panel panel1;
@@ -333,7 +332,6 @@
         private TextBox textBox5;
         private Button button1;
         private Label label8;
-        private TextBox textBox6;
         private TextBox textBox8;
         private Label label10;
         private TextBox textBox7;
@@ -344,5 +342,8 @@
         private DataGridViewTextBoxColumn ColumnThanhToan_DonGia;
         private DataGridViewTextBoxColumn ColumnThanhToan_ThanhTien;
         private Panel panel2;
+        private DateTimePicker dateTimePickerDonDatPhong_NgayNhanPhong;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerHoaDon_NgayThanhToan;
     }
 }

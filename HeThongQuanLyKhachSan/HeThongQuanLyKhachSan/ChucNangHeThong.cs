@@ -16,11 +16,17 @@ namespace HeThongQuanLyKhachSan
             get { return ID_phong; }
             set { ID_phong = value; }
         }
-        private static string ID_don_dat_phong = "";
-        public static string ID_Don_dat_phong
+        private static int ID_don_dat_phong = -1;
+        public static int ID_Don_dat_phong
         {
             get { return ID_don_dat_phong; }
             set { ID_don_dat_phong = value; }
+        }
+        private static DonDatPhong donDatPhong = new DonDatPhong("-1");
+        public static DonDatPhong GSDonDatPhong // get set DonDatPhong
+        {
+            get { return donDatPhong; }
+            set { donDatPhong = value; }
         }
         private static LeTan leTan = new LeTan("-1");
         public static LeTan GSLeTan // get set LeTan
