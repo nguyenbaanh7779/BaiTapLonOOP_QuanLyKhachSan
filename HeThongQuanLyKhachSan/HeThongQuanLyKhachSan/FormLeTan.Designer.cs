@@ -29,59 +29,43 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonHoaDon = new System.Windows.Forms.Button();
-            this.buttonPhong = new System.Windows.Forms.Button();
-            this.buttonKhachHang = new System.Windows.Forms.Button();
+            this.buttonDatPhong = new System.Windows.Forms.Button();
             this.buttonDonDatPhong = new System.Windows.Forms.Button();
             this.useControlLeTan_DonDatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DonDatPhong();
             this.buttonDonDatPhong_NhanPhong = new System.Windows.Forms.Button();
             this.buttonDonDatPhong_TraPhong = new System.Windows.Forms.Button();
             this.userControlLeTan_ChiTietDonDatPhong1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_ChiTietDonDatPhong();
             this.buttonChiTietDonDatPhong_QuayLai = new System.Windows.Forms.Button();
+            this.userControlLeTan_HoaDon1 = new HeThongQuanLyKhachSan.All_user_control.UserControlLeTan_HoaDon();
+            this.buttonHoaDon_QuayLai = new System.Windows.Forms.Button();
+            this.useControlLeTan_DatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DatPhong();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonHoaDon);
-            this.panel1.Controls.Add(this.buttonPhong);
-            this.panel1.Controls.Add(this.buttonKhachHang);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.buttonDatPhong);
             this.panel1.Controls.Add(this.buttonDonDatPhong);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(142, 494);
             this.panel1.TabIndex = 0;
             // 
-            // buttonHoaDon
+            // buttonDatPhong
             // 
-            this.buttonHoaDon.Location = new System.Drawing.Point(3, 189);
-            this.buttonHoaDon.Name = "buttonHoaDon";
-            this.buttonHoaDon.Size = new System.Drawing.Size(135, 36);
-            this.buttonHoaDon.TabIndex = 3;
-            this.buttonHoaDon.Text = "Hóa đơn";
-            this.buttonHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // buttonPhong
-            // 
-            this.buttonPhong.Location = new System.Drawing.Point(3, 147);
-            this.buttonPhong.Name = "buttonPhong";
-            this.buttonPhong.Size = new System.Drawing.Size(135, 36);
-            this.buttonPhong.TabIndex = 2;
-            this.buttonPhong.Text = "Đặt phòng";
-            this.buttonPhong.UseVisualStyleBackColor = true;
-            // 
-            // buttonKhachHang
-            // 
-            this.buttonKhachHang.Location = new System.Drawing.Point(3, 105);
-            this.buttonKhachHang.Name = "buttonKhachHang";
-            this.buttonKhachHang.Size = new System.Drawing.Size(135, 36);
-            this.buttonKhachHang.TabIndex = 1;
-            this.buttonKhachHang.Text = "Khách hàng";
-            this.buttonKhachHang.UseVisualStyleBackColor = true;
+            this.buttonDatPhong.Location = new System.Drawing.Point(4, 91);
+            this.buttonDatPhong.Name = "buttonDatPhong";
+            this.buttonDatPhong.Size = new System.Drawing.Size(135, 36);
+            this.buttonDatPhong.TabIndex = 2;
+            this.buttonDatPhong.Text = "Đặt phòng";
+            this.buttonDatPhong.UseVisualStyleBackColor = true;
+            this.buttonDatPhong.Click += new System.EventHandler(this.buttonDatPhong_Click);
             // 
             // buttonDonDatPhong
             // 
-            this.buttonDonDatPhong.Location = new System.Drawing.Point(3, 63);
+            this.buttonDonDatPhong.Location = new System.Drawing.Point(4, 49);
             this.buttonDonDatPhong.Name = "buttonDonDatPhong";
             this.buttonDonDatPhong.Size = new System.Drawing.Size(135, 36);
             this.buttonDonDatPhong.TabIndex = 0;
@@ -138,11 +122,50 @@
             this.buttonChiTietDonDatPhong_QuayLai.Visible = false;
             this.buttonChiTietDonDatPhong_QuayLai.Click += new System.EventHandler(this.buttonChiTietDonDatPhong_QuayLai_Click);
             // 
+            // userControlLeTan_HoaDon1
+            // 
+            this.userControlLeTan_HoaDon1.Location = new System.Drawing.Point(160, 12);
+            this.userControlLeTan_HoaDon1.Name = "userControlLeTan_HoaDon1";
+            this.userControlLeTan_HoaDon1.Size = new System.Drawing.Size(799, 494);
+            this.userControlLeTan_HoaDon1.TabIndex = 10;
+            this.userControlLeTan_HoaDon1.Visible = false;
+            // 
+            // buttonHoaDon_QuayLai
+            // 
+            this.buttonHoaDon_QuayLai.Location = new System.Drawing.Point(862, 12);
+            this.buttonHoaDon_QuayLai.Name = "buttonHoaDon_QuayLai";
+            this.buttonHoaDon_QuayLai.Size = new System.Drawing.Size(96, 29);
+            this.buttonHoaDon_QuayLai.TabIndex = 11;
+            this.buttonHoaDon_QuayLai.Text = "Quay lại";
+            this.buttonHoaDon_QuayLai.UseVisualStyleBackColor = true;
+            this.buttonHoaDon_QuayLai.Visible = false;
+            this.buttonHoaDon_QuayLai.Click += new System.EventHandler(this.buttonHoaDon_QuayLai_Click);
+            // 
+            // useControlLeTan_DatPhong1
+            // 
+            this.useControlLeTan_DatPhong1.Location = new System.Drawing.Point(160, 12);
+            this.useControlLeTan_DatPhong1.Name = "useControlLeTan_DatPhong1";
+            this.useControlLeTan_DatPhong1.Size = new System.Drawing.Size(799, 494);
+            this.useControlLeTan_DatPhong1.TabIndex = 12;
+            this.useControlLeTan_DatPhong1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
+            // 
             // FormLeTan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 519);
+            this.Controls.Add(this.useControlLeTan_DatPhong1);
+            this.Controls.Add(this.buttonHoaDon_QuayLai);
+            this.Controls.Add(this.userControlLeTan_HoaDon1);
             this.Controls.Add(this.buttonChiTietDonDatPhong_QuayLai);
             this.Controls.Add(this.userControlLeTan_ChiTietDonDatPhong1);
             this.Controls.Add(this.buttonDonDatPhong_TraPhong);
@@ -153,6 +176,7 @@
             this.Text = "Lễ Tân";
             this.Load += new System.EventHandler(this.FormLeTan_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -161,13 +185,15 @@
 
         private Panel panel1;
         private Button buttonDonDatPhong;
-        private Button buttonKhachHang;
-        private Button buttonHoaDon;
-        private Button buttonPhong;
+        private Button buttonDatPhong;
         private All_user_control.useControlLeTan_DonDatPhong useControlLeTan_DonDatPhong1;
         private Button buttonDonDatPhong_NhanPhong;
         private Button buttonDonDatPhong_TraPhong;
         private UseControl_LeTan.UserControlLeTan_ChiTietDonDatPhong userControlLeTan_ChiTietDonDatPhong1;
         private Button buttonChiTietDonDatPhong_QuayLai;
+        private All_user_control.UserControlLeTan_HoaDon userControlLeTan_HoaDon1;
+        private Button buttonHoaDon_QuayLai;
+        private All_user_control.useControlLeTan_DatPhong useControlLeTan_DatPhong1;
+        private Label label1;
     }
 }

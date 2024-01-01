@@ -4,7 +4,7 @@
     <Compile Update="UseControl_LeTan\UserControlLeTan_ChiTietDonDatPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UseControl_LeTan\UserControlLeTan_ThanhToan.cs">
+    <Compile Update="UseControl_LeTan\UserControlLeTan_HoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UseControl_LeTan\UserControlLeTan_DonDatPhong.cs">

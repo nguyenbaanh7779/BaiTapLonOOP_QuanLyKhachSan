@@ -25,9 +25,15 @@ namespace HeThongQuanLyKhachSan
         private void buttonDonDatPhong_Click(object sender, EventArgs e)
         {
             // dùng để hiện thị giao hiện đơn đặt phòng
+
+            // form đặt phòng
+            useControlLeTan_DatPhong1.Visible = false;
+
+            // form đơn đặt phòng
             buttonDonDatPhong_NhanPhong.Visible = true;
             buttonDonDatPhong_TraPhong.Visible = true;
             useControlLeTan_DonDatPhong1.Visible = true;
+            /////////////////////
         }
         private void buttonDonDatPhong_NhanPhong_Click(object sender, EventArgs e)
         {
@@ -58,6 +64,29 @@ namespace HeThongQuanLyKhachSan
         private void buttonDonDatPhong_TraPhong_Click(object sender, EventArgs e)
         {
             // dùng để thực hiện chức năng trả phòng
+
+            if (ChucNangHeThong.ID_Don_dat_phong == -1)
+            {
+                MessageBox.Show("Vui lòng chọn đơn đặt phòng!");
+            }
+            else
+            {
+                // Tạo hóa đơn
+                ChucNangHeThong.GSLeTan.taoHoaDon(Convert.ToString(ChucNangHeThong.ID_Don_dat_phong));
+
+                // form đơn đặt phòng
+                buttonDonDatPhong_NhanPhong.Visible = false;
+                buttonDonDatPhong_TraPhong.Visible = false;
+                useControlLeTan_DonDatPhong1.Visible = false;
+                /////////////////////
+
+                // form hóa đơn
+                buttonHoaDon_QuayLai.Visible = true;
+                userControlLeTan_HoaDon1.Visible = true;
+                ///////////////
+            }
+
+
         }
 
         private void buttonChiTietDonDatPhong_NhanPhong_Click(object sender, EventArgs e)
@@ -84,6 +113,45 @@ namespace HeThongQuanLyKhachSan
             buttonDonDatPhong_TraPhong.Visible = true;
             useControlLeTan_DonDatPhong1.Visible = true;
             /////////////////////
+        }
+
+        private void buttonHoaDon_QuayLai_Click(object sender, EventArgs e)
+        {
+            // dùng để quay về form đơn đặt phòng
+
+            // form hóa đơn
+            buttonHoaDon_QuayLai.Visible = false;
+            userControlLeTan_HoaDon1.Visible = false;
+            ///////////////
+
+
+            // form đơn đặt phòng
+            buttonDonDatPhong_NhanPhong.Visible = true;
+            buttonDonDatPhong_TraPhong.Visible = true;
+            useControlLeTan_DonDatPhong1.Visible = true;
+            /////////////////////
+        }
+
+        private void buttonDatPhong_Click(object sender, EventArgs e)
+        {
+            // form đơn đặt phòng
+            buttonDonDatPhong_NhanPhong.Visible = false;
+            buttonDonDatPhong_TraPhong.Visible = false;
+            useControlLeTan_DonDatPhong1.Visible = false;
+            /////////////////////
+
+            // from chi tiết đơn đặt phòng
+            buttonChiTietDonDatPhong_QuayLai.Visible = false;
+            userControlLeTan_ChiTietDonDatPhong1.Visible = false;
+            //////////////////////////////
+
+            // form hóa đơn
+            buttonHoaDon_QuayLai.Visible = false;
+            userControlLeTan_HoaDon1.Visible = false;
+            ///////////////
+
+            // form đặt phòng
+            useControlLeTan_DatPhong1.Visible = true;
         }
     }
 }

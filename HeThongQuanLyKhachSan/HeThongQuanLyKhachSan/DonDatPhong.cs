@@ -54,9 +54,15 @@ namespace HeThongQuanLyKhachSan
             get { return trang_thai_don; }
             set { trang_thai_don = value; }
         }
-        public DonDatPhong()
+        public int So_Ngay_Thue
         {
-
+            get { return so_ngay_thue; }
+            set { so_ngay_thue = value; }
+        }
+        public long Tong_tien_phong
+        {
+            get { return tong_tien_phong; }
+            set { tong_tien_phong = value; }
         }
         public DonDatPhong(string ID_don_dat_phong)
         {

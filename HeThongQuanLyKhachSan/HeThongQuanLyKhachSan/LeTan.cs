@@ -193,7 +193,7 @@ namespace HeThongQuanLyKhachSan
             string truy_van = "";
             if (so_dien_thoai == "")
             {
-                truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where trang_thai_don = 'Đã đặt' group by chi_tiet_don_dat_phong.ID_don_dat_phong";
+                truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong group by chi_tiet_don_dat_phong.ID_don_dat_phong";
             }
             else
             {
@@ -214,6 +214,43 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             thaoTacVoiSQL.capNhatDuLieu();
             MessageBox.Show("Nhận phòng thành công!");
+        }
+        public void taoHoaDon(string ID_don_dat_phong)
+        {
+            // tạo hóa đơn
+            string truy_van = "insert into hoa_don(ID_don_dat_phong, ID_nhan_vien, ngay_thanh_toan) values(" + ID_don_dat_phong + ", " + Convert.ToString(this.ID_Nhan_vien) + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            truy_van = "select ID_hoa_don from hoa_don where ID_don_dat_phong = " + ID_don_dat_phong;
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            string ID_hoa_don = "";
+            if (reader.Read())
+            {
+                ID_hoa_don = reader.GetString("ID_hoa_don");
+            }
+            ChucNangHeThong.GSHoaDon = new HoaDon(ID_hoa_don);
+        }
+        public void thanhToanHoaDon(string ID_hoa_don)
+        {
+            // thực hiện chức năng thanh toán hóa đơn
+            string truy_van = "select ID_don_dat_phong from hoa_don where ID_hoa_don = " + ID_hoa_don;
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            string ID_don_dat_phong = "";
+            if (reader.Read())
+            {
+                ID_don_dat_phong = reader.GetString("ID_don_dat_phong");
+            }
+            truy_van = "update don_dat_phong set trang_thai_don = 'Đã trả phòng' where ID_don_dat_phong = " + ID_don_dat_phong;
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            truy_van = "update phong set trang_thai_phong = 'Trống' where ID_phong IN (select ID_phong from chi_tiet_don_dat_phong where ID_don_dat_phong = " + ID_don_dat_phong + ")";
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            MessageBox.Show("Thanh toán hóa đơn thành công!");
         }
     }
 }

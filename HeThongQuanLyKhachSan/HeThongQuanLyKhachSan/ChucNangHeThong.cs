@@ -28,6 +28,12 @@ namespace HeThongQuanLyKhachSan
             get { return donDatPhong; }
             set { donDatPhong = value; }
         }
+        private static HoaDon hoaDon = new HoaDon("-1");
+        public static HoaDon GSHoaDon // get set HoaDon
+        {
+            get { return hoaDon; }
+            set { hoaDon = value; }
+        }
         private static LeTan leTan = new LeTan("-1");
         public static LeTan GSLeTan // get set LeTan
         {
