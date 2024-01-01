@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonThongTinCaNhan = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonDatPhong = new System.Windows.Forms.Button();
             this.buttonDonDatPhong = new System.Windows.Forms.Button();
             this.useControlLeTan_DonDatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DonDatPhong();
@@ -39,12 +41,13 @@
             this.userControlLeTan_HoaDon1 = new HeThongQuanLyKhachSan.All_user_control.UserControlLeTan_HoaDon();
             this.buttonHoaDon_QuayLai = new System.Windows.Forms.Button();
             this.useControlLeTan_DatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DatPhong();
-            this.label1 = new System.Windows.Forms.Label();
+            this.userControlLeTan_ThongTinCaNhan1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_ThongTinCaNhan();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonThongTinCaNhan);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonDatPhong);
             this.panel1.Controls.Add(this.buttonDonDatPhong);
@@ -53,9 +56,28 @@
             this.panel1.Size = new System.Drawing.Size(142, 494);
             this.panel1.TabIndex = 0;
             // 
+            // buttonThongTinCaNhan
+            // 
+            this.buttonThongTinCaNhan.Location = new System.Drawing.Point(3, 39);
+            this.buttonThongTinCaNhan.Name = "buttonThongTinCaNhan";
+            this.buttonThongTinCaNhan.Size = new System.Drawing.Size(135, 36);
+            this.buttonThongTinCaNhan.TabIndex = 14;
+            this.buttonThongTinCaNhan.Text = "Thông tin cá nhân";
+            this.buttonThongTinCaNhan.UseVisualStyleBackColor = true;
+            this.buttonThongTinCaNhan.Click += new System.EventHandler(this.buttonThongTinCaNhan_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
+            // 
             // buttonDatPhong
             // 
-            this.buttonDatPhong.Location = new System.Drawing.Point(4, 91);
+            this.buttonDatPhong.Location = new System.Drawing.Point(4, 123);
             this.buttonDatPhong.Name = "buttonDatPhong";
             this.buttonDatPhong.Size = new System.Drawing.Size(135, 36);
             this.buttonDatPhong.TabIndex = 2;
@@ -65,7 +87,7 @@
             // 
             // buttonDonDatPhong
             // 
-            this.buttonDonDatPhong.Location = new System.Drawing.Point(4, 49);
+            this.buttonDonDatPhong.Location = new System.Drawing.Point(4, 81);
             this.buttonDonDatPhong.Name = "buttonDonDatPhong";
             this.buttonDonDatPhong.Size = new System.Drawing.Size(135, 36);
             this.buttonDonDatPhong.TabIndex = 0;
@@ -149,20 +171,20 @@
             this.useControlLeTan_DatPhong1.TabIndex = 12;
             this.useControlLeTan_DatPhong1.Visible = false;
             // 
-            // label1
+            // userControlLeTan_ThongTinCaNhan1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
+            this.userControlLeTan_ThongTinCaNhan1.Location = new System.Drawing.Point(159, 12);
+            this.userControlLeTan_ThongTinCaNhan1.Name = "userControlLeTan_ThongTinCaNhan1";
+            this.userControlLeTan_ThongTinCaNhan1.Size = new System.Drawing.Size(799, 494);
+            this.userControlLeTan_ThongTinCaNhan1.TabIndex = 13;
+            this.userControlLeTan_ThongTinCaNhan1.Visible = false;
             // 
             // FormLeTan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 519);
+            this.Controls.Add(this.userControlLeTan_ThongTinCaNhan1);
             this.Controls.Add(this.useControlLeTan_DatPhong1);
             this.Controls.Add(this.buttonHoaDon_QuayLai);
             this.Controls.Add(this.userControlLeTan_HoaDon1);
@@ -195,5 +217,7 @@
         private Button buttonHoaDon_QuayLai;
         private All_user_control.useControlLeTan_DatPhong useControlLeTan_DatPhong1;
         private Label label1;
+        private Button buttonThongTinCaNhan;
+        private UseControl_LeTan.UserControlLeTan_ThongTinCaNhan userControlLeTan_ThongTinCaNhan1;
     }
 }

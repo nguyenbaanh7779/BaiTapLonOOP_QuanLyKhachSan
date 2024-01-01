@@ -26,6 +26,11 @@ namespace HeThongQuanLyKhachSan
         {
             // dùng để hiện thị giao hiện đơn đặt phòng
 
+            // form thông tin cá nhân
+            buttonThongTinCaNhan_QuayLai.Visible = false;
+            userControlLeTan_ThongTinCaNhan1.Visible = false;
+            /////////////////////////
+
             // form đặt phòng
             useControlLeTan_DatPhong1.Visible = false;
 
@@ -150,8 +155,49 @@ namespace HeThongQuanLyKhachSan
             userControlLeTan_HoaDon1.Visible = false;
             ///////////////
 
+            // form thông tin cá nhân
+            buttonThongTinCaNhan_QuayLai.Visible = false;
+            userControlLeTan_ThongTinCaNhan1.Visible = false;
+            /////////////////////////
+
             // form đặt phòng
             useControlLeTan_DatPhong1.Visible = true;
+        }
+
+        private void buttonThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+            // dùng để hiện thị thông tin cá nhân của lễ tân
+
+            // form đơn đặt phòng
+            buttonDonDatPhong_NhanPhong.Visible = false;
+            buttonDonDatPhong_TraPhong.Visible = false;
+            useControlLeTan_DonDatPhong1.Visible = false;
+            /////////////////////
+
+            // from chi tiết đơn đặt phòng
+            buttonChiTietDonDatPhong_QuayLai.Visible = false;
+            userControlLeTan_ChiTietDonDatPhong1.Visible = false;
+            //////////////////////////////
+
+            // form hóa đơn
+            buttonHoaDon_QuayLai.Visible = false;
+            userControlLeTan_HoaDon1.Visible = false;
+            ///////////////
+
+            // form đặt phòng
+            useControlLeTan_DatPhong1.Visible = false;
+
+            // form thông tin cá nhân
+            buttonThongTinCaNhan_QuayLai.Visible = true;
+            userControlLeTan_ThongTinCaNhan1.Visible = true;
+            /////////////////////////
+
+
+        }
+
+        private void buttonThongTinCaNhan_QuayLai_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
