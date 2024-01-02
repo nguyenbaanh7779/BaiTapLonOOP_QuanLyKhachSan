@@ -13,8 +13,8 @@ namespace HeThongQuanLyKhachSan
         private int ID_don_dat_phong;
         private List<Phong> danh_sach_phong = new List<Phong>();
         private KhachHang khach_hang = new KhachHang("-1");
-        private DateTime ngay_nhan_phong = new DateTime();
-        private DateTime ngay_tra_phong = new DateTime();
+        private DateTime ngay_nhan_phong = DateTime.Now;
+        private DateTime ngay_tra_phong = DateTime.Now;
         private string so_dien_thoai = "";
         private int so_ngay_thue = 0;
         private long tong_tien_phong = 0;
@@ -68,6 +68,7 @@ namespace HeThongQuanLyKhachSan
         {
             this.ID_don_dat_phong = Convert.ToInt32(ID_don_dat_phong);
             string truy_van = "select don_dat_phong.ID_khach_hang, chi_tiet_don_dat_phong.ID_phong, ngay_nhan_phong, ngay_tra_phong, so_dien_thoai, trang_thai_don from don_dat_phong join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong where don_dat_phong.ID_don_dat_phong = " + ID_don_dat_phong;
+            MessageBox.Show(truy_van);
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             MySqlDataReader result = thaoTacVoiSQL.layDuLieuChoClass();
@@ -81,7 +82,8 @@ namespace HeThongQuanLyKhachSan
                 do
                 {
                     this.danh_sach_phong.Add(new Phong(result.GetInt32("ID_phong")));
-                } while (result.Read());
+                } 
+                while (result.Read());
             }
             this.so_ngay_thue = (int)(this.ngay_tra_phong - this.ngay_nhan_phong).TotalDays;
             foreach (Phong phong in this.danh_sach_phong)
@@ -92,12 +94,13 @@ namespace HeThongQuanLyKhachSan
         public DataSet hienThiPhongDaDat()
         {
             string truy_van = "select ID_phong, so_phong, so_giuong, loai_phong, don_gia from phong where ID_phong in (";
-            foreach (Phong phong in danh_sach_phong)
+            foreach (Phong phong in this.danh_sach_phong)
             {
-                truy_van += phong.ID_Phong + ", ";
+                truy_van += Convert.ToString(phong.ID_Phong) + ", ";
             }
             truy_van = truy_van.Substring(0, truy_van.Length - 2);
             truy_van += ")";
+            MessageBox.Show(truy_van);
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();

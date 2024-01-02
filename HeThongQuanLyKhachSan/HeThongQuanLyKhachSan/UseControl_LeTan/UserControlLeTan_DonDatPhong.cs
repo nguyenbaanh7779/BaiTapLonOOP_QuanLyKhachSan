@@ -12,6 +12,8 @@ namespace HeThongQuanLyKhachSan.All_user_control
 {
     public partial class useControlLeTan_DonDatPhong : UserControl
     {
+        private List<string> DS_trangThaiDon = new List<string>();
+        string trang_thai_don = "";
         public useControlLeTan_DonDatPhong()
         {
             InitializeComponent();
@@ -23,7 +25,15 @@ namespace HeThongQuanLyKhachSan.All_user_control
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            // dùng để thực hiện tìm kiếm đơn đặt phòng theo số điện thoại hoặc mã số đơn
+            foreach (RadioButton item in groupBox_TieuChiTimKiem.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, item.Text, DS_trangThaiDon).Tables[0];
+                    break;
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,7 +43,10 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void useControlDonDatPhong_Load(object sender, EventArgs e)
         {
-            dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiemSoDienThoai.Text).Tables[0]; 
+            // hiện thị thông tin tất cả các đơn đặt phòng lên datagridview
+            radioButton_SoDienThoai.Checked = true;
+            checkBox_DaDat.Checked = true;
+            dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, radioButton_SoDienThoai.Text, DS_trangThaiDon).Tables[0];
         }
 
         private void dataGridViewDonDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -47,12 +60,28 @@ namespace HeThongQuanLyKhachSan.All_user_control
             dateTimePickerDonDatPhong_NgayNhanPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayNhanPhong"].Value.ToString();
             dateTimePickerDonDatPhong_NgayTraPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayTraPhong"].Value.ToString();
             textBoxDonDatPhong_SoLuongPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoLuongPhong"].Value.ToString();
-            ChucNangHeThong.ID_Don_dat_phong = Convert.ToInt32(textBoxDonDatPhong_MaDon.Text);
+            trang_thai_don = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_TrangThaiDon"].Value.ToString();
         }
 
         private void buttonNhanPhong_Click(object sender, EventArgs e)
         {
-            
+            // dùng để mở form nhận phòng để thực hiện chức năng nhận phòng
+            if (textBoxDonDatPhong_MaDon.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn đơn đặt phòng!");
+            }
+            else
+            {
+                ChucNangHeThong.GSDonDatPhong = new DonDatPhong(textBoxDonDatPhong_MaDon.Text);
+                if (trang_thai_don == "Đã đặt")
+                {
+                    userControlLeTan_ChiTietDonDatPhong1.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thực hiện nhận phòng! Vui lòng xem lại trạng thái đơn");
+                }
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -61,6 +90,157 @@ namespace HeThongQuanLyKhachSan.All_user_control
         }
 
         private void labelThongBao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDonDatPhong_CapNhat_Click(object sender, EventArgs e)
+        {
+            // dùng để mở form cập nhật phòng để thực hiện chức năng cập nhật phòng
+            if (textBoxDonDatPhong_MaDon.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn đơn đặt phòng!");
+            }
+            else
+            {
+                ChucNangHeThong.GSDonDatPhong = new DonDatPhong(textBoxDonDatPhong_MaDon.Text);
+                if (trang_thai_don == "Đã đặt")
+                {
+                    userControlLeTan_CapNhatDonDatPhong1.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thực hiện cập nhật phòng! Vui lòng xem lại trạng thái đơn");
+                }
+            }
+        }
+
+        private void buttonTraPhong_Click(object sender, EventArgs e)
+        {
+            // dùng để mở form thanh toán để thực hiện chức năng trả phòng
+            if (textBoxDonDatPhong_MaDon.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn đơn đặt phòng!");
+            }
+            else
+            {
+                if (trang_thai_don == "Đã nhận")
+                {
+                    string ID_hoa_don = ChucNangHeThong.GSLeTan.taoHoaDon(textBoxDonDatPhong_MaDon.Text);
+                    ChucNangHeThong.GSHoaDon = new HoaDon(ID_hoa_don);
+                    userControlLeTan_HoaDon1.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thực hiện trả phòng! Vui lòng xem lại trạng thái đơn");
+                }
+            }
+        }
+
+        private void buttonDonDatPhong_HuyDon_Click(object sender, EventArgs e)
+        {
+            // dùng để thực hiện chức năng hủy đơn đặt phòng
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxTatCa_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox_DaDat_CheckedChanged(object sender, EventArgs e)
+        {
+            // thao tác với check box đã đặt
+            DS_trangThaiDon.Clear();
+            foreach (CheckBox item in groupBox_trangThaiDon.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    DS_trangThaiDon.Add(item.Text);
+                }
+            }
+            // hiện thị thông tin tất cả các đơn đặt phòng lên datagridview
+            foreach (RadioButton item in groupBox_TieuChiTimKiem.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, item.Text, DS_trangThaiDon).Tables[0];
+                    break;
+                }
+            }
+        }
+
+        private void checkBox_DaNhan_CheckedChanged(object sender, EventArgs e)
+        {
+            // thao tác với check box đã nhận
+            DS_trangThaiDon.Clear();
+            foreach (CheckBox item in groupBox_trangThaiDon.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    DS_trangThaiDon.Add(item.Text);
+                }
+            }
+            // hiện thị thông tin tất cả các đơn đặt phòng lên datagridview
+            foreach (RadioButton item in groupBox_TieuChiTimKiem.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, item.Text, DS_trangThaiDon).Tables[0];
+                    break;
+                }
+            }
+        }
+
+        private void checkBox_DaTra_CheckedChanged(object sender, EventArgs e)
+        {
+            // thao tác với check box đã trả
+            DS_trangThaiDon.Clear();
+            foreach (CheckBox item in groupBox_trangThaiDon.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    DS_trangThaiDon.Add(item.Text);
+                }
+            }
+            // hiện thị thông tin tất cả các đơn đặt phòng lên datagridview
+            foreach (RadioButton item in groupBox_TieuChiTimKiem.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, item.Text, DS_trangThaiDon).Tables[0];
+                    break;
+                } 
+            }
+        }
+
+        private void checkBox_DaHuy_CheckedChanged(object sender, EventArgs e)
+        {
+            // thao tác với check box đã hủy
+            DS_trangThaiDon.Clear();
+            foreach (CheckBox item in groupBox_trangThaiDon.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    DS_trangThaiDon.Add(item.Text);
+                }
+            }
+            // hiện thị thông tin tất cả các đơn đặt phòng lên datagridview
+            foreach (RadioButton item in groupBox_TieuChiTimKiem.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, item.Text, DS_trangThaiDon).Tables[0];
+                    break;
+                }
+            }
+        }
+
+        private void userControlLeTan_HoaDon1_Load(object sender, EventArgs e)
         {
 
         }

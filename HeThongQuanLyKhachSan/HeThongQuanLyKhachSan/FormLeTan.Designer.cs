@@ -34,12 +34,6 @@
             this.buttonDatPhong = new System.Windows.Forms.Button();
             this.buttonDonDatPhong = new System.Windows.Forms.Button();
             this.useControlLeTan_DonDatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DonDatPhong();
-            this.buttonDonDatPhong_NhanPhong = new System.Windows.Forms.Button();
-            this.buttonDonDatPhong_TraPhong = new System.Windows.Forms.Button();
-            this.userControlLeTan_ChiTietDonDatPhong1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_ChiTietDonDatPhong();
-            this.buttonChiTietDonDatPhong_QuayLai = new System.Windows.Forms.Button();
-            this.userControlLeTan_HoaDon1 = new HeThongQuanLyKhachSan.All_user_control.UserControlLeTan_HoaDon();
-            this.buttonHoaDon_QuayLai = new System.Windows.Forms.Button();
             this.useControlLeTan_DatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DatPhong();
             this.userControlLeTan_ThongTinCaNhan1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_ThongTinCaNhan();
             this.panel1.SuspendLayout();
@@ -103,66 +97,6 @@
             this.useControlLeTan_DonDatPhong1.TabIndex = 1;
             this.useControlLeTan_DonDatPhong1.Visible = false;
             // 
-            // buttonDonDatPhong_NhanPhong
-            // 
-            this.buttonDonDatPhong_NhanPhong.Location = new System.Drawing.Point(452, 456);
-            this.buttonDonDatPhong_NhanPhong.Name = "buttonDonDatPhong_NhanPhong";
-            this.buttonDonDatPhong_NhanPhong.Size = new System.Drawing.Size(94, 29);
-            this.buttonDonDatPhong_NhanPhong.TabIndex = 4;
-            this.buttonDonDatPhong_NhanPhong.Text = "Nhận phòng";
-            this.buttonDonDatPhong_NhanPhong.UseVisualStyleBackColor = true;
-            this.buttonDonDatPhong_NhanPhong.Visible = false;
-            this.buttonDonDatPhong_NhanPhong.Click += new System.EventHandler(this.buttonDonDatPhong_NhanPhong_Click);
-            // 
-            // buttonDonDatPhong_TraPhong
-            // 
-            this.buttonDonDatPhong_TraPhong.Location = new System.Drawing.Point(552, 456);
-            this.buttonDonDatPhong_TraPhong.Name = "buttonDonDatPhong_TraPhong";
-            this.buttonDonDatPhong_TraPhong.Size = new System.Drawing.Size(94, 29);
-            this.buttonDonDatPhong_TraPhong.TabIndex = 5;
-            this.buttonDonDatPhong_TraPhong.Text = "Trả phòng";
-            this.buttonDonDatPhong_TraPhong.UseVisualStyleBackColor = true;
-            this.buttonDonDatPhong_TraPhong.Visible = false;
-            this.buttonDonDatPhong_TraPhong.Click += new System.EventHandler(this.buttonDonDatPhong_TraPhong_Click);
-            // 
-            // userControlLeTan_ChiTietDonDatPhong1
-            // 
-            this.userControlLeTan_ChiTietDonDatPhong1.Location = new System.Drawing.Point(160, 12);
-            this.userControlLeTan_ChiTietDonDatPhong1.Name = "userControlLeTan_ChiTietDonDatPhong1";
-            this.userControlLeTan_ChiTietDonDatPhong1.Size = new System.Drawing.Size(799, 494);
-            this.userControlLeTan_ChiTietDonDatPhong1.TabIndex = 6;
-            this.userControlLeTan_ChiTietDonDatPhong1.Visible = false;
-            // 
-            // buttonChiTietDonDatPhong_QuayLai
-            // 
-            this.buttonChiTietDonDatPhong_QuayLai.Location = new System.Drawing.Point(862, 12);
-            this.buttonChiTietDonDatPhong_QuayLai.Name = "buttonChiTietDonDatPhong_QuayLai";
-            this.buttonChiTietDonDatPhong_QuayLai.Size = new System.Drawing.Size(96, 29);
-            this.buttonChiTietDonDatPhong_QuayLai.TabIndex = 9;
-            this.buttonChiTietDonDatPhong_QuayLai.Text = "Quay lại";
-            this.buttonChiTietDonDatPhong_QuayLai.UseVisualStyleBackColor = true;
-            this.buttonChiTietDonDatPhong_QuayLai.Visible = false;
-            this.buttonChiTietDonDatPhong_QuayLai.Click += new System.EventHandler(this.buttonChiTietDonDatPhong_QuayLai_Click);
-            // 
-            // userControlLeTan_HoaDon1
-            // 
-            this.userControlLeTan_HoaDon1.Location = new System.Drawing.Point(160, 12);
-            this.userControlLeTan_HoaDon1.Name = "userControlLeTan_HoaDon1";
-            this.userControlLeTan_HoaDon1.Size = new System.Drawing.Size(799, 494);
-            this.userControlLeTan_HoaDon1.TabIndex = 10;
-            this.userControlLeTan_HoaDon1.Visible = false;
-            // 
-            // buttonHoaDon_QuayLai
-            // 
-            this.buttonHoaDon_QuayLai.Location = new System.Drawing.Point(862, 12);
-            this.buttonHoaDon_QuayLai.Name = "buttonHoaDon_QuayLai";
-            this.buttonHoaDon_QuayLai.Size = new System.Drawing.Size(96, 29);
-            this.buttonHoaDon_QuayLai.TabIndex = 11;
-            this.buttonHoaDon_QuayLai.Text = "Quay lại";
-            this.buttonHoaDon_QuayLai.UseVisualStyleBackColor = true;
-            this.buttonHoaDon_QuayLai.Visible = false;
-            this.buttonHoaDon_QuayLai.Click += new System.EventHandler(this.buttonHoaDon_QuayLai_Click);
-            // 
             // useControlLeTan_DatPhong1
             // 
             this.useControlLeTan_DatPhong1.Location = new System.Drawing.Point(160, 12);
@@ -186,12 +120,6 @@
             this.ClientSize = new System.Drawing.Size(970, 519);
             this.Controls.Add(this.userControlLeTan_ThongTinCaNhan1);
             this.Controls.Add(this.useControlLeTan_DatPhong1);
-            this.Controls.Add(this.buttonHoaDon_QuayLai);
-            this.Controls.Add(this.userControlLeTan_HoaDon1);
-            this.Controls.Add(this.buttonChiTietDonDatPhong_QuayLai);
-            this.Controls.Add(this.userControlLeTan_ChiTietDonDatPhong1);
-            this.Controls.Add(this.buttonDonDatPhong_TraPhong);
-            this.Controls.Add(this.buttonDonDatPhong_NhanPhong);
             this.Controls.Add(this.useControlLeTan_DonDatPhong1);
             this.Controls.Add(this.panel1);
             this.Name = "FormLeTan";
@@ -208,16 +136,10 @@
         private Panel panel1;
         private Button buttonDonDatPhong;
         private Button buttonDatPhong;
-        private All_user_control.useControlLeTan_DonDatPhong useControlLeTan_DonDatPhong1;
-        private Button buttonDonDatPhong_NhanPhong;
-        private Button buttonDonDatPhong_TraPhong;
-        private UseControl_LeTan.UserControlLeTan_ChiTietDonDatPhong userControlLeTan_ChiTietDonDatPhong1;
-        private Button buttonChiTietDonDatPhong_QuayLai;
-        private All_user_control.UserControlLeTan_HoaDon userControlLeTan_HoaDon1;
-        private Button buttonHoaDon_QuayLai;
-        private All_user_control.useControlLeTan_DatPhong useControlLeTan_DatPhong1;
-        private Label label1;
         private Button buttonThongTinCaNhan;
+        private All_user_control.useControlLeTan_DonDatPhong useControlLeTan_DonDatPhong1;
+        private All_user_control.useControlLeTan_DatPhong useControlLeTan_DatPhong1;
         private UseControl_LeTan.UserControlLeTan_ThongTinCaNhan userControlLeTan_ThongTinCaNhan1;
+        private Label label1;
     }
 }

@@ -41,11 +41,13 @@
             this.buttonPhong_Them = new System.Windows.Forms.Button();
             this.userControlQuanLy_ThemPhong1 = new HeThongQuanLyKhachSan.UserControl_QuanLy.UserControlQuanLy_ThemPhong();
             this.buttonThemPhong_QuayLai = new System.Windows.Forms.Button();
+            this.buttonThongTinCaNhan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonThongTinCaNhan);
             this.panel1.Controls.Add(this.buttonQuanLy_DangXuat);
             this.panel1.Controls.Add(this.labelQuanLy_TaiKhoan);
             this.panel1.Controls.Add(this.buttonKhachHang);
@@ -77,7 +79,7 @@
             // 
             // buttonKhachHang
             // 
-            this.buttonKhachHang.Location = new System.Drawing.Point(3, 87);
+            this.buttonKhachHang.Location = new System.Drawing.Point(3, 126);
             this.buttonKhachHang.Name = "buttonKhachHang";
             this.buttonKhachHang.Size = new System.Drawing.Size(135, 36);
             this.buttonKhachHang.TabIndex = 1;
@@ -87,7 +89,7 @@
             // 
             // buttonDonDatPhong
             // 
-            this.buttonDonDatPhong.Location = new System.Drawing.Point(3, 45);
+            this.buttonDonDatPhong.Location = new System.Drawing.Point(3, 84);
             this.buttonDonDatPhong.Name = "buttonDonDatPhong";
             this.buttonDonDatPhong.Size = new System.Drawing.Size(135, 36);
             this.buttonDonDatPhong.TabIndex = 0;
@@ -176,6 +178,15 @@
             this.buttonThemPhong_QuayLai.Visible = false;
             this.buttonThemPhong_QuayLai.Click += new System.EventHandler(this.buttonThemPhong_QuayLai_Click);
             // 
+            // buttonThongTinCaNhan
+            // 
+            this.buttonThongTinCaNhan.Location = new System.Drawing.Point(3, 42);
+            this.buttonThongTinCaNhan.Name = "buttonThongTinCaNhan";
+            this.buttonThongTinCaNhan.Size = new System.Drawing.Size(135, 36);
+            this.buttonThongTinCaNhan.TabIndex = 15;
+            this.buttonThongTinCaNhan.Text = "Thông tin cá nhân";
+            this.buttonThongTinCaNhan.UseVisualStyleBackColor = true;
+            // 
             // FormQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,5 +225,6 @@
         private Button buttonPhong_Them;
         private UserControl_QuanLy.UserControlQuanLy_ThemPhong userControlQuanLy_ThemPhong1;
         private Button buttonThemPhong_QuayLai;
+        private Button buttonThongTinCaNhan;
     }
 }

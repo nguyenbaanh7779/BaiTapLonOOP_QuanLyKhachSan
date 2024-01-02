@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Math.Field;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,18 +11,6 @@ namespace HeThongQuanLyKhachSan
 {
     internal class ChucNangHeThong
     {
-        private static int ID_phong ;
-        public static int ID_Phong
-        {
-            get { return ID_phong; }
-            set { ID_phong = value; }
-        }
-        private static int ID_don_dat_phong = -1;
-        public static int ID_Don_dat_phong
-        {
-            get { return ID_don_dat_phong; }
-            set { ID_don_dat_phong = value; }
-        }
         private static DonDatPhong donDatPhong = new DonDatPhong("-1");
         public static DonDatPhong GSDonDatPhong // get set DonDatPhong
         {
@@ -46,8 +35,44 @@ namespace HeThongQuanLyKhachSan
             get { return quanLy; }
             set { quanLy = value; }
         }
+        public static void capNhatDuLieuDB()
+        {
+            // cập nhật trạng thái của phòng: nếu như đến ngày nhận phòng mà chưa nhận thì trạng thái của đơn đặt phòng sẽ chuyển sang đã hủy
+            DateTime ngay_hien_tai = DateTime.Now;
+            string truy_van = "select * from don_dat_phong where trang_thai_don = 'Đã đặt phòng'";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            while (reader.Read())
+            {
+                DateTime ngay_nhan_phong = reader.GetDateTime("ngay_nhan_phong");
+                if (ngay_hien_tai > ngay_nhan_phong)
+                {
+                    string ID_don_dat_phong = reader.GetString("ID_don_dat_phong");
+                    string truy_van_cap_nhat = "update don_dat_phong set trang_thai_don = 'Đã hủy' where ID_don_dat_phong = " + ID_don_dat_phong;
+                    ThaoTacVoiSQL thaoTacVoiSQL_cap_nhat = new ThaoTacVoiSQL();
+                    thaoTacVoiSQL_cap_nhat.Truy_van = truy_van_cap_nhat;
+                    thaoTacVoiSQL_cap_nhat.capNhatDuLieu();
+                    truy_van_cap_nhat = "select ID_phong, trang_thai_phong from don_dat_phong join chi_tiet_don_dat_phong using(ID_don_dat_phong) join phong using(ID_phong) where ID_don_dat_phong = " + ID_don_dat_phong;
+                    thaoTacVoiSQL_cap_nhat.Truy_van = truy_van_cap_nhat;
+                    MySqlDataReader reader_cap_nhat = thaoTacVoiSQL_cap_nhat.layDuLieuChoClass();
+                    while (reader_cap_nhat.Read())
+                    {
+                        string ID_phong = reader_cap_nhat.GetString("ID_phong");
+                        string trang_thai_phong = reader_cap_nhat.GetString("trang_thai_phong");
+                        if (trang_thai_phong == "Đã đặt")
+                        {
+                            truy_van_cap_nhat = "update phong set trang_thai_phong = 'Trống' where ID_phong = " + ID_phong;
+                            thaoTacVoiSQL_cap_nhat.Truy_van = truy_van_cap_nhat;
+                            thaoTacVoiSQL_cap_nhat.capNhatDuLieu();
+                        }
+                    }
+                }
+            }
+        }
         public static string dangNhap(string tai_khoan, string mat_khau)
         {
+            // dùng để thực hiện chức năng đăng nhập, trả về chuỗi là bộ phận của nhân viên
             string truy_van = "select ID_nhan_vien, bo_phan from nhan_vien where tai_khoan = '" + tai_khoan + "' and mat_khau = '" + mat_khau + "'";
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
@@ -64,6 +89,7 @@ namespace HeThongQuanLyKhachSan
                 {
                     GSQuanLy = new QuanLy(ID_nhan_vien);
                 }
+                capNhatDuLieuDB();
                 return bo_phan;
             }
             else
@@ -117,14 +143,6 @@ namespace HeThongQuanLyKhachSan
                 MessageBox.Show("Nhận phòng thành công!");
             }
         }
-        public static void themPhong(string so_phong, string so_giuong, string loai_phong, long don_gia)
-        {
-            string truy_van = "insert into phong(so_phong, so_giuong, loai_phong, don_gia, trang_thai_phong) values('" + so_phong + "', '" + so_giuong + "', '" + loai_phong + "', " + don_gia + ", 'Trống')";
-            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
-            thaoTacVoiSQL.Truy_van = truy_van;
-            thaoTacVoiSQL.capNhatDuLieu();
-            MessageBox.Show("Thêm phòng thành công!");
-        }
         public static void themNhanVien(string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, string gioi_tinh, DateTime ngay_sinh, long tien_luong, string bo_phan, string tai_khoan, string mat_khau)
         {
             string truy_van = "insert into le_tan(ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, gioi_tinh, ngay_sinh, tien_luong, bo_phan, tai_khoan, mat_khau) values('" + ho_ten + "', '" + so_can_cuoc_cong_dan + "', '" + so_dien_thoai + "', '" + gioi_tinh + "', '" + ngay_sinh.ToString("yyyy-MM-dd") + "', " + tien_luong + ", '" + bo_phan + ", '" + tai_khoan + "', '" + mat_khau + "')";
@@ -134,4 +152,9 @@ namespace HeThongQuanLyKhachSan
             MessageBox.Show("Thêm nhân viên thành công!");
         }
     }
+
+    internal class MySqlAttributeReader
+    {
+    }
+
 }

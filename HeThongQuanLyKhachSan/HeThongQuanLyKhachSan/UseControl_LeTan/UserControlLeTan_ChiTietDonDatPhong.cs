@@ -16,27 +16,34 @@ namespace HeThongQuanLyKhachSan.UseControl_LeTan
         {
             InitializeComponent();
         }
-
         private void UserControlLeTan_ChiTietDonDatPhong_Load(object sender, EventArgs e)
         {
+            // dùng để hiện thị thông tin lên form chi tiết đơn đặt phòng
             textBoxChiTietDonDatPhong_MaDon.Text = Convert.ToString(ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong);
             textBoxChiTietDonDatPhong_HoTen.Text = ChucNangHeThong.GSDonDatPhong.Khach_Hang.Ho_Ten;
-            textBoxChiTietDonDatPhong_SoCanCuocCongDan .Text = ChucNangHeThong.GSDonDatPhong.Khach_Hang.So_Can_Cuoc_Cong_Dan;
+            textBoxChiTietDonDatPhong_SoCanCuocCongDan.Text = ChucNangHeThong.GSDonDatPhong.Khach_Hang.So_Can_Cuoc_Cong_Dan;
             textBoxChiTietDonDatPhong_SoDienThoai.Text = ChucNangHeThong.GSDonDatPhong.So_Dien_Thoai;
             dateTimePickerChiTietDonDatPhong_NgayNhanPhong.Value = ChucNangHeThong.GSDonDatPhong.Ngay_Nhan_Phong;
             dateTimePickerChiTietDonDatPhong_NgayTraPhong.Value = ChucNangHeThong.GSDonDatPhong.Ngay_Tra_Phong;
-            dataGridViewChiTietDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSDonDatPhong.hienThiPhongDaDat().Tables[0];
+            if (ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong != -1)
+            {
+                dataGridViewChiTietDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSDonDatPhong.hienThiPhongDaDat().Tables[0];
+            }
         }
-
         private void dataGridViewChiTietDonDatPhong_PhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
-
         private void buttonDatPhong_DatPhong_Click(object sender, EventArgs e)
         {
             // dùng để xác nhận nhận phòng
             ChucNangHeThong.GSLeTan.nhanPhong(Convert.ToString(ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong));
+            ChucNangHeThong.GSDonDatPhong = new DonDatPhong("-1");
+        }
+        private void button_QuayLai_Click(object sender, EventArgs e)
+        {
+            this.Visible= false;
+            this.Refresh();
         }
     }
 }

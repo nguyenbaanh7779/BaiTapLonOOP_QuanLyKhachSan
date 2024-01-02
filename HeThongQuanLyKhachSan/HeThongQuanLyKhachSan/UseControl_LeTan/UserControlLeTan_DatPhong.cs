@@ -22,17 +22,18 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void useControlLeTan_DatPhong_Load(object sender, EventArgs e)
         {
-            
             dataGridViewDatPhong_ChonPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
         }
 
         private void buttonPhongTimKiem_Click(object sender, EventArgs e)
         {
+            // dùng để tìm kiếm thông tin phòng theo bộ lọc
             dataGridViewDatPhong_ChonPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
         }
 
         private void dataGridViewDatPhong_ChonPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // dùng để click vào phòng và thêm vào danh sách phòng đã chọn
             dataGridViewDatPhong_ChonPhong.CurrentRow.Selected = true;
             this.ID_Phong = Convert.ToInt32(dataGridViewDatPhong_ChonPhong.Rows[e.RowIndex].Cells["CollumnChonPhong_MaSoPhong"].FormattedValue.ToString());
             if (this.listID_Phong.Contains(this.ID_Phong))
@@ -53,6 +54,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void dataGridViewDatPhong_PhongDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // dùng để click vào phòng đã chọn và xóa khỏi danh sách phòng đã chọn
             dataGridViewDatPhong_PhongDaChon.CurrentRow.Selected = true;
             this.ID_Phong = Convert.ToInt32(dataGridViewDatPhong_PhongDaChon.Rows[e.RowIndex].Cells["CollumnPhongDaChon_MaSoPhong"].FormattedValue.ToString());
             this.listID_Phong.Remove(this.ID_Phong);
@@ -61,21 +63,20 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void buttonDatPhong_DatPhong_Click(object sender, EventArgs e)
         {
-            if (this.listID_Phong.Count == 0)
+            // dùng để thực hiện chức năng đặt phòng
+            if (this.listID_Phong.Count == 0) // nếu chưa chọn phòng
             {
                 MessageBox.Show("Bạn chưa chọn phòng");
             }
             else
             {
-                if (textBoxDatPhong_HoTen.Text == "" || textBoxDatPhong_SoCanCuocCongDan.Text == "" || textBoxDatPhong_SoDienThoai.Text == "")
+                if (textBoxDatPhong_HoTen.Text == "" || textBoxDatPhong_SoCanCuocCongDan.Text == "" || textBoxDatPhong_SoDienThoai.Text == "") // nếu chưa nhập đầy đủ thông tin
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 }
                 else
                 {
-                    string ngay_nhan_phong = dateTimePickerDatPhong_NgayNhanPhong.Value.ToString("yyyy-MM-dd");
-                    string ngay_tra_phong = dateTimePickerDatPhong_NgayTraPhong.Value.ToString("yyyy-MM-dd");
-                    ChucNangHeThong.GSLeTan.datPhong(textBoxDatPhong_HoTen.Text, textBoxDatPhong_SoCanCuocCongDan.Text, textBoxDatPhong_SoDienThoai.Text, ngay_nhan_phong, ngay_tra_phong, this.listID_Phong);
+                    ChucNangHeThong.GSLeTan.datPhong(textBoxDatPhong_HoTen.Text, textBoxDatPhong_SoCanCuocCongDan.Text, textBoxDatPhong_SoDienThoai.Text, dateTimePickerDatPhong_NgayNhanPhong.Value, dateTimePickerDatPhong_NgayTraPhong.Value, this.listID_Phong);
                 }
             }
         }

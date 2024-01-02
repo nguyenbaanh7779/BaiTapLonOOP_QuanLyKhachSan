@@ -13,7 +13,7 @@ namespace HeThongQuanLyKhachSan
         private int ID_hoa_don;
         private DonDatPhong don_dat_phong = new DonDatPhong("-1");
         private LeTan le_tan = new LeTan("-1");
-        private DateTime ngay_thanh_toan = new DateTime();
+        private DateTime ngay_thanh_toan = DateTime.Now;
         private string trang_thai_hoa_don = "";
         public int ID_Hoa_Don
         {

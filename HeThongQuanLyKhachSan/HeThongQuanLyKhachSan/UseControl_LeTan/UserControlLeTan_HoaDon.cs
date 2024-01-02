@@ -24,6 +24,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void UserControlLeTan_HoaDon_Load(object sender, EventArgs e)
         {
+            // dùng để hiện thị thông tin của hóa đơn
             textBoxHoaDon_KhachHang.Text = ChucNangHeThong.GSHoaDon.Don_Dat_Phong.Khach_Hang.Ho_Ten;
             textBoxHoaDon_SoDienThoai.Text = ChucNangHeThong.GSHoaDon.Don_Dat_Phong.So_Dien_Thoai;
             dateTimePickerHoaDon_NgayNhanPhong.Value = ChucNangHeThong.GSHoaDon.Don_Dat_Phong.Ngay_Nhan_Phong;
@@ -39,6 +40,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
         {
             // dùng để thanh toán hóa đơn
             ChucNangHeThong.GSLeTan.thanhToanHoaDon(Convert.ToString(ChucNangHeThong.GSHoaDon.ID_Hoa_Don));
+            ChucNangHeThong.GSHoaDon = new HoaDon("-1");
         }
     }
 }

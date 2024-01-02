@@ -164,54 +164,138 @@ namespace HeThongQuanLyKhachSan
                 taoDonDatPhong(ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong);
             }
         }
-        public void datPhong (string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, string ngay_nhan_phong, string ngay_tra_phong, List<int> ID_phong) {
-            // đặt phòng
-            taoDonDatPhong(ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong);
-            string ID_khach_hang = "";
-            string ID_don_dat_phong = "";
-            string truy_van = "select ID_khach_hang from khach_hang where so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' and ho_ten = '" + ho_ten + "'";
-            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
-            thaoTacVoiSQL.Truy_van = truy_van;
-            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
-            if (reader.Read())
+        public void datPhong (string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, DateTime ngay_nhan_phong, DateTime ngay_tra_phong, List<int> ID_phong) {
+            // dùng để thực hiện chức năng đặt phòng
+            if (ngay_nhan_phong >= DateTime.Now && ngay_tra_phong >= ngay_nhan_phong) // kiểm tra ngày nhận phòng và ngày trả phòng có hợp lệ hay không
             {
-                ID_khach_hang = reader.GetString("ID_khach_hang");
-            }
-            truy_van = "select ID_don_dat_phong from don_dat_phong where ID_khach_hang = " + ID_khach_hang + " and ngay_nhan_phong = '" + ngay_nhan_phong + "' and ngay_tra_phong = '" + ngay_tra_phong + "' and so_dien_thoai = '" + so_dien_thoai + "' and trang_thai_don = 'Đã đặt'";
-            thaoTacVoiSQL.Truy_van = truy_van;
-            reader = thaoTacVoiSQL.layDuLieuChoClass();
-            if (reader.Read())
-            {
-                ID_don_dat_phong = reader.GetString("ID_don_dat_phong");
-            }
-            foreach (int ID in ID_phong)
-            {
-                // thêm đơn dữ liệu cho chi tiết đơn đặt phòng
-                truy_van = "insert into chi_tiet_don_dat_phong(ID_phong, ID_don_dat_phong) values(" + Convert.ToString(ID) + ", " + ID_don_dat_phong + ")";
-                MessageBox.Show(truy_van);
+                string ngay_nhan_phong_string = ngay_nhan_phong.ToString("yyyy-MM-dd");
+                string ngay_tra_phong_string = ngay_tra_phong.ToString("yyyy-MM-dd");
+                taoDonDatPhong(ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong_string, ngay_tra_phong_string);
+                string ID_khach_hang = "";
+                string ID_don_dat_phong = "";
+                string truy_van = "select ID_khach_hang from khach_hang where so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' and ho_ten = '" + ho_ten + "'";
+                ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
                 thaoTacVoiSQL.Truy_van = truy_van;
-                thaoTacVoiSQL.capNhatDuLieu();
-                // thay đổi trạng thái phòng
-                truy_van = "update phong set trang_thai_phong = 'Đã đặt' where ID_phong = " + Convert.ToString(ID);
+                MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+                if (reader.Read())
+                {
+                    ID_khach_hang = reader.GetString("ID_khach_hang");
+                }
+                truy_van = "select ID_don_dat_phong from don_dat_phong where ID_khach_hang = " + ID_khach_hang + " and ngay_nhan_phong = '" + ngay_nhan_phong_string + "' and ngay_tra_phong = '" + ngay_tra_phong_string + "' and so_dien_thoai = '" + so_dien_thoai + "' and trang_thai_don = 'Đã đặt'";
                 thaoTacVoiSQL.Truy_van = truy_van;
-                thaoTacVoiSQL.capNhatDuLieu();
+                reader = thaoTacVoiSQL.layDuLieuChoClass();
+                if (reader.Read())
+                {
+                    ID_don_dat_phong = reader.GetString("ID_don_dat_phong");
+                }
+                foreach (int ID in ID_phong)
+                {
+                    // thêm đơn dữ liệu cho chi tiết đơn đặt phòng
+                    truy_van = "insert into chi_tiet_don_dat_phong(ID_phong, ID_don_dat_phong) values(" + Convert.ToString(ID) + ", " + ID_don_dat_phong + ")";
+                    MessageBox.Show(truy_van);
+                    thaoTacVoiSQL.Truy_van = truy_van;
+                    thaoTacVoiSQL.capNhatDuLieu();
+                    // thay đổi trạng thái phòng
+                    truy_van = "update phong set trang_thai_phong = 'Đã đặt' where ID_phong = " + Convert.ToString(ID);
+                    thaoTacVoiSQL.Truy_van = truy_van;
+                    thaoTacVoiSQL.capNhatDuLieu();
+                }
+                MessageBox.Show("Đặt phòng thành công!");
             }
-            MessageBox.Show("Đặt phòng thành công!");
+            else if (ngay_nhan_phong < DateTime.Now)
+            {
+                MessageBox.Show("Ngày nhận phòng phải sau hơn ngày hiện tại!");
+            }
+            else if (ngay_tra_phong < ngay_nhan_phong)
+            {
+                MessageBox.Show("Ngày trả phòng phải sau hơn ngày nhận phòng!");
+            }
         }
-        public DataSet timKiemThongTinDonDatPhong(string so_dien_thoai = "")
+        public DataSet timKiemThongTinDonDatPhong(string text_tim_kiem, string loai_tim_kiem, List<string> DS_trang_thai_don)
         {
             string truy_van = "";
-            if (so_dien_thoai == "")
+            if (DS_trang_thai_don.Count != 0)
             {
-                truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong group by chi_tiet_don_dat_phong.ID_don_dat_phong";
+                if (text_tim_kiem == "")
+                {
+                    truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong, trang_thai_don from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where don_dat_phong.trang_thai_don IN (";
+                    foreach (string trang_thai_don in DS_trang_thai_don)
+                    {
+                        truy_van += "'" + trang_thai_don + "', ";
+                    }
+                    truy_van = truy_van.Remove(truy_van.Length - 2); // xóa dấu , và dấu cách cuối cùng
+                    truy_van += ") group by chi_tiet_don_dat_phong.ID_don_dat_phong";
+                }
+                else
+                {
+                    if (loai_tim_kiem == "Mã số đơn")
+                    {
+                        truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong, trang_thai_don from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where don_dat_phong.ID_don_dat_phong = " + text_tim_kiem + " and don_dat_phong.trang_thai_don IN (";
+                        foreach (string trang_thai_don in DS_trang_thai_don)
+                        {
+                            truy_van += "'" + trang_thai_don + "', ";
+                        }
+                        truy_van = truy_van.Remove(truy_van.Length - 2); // xóa dấu , và dấu cách cuối cùng
+                        truy_van += ") group by chi_tiet_don_dat_phong.ID_don_dat_phong";
+                    }
+                    else if (loai_tim_kiem == "Số điện thoại")
+                    {
+                        truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(chi_tiet_don_dat_phong.ID_phong) as so_luong_phong, trang_thai_don from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where so_dien_thoai = '" + text_tim_kiem + "' and don_dat_phong.trang_thai_don IN (";
+                        foreach (string trang_thai_don in DS_trang_thai_don)
+                        {
+                            truy_van += "'" + trang_thai_don + "', ";
+                        }
+                        truy_van = truy_van.Remove(truy_van.Length - 2); // xóa dấu , và dấu cách cuối cùng
+                        truy_van += ") group by chi_tiet_don_dat_phong.ID_don_dat_phong";
+                    }
+                }
             }
             else
             {
-                truy_van = "select ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, COUNT(ID_phong) as so_luong_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where so_dien_thoai = '" + so_dien_thoai + "' group by ID_don_dat_phong";
+                truy_van = "select chi_tiet_don_dat_phong.ID_don_dat_phong, ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ngay_nhan_phong, ngay_tra_phong, trang_thai_don from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong join phong on chi_tiet_don_dat_phong.ID_phong = phong.ID_phong where don_dat_phong.ID_don_dat_phong = -1";
             }
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();
+        }
+        public void capNhatDonDatPhong(int ID_don_dat_phong, string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, DateTime ngay_nhan_phong, DateTime ngay_tra_phong, List<int> DS_ID_phong_moi, List<int> DS_ID_phong_cu)
+        {
+            // thực hiện chức năng cập nhật phòng
+            if (ngay_nhan_phong >= DateTime.Now && ngay_tra_phong >= ngay_nhan_phong)
+            {
+                string truy_van = "update don_dat_phong set ngay_nhan_phong = '" + ngay_nhan_phong.ToString("yyyy-MM-dd") + "', ngay_tra_phong = '" + ngay_tra_phong.ToString("yyyy-MM-dd") + "', so_dien_thoai = '" + so_dien_thoai + "' where ID_don_dat_phong = " + Convert.ToString(ID_don_dat_phong);
+                ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+                thaoTacVoiSQL.Truy_van = truy_van;
+                thaoTacVoiSQL.capNhatDuLieu();
+                truy_van = "update khach_hang set ho_ten = '" + ho_ten + "', so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' where ID_khach_hang IN (select ID_khach_hang from don_dat_phong where ID_don_dat_phong = " + Convert.ToString(ID_don_dat_phong) + ")";
+                thaoTacVoiSQL.Truy_van = truy_van;
+                thaoTacVoiSQL.capNhatDuLieu();
+                foreach (int ID in DS_ID_phong_moi)
+                {
+                    if (!DS_ID_phong_cu.Contains(ID))
+                    {
+                        truy_van = "insert into chi_tiet_don_dat_phong(ID_phong, ID_don_dat_phong) values(" + Convert.ToString(ID) + ", " + Convert.ToString(ID_don_dat_phong) + ")";
+                        thaoTacVoiSQL.Truy_van = truy_van;
+                        thaoTacVoiSQL.capNhatDuLieu();
+                        truy_van = "update phong set trang_thai_phong = 'Đã đặt' where ID_phong = " + Convert.ToString(ID);
+                        thaoTacVoiSQL.Truy_van = truy_van;
+                        thaoTacVoiSQL.capNhatDuLieu();
+                    }
+                }
+                foreach (int ID in DS_ID_phong_cu)
+                {
+                    if (!DS_ID_phong_moi.Contains(ID))
+                    {
+                        truy_van = "delete from chi_tiet_don_dat_phong where ID_phong = " + Convert.ToString(ID) + " and ID_don_dat_phong = " + Convert.ToString(ID_don_dat_phong);
+                        thaoTacVoiSQL.Truy_van = truy_van;
+                        thaoTacVoiSQL.capNhatDuLieu();
+                        truy_van = "update phong set trang_thai_phong = 'Trống' where ID_phong = " + Convert.ToString(ID);
+                        thaoTacVoiSQL.Truy_van = truy_van;
+                        thaoTacVoiSQL.capNhatDuLieu();
+                    }
+                }
+                MessageBox.Show("Cập nhật đơn đặt phòng thành công!");
+            }
         }
         public void nhanPhong(string ID_don_dat_phong)
         {
@@ -220,12 +304,12 @@ namespace HeThongQuanLyKhachSan
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             thaoTacVoiSQL.capNhatDuLieu();
-            truy_van = "update phong set trang_thai_phong = 'Đã nhận' where ID_phong IN (select ID_phong from chi_tiet_don_dat_phong where ID_don_dat_phong = " + ID_don_dat_phong + ")";
+            truy_van = "update phong set trang_thai_phong = 'Đang ở' where ID_phong IN (select ID_phong from chi_tiet_don_dat_phong where ID_don_dat_phong = " + ID_don_dat_phong + ")";
             thaoTacVoiSQL.Truy_van = truy_van;
             thaoTacVoiSQL.capNhatDuLieu();
             MessageBox.Show("Nhận phòng thành công!");
         }
-        public void taoHoaDon(string ID_don_dat_phong)
+        public string taoHoaDon(string ID_don_dat_phong)
         {
             // tạo hóa đơn
             string truy_van = "insert into hoa_don(ID_don_dat_phong, ID_nhan_vien, ngay_thanh_toan) values(" + ID_don_dat_phong + ", " + Convert.ToString(this.ID_Nhan_vien) + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";
@@ -240,7 +324,7 @@ namespace HeThongQuanLyKhachSan
             {
                 ID_hoa_don = reader.GetString("ID_hoa_don");
             }
-            ChucNangHeThong.GSHoaDon = new HoaDon(ID_hoa_don);
+            return ID_hoa_don;
         }
         public void thanhToanHoaDon(string ID_hoa_don)
         {
@@ -254,7 +338,7 @@ namespace HeThongQuanLyKhachSan
             {
                 ID_don_dat_phong = reader.GetString("ID_don_dat_phong");
             }
-            truy_van = "update don_dat_phong set trang_thai_don = 'Đã trả phòng' where ID_don_dat_phong = " + ID_don_dat_phong;
+            truy_van = "update don_dat_phong set trang_thai_don = 'Đã trả' where ID_don_dat_phong = " + ID_don_dat_phong;
             thaoTacVoiSQL.Truy_van = truy_van;
             thaoTacVoiSQL.capNhatDuLieu();
             truy_van = "update phong set trang_thai_phong = 'Trống' where ID_phong IN (select ID_phong from chi_tiet_don_dat_phong where ID_don_dat_phong = " + ID_don_dat_phong + ")";

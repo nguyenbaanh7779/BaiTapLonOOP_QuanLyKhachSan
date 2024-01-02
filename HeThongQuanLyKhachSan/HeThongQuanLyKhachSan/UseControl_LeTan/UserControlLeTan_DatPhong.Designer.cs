@@ -208,7 +208,7 @@
             this.dataGridViewDatPhong_ChonPhong.Name = "dataGridViewDatPhong_ChonPhong";
             this.dataGridViewDatPhong_ChonPhong.RowHeadersWidth = 51;
             this.dataGridViewDatPhong_ChonPhong.RowTemplate.Height = 25;
-            this.dataGridViewDatPhong_ChonPhong.Size = new System.Drawing.Size(384, 185);
+            this.dataGridViewDatPhong_ChonPhong.Size = new System.Drawing.Size(374, 185);
             this.dataGridViewDatPhong_ChonPhong.TabIndex = 13;
             this.dataGridViewDatPhong_ChonPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDatPhong_ChonPhong_CellClick);
             this.dataGridViewDatPhong_ChonPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDatPhong_ChonPhong_CellContentClick);
@@ -252,7 +252,7 @@
             this.CollumnQuanLy__DonGia.HeaderText = "Đơn giá";
             this.CollumnQuanLy__DonGia.MinimumWidth = 6;
             this.CollumnQuanLy__DonGia.Name = "CollumnQuanLy__DonGia";
-            this.CollumnQuanLy__DonGia.Width = 90;
+            this.CollumnQuanLy__DonGia.Width = 80;
             // 
             // labelDonDatPhong
             // 
@@ -269,7 +269,7 @@
             this.labelDatPhong_ChonPhong.AutoSize = true;
             this.labelDatPhong_ChonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelDatPhong_ChonPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.labelDatPhong_ChonPhong.Location = new System.Drawing.Point(155, 49);
+            this.labelDatPhong_ChonPhong.Location = new System.Drawing.Point(147, 49);
             this.labelDatPhong_ChonPhong.Name = "labelDatPhong_ChonPhong";
             this.labelDatPhong_ChonPhong.Size = new System.Drawing.Size(96, 21);
             this.labelDatPhong_ChonPhong.TabIndex = 11;
@@ -280,7 +280,7 @@
             this.labelDatPhong_PhongDaChon.AutoSize = true;
             this.labelDatPhong_PhongDaChon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelDatPhong_PhongDaChon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.labelDatPhong_PhongDaChon.Location = new System.Drawing.Point(552, 49);
+            this.labelDatPhong_PhongDaChon.Location = new System.Drawing.Point(536, 49);
             this.labelDatPhong_PhongDaChon.Name = "labelDatPhong_PhongDaChon";
             this.labelDatPhong_PhongDaChon.Size = new System.Drawing.Size(114, 21);
             this.labelDatPhong_PhongDaChon.TabIndex = 16;
@@ -297,11 +297,11 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.dataGridViewDatPhong_PhongDaChon.Location = new System.Drawing.Point(404, 82);
+            this.dataGridViewDatPhong_PhongDaChon.Location = new System.Drawing.Point(414, 82);
             this.dataGridViewDatPhong_PhongDaChon.Name = "dataGridViewDatPhong_PhongDaChon";
             this.dataGridViewDatPhong_PhongDaChon.RowHeadersWidth = 51;
             this.dataGridViewDatPhong_PhongDaChon.RowTemplate.Height = 25;
-            this.dataGridViewDatPhong_PhongDaChon.Size = new System.Drawing.Size(384, 185);
+            this.dataGridViewDatPhong_PhongDaChon.Size = new System.Drawing.Size(374, 185);
             this.dataGridViewDatPhong_PhongDaChon.TabIndex = 17;
             this.dataGridViewDatPhong_PhongDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDatPhong_PhongDaChon_CellClick);
             // 
@@ -344,7 +344,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Đơn giá";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 90;
+            this.dataGridViewTextBoxColumn5.Width = 80;
             // 
             // panelDatPhong_ThongTinKhachHang
             // 
@@ -459,7 +459,7 @@
             // labelDatPhong_ClickVaoPhongMuonDat
             // 
             this.labelDatPhong_ClickVaoPhongMuonDat.AutoSize = true;
-            this.labelDatPhong_ClickVaoPhongMuonDat.Location = new System.Drawing.Point(14, 270);
+            this.labelDatPhong_ClickVaoPhongMuonDat.Location = new System.Drawing.Point(11, 270);
             this.labelDatPhong_ClickVaoPhongMuonDat.Name = "labelDatPhong_ClickVaoPhongMuonDat";
             this.labelDatPhong_ClickVaoPhongMuonDat.Size = new System.Drawing.Size(232, 15);
             this.labelDatPhong_ClickVaoPhongMuonDat.TabIndex = 13;
@@ -468,7 +468,7 @@
             // labelDatPhong_ClickVaoPhongMuonXoa
             // 
             this.labelDatPhong_ClickVaoPhongMuonXoa.AutoSize = true;
-            this.labelDatPhong_ClickVaoPhongMuonXoa.Location = new System.Drawing.Point(404, 270);
+            this.labelDatPhong_ClickVaoPhongMuonXoa.Location = new System.Drawing.Point(414, 270);
             this.labelDatPhong_ClickVaoPhongMuonXoa.Name = "labelDatPhong_ClickVaoPhongMuonXoa";
             this.labelDatPhong_ClickVaoPhongMuonXoa.Size = new System.Drawing.Size(339, 15);
             this.labelDatPhong_ClickVaoPhongMuonXoa.TabIndex = 19;
@@ -530,6 +530,8 @@
         private Label labelDatPhong_NgayNhanPhong;
         private ComboBox comboBoxDatPhong_TrangThai;
         private ComboBox comboBoxDatPhong_SoGiuong;
+        private Label labelDatPhong_ClickVaoPhongMuonDat;
+        private Label labelDatPhong_ClickVaoPhongMuonXoa;
         private DataGridViewTextBoxColumn CollumnChonPhong_MaSoPhong;
         private DataGridViewTextBoxColumn CollumnQuanLy_SoPhong;
         private DataGridViewTextBoxColumn CollumnQuanLy_SoGiuong;
@@ -540,7 +542,5 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private Label labelDatPhong_ClickVaoPhongMuonDat;
-        private Label labelDatPhong_ClickVaoPhongMuonXoa;
     }
 }
