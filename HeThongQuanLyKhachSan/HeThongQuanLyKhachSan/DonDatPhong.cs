@@ -68,7 +68,6 @@ namespace HeThongQuanLyKhachSan
         {
             this.ID_don_dat_phong = Convert.ToInt32(ID_don_dat_phong);
             string truy_van = "select don_dat_phong.ID_khach_hang, chi_tiet_don_dat_phong.ID_phong, ngay_nhan_phong, ngay_tra_phong, so_dien_thoai, trang_thai_don from don_dat_phong join chi_tiet_don_dat_phong on don_dat_phong.ID_don_dat_phong = chi_tiet_don_dat_phong.ID_don_dat_phong where don_dat_phong.ID_don_dat_phong = " + ID_don_dat_phong;
-            MessageBox.Show(truy_van);
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             MySqlDataReader result = thaoTacVoiSQL.layDuLieuChoClass();
@@ -100,7 +99,6 @@ namespace HeThongQuanLyKhachSan
             }
             truy_van = truy_van.Substring(0, truy_van.Length - 2);
             truy_van += ")";
-            MessageBox.Show(truy_van);
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();

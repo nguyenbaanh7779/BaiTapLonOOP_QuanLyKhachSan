@@ -53,6 +53,11 @@
             this.labelDatPhong_ClickVaoPhongMuonDat = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewCapNhatDonDatPhong_PhongDangCo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCapNhatDonDatPhong_TimKiem = new System.Windows.Forms.Button();
@@ -62,11 +67,6 @@
             this.labelSoPhong_LoaiPhong = new System.Windows.Forms.Label();
             this.buttonCapNhatDonDatPhong_CapNhat = new System.Windows.Forms.Button();
             this.buttonCapNhatDonDatPhong_QuayLai = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDonDatPhong_PhongDaDat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCapNhatDonDatPhong_PhongDangCo)).BeginInit();
@@ -325,6 +325,47 @@
             this.dataGridViewCapNhatDonDatPhong_PhongDangCo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCapNhatDonDatPhong_PhongDangCo_CellClick);
             this.dataGridViewCapNhatDonDatPhong_PhongDangCo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCapNhatDonDatPhong_PhongDangCo_CellContentClick);
             // 
+            // dataGridViewTextBoxColumnPhongDangCo_MaSoPhong
+            // 
+            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.DataPropertyName = "ID_Phong";
+            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.HeaderText = "Mã số phòng";
+            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.Name = "dataGridViewTextBoxColumnPhongDangCo_MaSoPhong";
+            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "So_phong";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Số phòng";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn2.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "So_giuong";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Số giường";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Loai_phong";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Loại phòng";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Don_gia";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Đơn giá";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 80;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -363,8 +404,9 @@
             this.comboBoxCapNhatDonDatPhong_SoGiuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCapNhatDonDatPhong_SoGiuong.FormattingEnabled = true;
             this.comboBoxCapNhatDonDatPhong_SoGiuong.Items.AddRange(new object[] {
-            "Thường",
-            "Cao cấp"});
+            "1",
+            "2",
+            "3"});
             this.comboBoxCapNhatDonDatPhong_SoGiuong.Location = new System.Drawing.Point(278, 3);
             this.comboBoxCapNhatDonDatPhong_SoGiuong.Name = "comboBoxCapNhatDonDatPhong_SoGiuong";
             this.comboBoxCapNhatDonDatPhong_SoGiuong.Size = new System.Drawing.Size(87, 23);
@@ -419,47 +461,6 @@
             this.buttonCapNhatDonDatPhong_QuayLai.Text = "Quay lại";
             this.buttonCapNhatDonDatPhong_QuayLai.UseVisualStyleBackColor = true;
             this.buttonCapNhatDonDatPhong_QuayLai.Click += new System.EventHandler(this.buttonCapNhatDonDatPhong_QuayLai_Click);
-            // 
-            // dataGridViewTextBoxColumnPhongDangCo_MaSoPhong
-            // 
-            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.DataPropertyName = "ID_Phong";
-            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.HeaderText = "Mã số phòng";
-            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.Name = "dataGridViewTextBoxColumnPhongDangCo_MaSoPhong";
-            this.dataGridViewTextBoxColumnPhongDangCo_MaSoPhong.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "So_phong";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Số phòng";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn2.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "So_giuong";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Số giường";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Loai_phong";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Loại phòng";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Don_gia";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Đơn giá";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 80;
             // 
             // UserControlLeTan_CapNhatDonDatPhong
             // 

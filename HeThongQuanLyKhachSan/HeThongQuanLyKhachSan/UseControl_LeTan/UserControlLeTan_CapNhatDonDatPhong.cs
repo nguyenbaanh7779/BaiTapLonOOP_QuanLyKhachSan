@@ -14,6 +14,7 @@ namespace HeThongQuanLyKhachSan.UseControl_LeTan
     {
         private List<int> DS_ID_phong_moi = new List<int>();
         private List<int> DS_ID_phong_cu = new List<int>();
+        private List<int> DS_ID_phong_hien_co = new List<int>();
 
         public UserControlLeTan_CapNhatDonDatPhong()
         {
@@ -23,14 +24,33 @@ namespace HeThongQuanLyKhachSan.UseControl_LeTan
         private void buttonCapNhatDonDatPhong_TimKiem_Click(object sender, EventArgs e)
         {
             // dùng để tìm kiếm thông tin của phòng đang trống theo bộ lọc
-            dataGridViewCapNhatDonDatPhong_PhongDangCo.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinPhong("", comboBoxCapNhatDonDatPhong_SoGiuong.Text, comboBoxCapNhatDonDatPhong_LoaiPhong.Text, "Trống").Tables[0];
+            this.DS_ID_phong_hien_co.Clear();
+            this.DS_ID_phong_hien_co = ChucNangHeThong.GSLeTan.layDanhSachIDPhong("", comboBoxCapNhatDonDatPhong_SoGiuong.Text, comboBoxCapNhatDonDatPhong_LoaiPhong.Text, "Trống");
+            if (this.DS_ID_phong_hien_co.Count != 0)
+            {
+                foreach (int ID in this.DS_ID_phong_hien_co)
+                {
+                    if (this.DS_ID_phong_moi.Contains(ID))
+                    {
+                        this.DS_ID_phong_hien_co.Remove(ID);
+                    }
+                }
+            }
+            foreach (int ID in this.DS_ID_phong_cu)
+            {
+                if (!this.DS_ID_phong_moi.Contains(ID))
+                {
+                    this.DS_ID_phong_hien_co.Add(ID);
+                }
+            }
+            dataGridViewCapNhatDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_moi).Tables[0];
+            dataGridViewCapNhatDonDatPhong_PhongDangCo.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_hien_co).Tables[0];
         }
 
         private void buttonCapNhatDonDatPhong_QuayLai_Click(object sender, EventArgs e)
         {
             // dùng để quay trở lại form đơn đặt phòng
             this.Visible = false;
-            this.Refresh();
         }
 
         private void buttonCapNhatDonDatPhong_CapNhat_Click(object sender, EventArgs e)
@@ -42,15 +62,17 @@ namespace HeThongQuanLyKhachSan.UseControl_LeTan
         private void dataGridViewCapNhatDonDatPhong_PhongDaDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // dùng để click vào và hủy phòng đã đặt
+            int ID_Phong = Convert.ToInt32(dataGridViewCapNhatDonDatPhong_PhongDaDat.Rows[e.RowIndex].Cells["CollumnPhongDaDat_MaSoPhong"].FormattedValue.ToString());
             dataGridViewCapNhatDonDatPhong_PhongDaDat.CurrentRow.Selected = true;
-            this.DS_ID_phong_moi.Add(Convert.ToInt32(dataGridViewCapNhatDonDatPhong_PhongDaDat.Rows[e.RowIndex].Cells["CollumnPhongDaDat_MaSoPhong"].FormattedValue.ToString()));
-            dataGridViewCapNhatDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_moi);
+            this.DS_ID_phong_moi.Remove(ID_Phong);
+            this.DS_ID_phong_hien_co.Add(ID_Phong);
+            dataGridViewCapNhatDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_moi).Tables[0];
+            dataGridViewCapNhatDonDatPhong_PhongDangCo.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_hien_co).Tables[0];
         }
 
         private void UserControlLeTan_CapNhatDonDatPhong_Load(object sender, EventArgs e)
         {
             // dùng để hiện thị thông tin lên form cập nhật đơn đặt phòng
-            //dataGridViewCapNhatDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong().Tables[0];
             textBoxCapNhatDonDatPhong_MaDon.Text = ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong.ToString();
             textBoxCapNhatDonDatPhong_HoTen.Text = ChucNangHeThong.GSDonDatPhong.Khach_Hang.Ho_Ten;
             textBoxCapNhatDonDatPhong_SoCanCuocCongDan.Text = ChucNangHeThong.GSDonDatPhong.Khach_Hang.So_Can_Cuoc_Cong_Dan;
@@ -64,6 +86,7 @@ namespace HeThongQuanLyKhachSan.UseControl_LeTan
                 this.DS_ID_phong_cu.Add(phong.ID_Phong);
                 this.DS_ID_phong_moi.Add(phong.ID_Phong);
             }
+            this.DS_ID_phong_hien_co = ChucNangHeThong.GSLeTan.layDanhSachIDPhong("", "", "", "Trống");
             
         }
 
@@ -77,15 +100,10 @@ namespace HeThongQuanLyKhachSan.UseControl_LeTan
             // dùng để click vào phòng và thêm vào danh sách phòng đã chọn
             dataGridViewCapNhatDonDatPhong_PhongDangCo.CurrentRow.Selected = true;
             int ID_Phong = Convert.ToInt32(dataGridViewCapNhatDonDatPhong_PhongDangCo.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumnPhongDangCo_MaSoPhong"].FormattedValue.ToString());
-            if (this.DS_ID_phong_moi.Contains(ID_Phong))
-            {
-                MessageBox.Show("Phòng này đã được chọn");
-            }
-            else
-            {
-                this.DS_ID_phong_moi.Add(ID_Phong);
-            }
+            this.DS_ID_phong_moi.Add(ID_Phong);
+            this.DS_ID_phong_hien_co.Remove(ID_Phong);
             dataGridViewCapNhatDonDatPhong_PhongDaDat.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_moi).Tables[0];
+            dataGridViewCapNhatDonDatPhong_PhongDangCo.DataSource = ChucNangHeThong.GSLeTan.hienThiPhongDaThem(this.DS_ID_phong_hien_co).Tables[0];
         }
     }
 }

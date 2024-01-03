@@ -114,6 +114,43 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();
         }
+        public List<int> layDanhSachIDPhong(string so_phong = "", string so_giuong = "", string loai_phong = "", string trang_thai = "")
+        {
+            // lấy danh sách ID phòng từ ID đơn đặt phòng
+            List<int> DS_ID_phong = new List<int>();
+            string truy_van = "";
+            if (so_phong == "" && so_giuong == "" && loai_phong == "" && trang_thai == "")
+                truy_van = "select ID_phong, so_phong, so_giuong, loai_phong, don_gia from phong";
+            else
+            {
+                truy_van = "select ID_phong, so_phong, so_giuong, loai_phong, don_gia from phong where ";
+                if (so_phong != "")
+                {
+                    truy_van += "so_phong = '" + so_phong + "' and ";
+                }
+                if (so_giuong != "")
+                {
+                    truy_van += "so_giuong = '" + so_giuong + "' and ";
+                }
+                if (loai_phong != "")
+                {
+                    truy_van += "loai_phong = '" + loai_phong + "' and ";
+                }
+                if (trang_thai != "")
+                {
+                    truy_van += "trang_thai_phong = '" + trang_thai + "' and ";
+                }
+                truy_van = truy_van.Remove(truy_van.Length - 4); // xóa dấu and và dấu cách cuối cùng
+            }
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            while (reader.Read())
+            {
+                DS_ID_phong.Add(reader.GetInt32("ID_phong"));
+            }
+            return DS_ID_phong;
+        }
         public DataSet hienThiPhongDaThem(List<int> ID_phong)
         {
             string truy_van = "";
@@ -258,6 +295,14 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();
         }
+        public void capNhatTrangThaiPhong(int ID_phong, string trang_thai_phong)
+        {
+            // thực hiện chức năng cập nhật trạng thái phòng
+            string truy_van = "update phong set trang_thai_phong = '" + trang_thai_phong + "' where ID_phong = " + Convert.ToString(ID_phong);
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+        }
         public void capNhatDonDatPhong(int ID_don_dat_phong, string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, DateTime ngay_nhan_phong, DateTime ngay_tra_phong, List<int> DS_ID_phong_moi, List<int> DS_ID_phong_cu)
         {
             // thực hiện chức năng cập nhật phòng
@@ -267,6 +312,7 @@ namespace HeThongQuanLyKhachSan
                 ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
                 thaoTacVoiSQL.Truy_van = truy_van;
                 thaoTacVoiSQL.capNhatDuLieu();
+                MessageBox.Show("hihi");
                 truy_van = "update khach_hang set ho_ten = '" + ho_ten + "', so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' where ID_khach_hang IN (select ID_khach_hang from don_dat_phong where ID_don_dat_phong = " + Convert.ToString(ID_don_dat_phong) + ")";
                 thaoTacVoiSQL.Truy_van = truy_van;
                 thaoTacVoiSQL.capNhatDuLieu();
@@ -295,6 +341,14 @@ namespace HeThongQuanLyKhachSan
                     }
                 }
                 MessageBox.Show("Cập nhật đơn đặt phòng thành công!");
+            }
+            else if (ngay_nhan_phong < DateTime.Now)
+            {
+                MessageBox.Show("Ngày nhận phòng phải sau hơn ngày hiện tại!");
+            }
+            else if (ngay_tra_phong < ngay_nhan_phong)
+            {
+                MessageBox.Show("Ngày trả phòng phải sau hơn ngày nhận phòng!");
             }
         }
         public void nhanPhong(string ID_don_dat_phong)
@@ -368,6 +422,12 @@ namespace HeThongQuanLyKhachSan
             {
                 MessageBox.Show("Mật khẩu cũ không đúng!");
             }
+        }
+
+        public void huyDonDatPhong (int ID_don_dat_phong)
+        {
+            string St_Id_don_dat_phong = Convert.ToString(ID_don_dat_phong);
+            string truy_van = "update don_dat_phong set trang_thai_don = 'Đã hủy' where ID_don_dat_phong = " + St_Id_don_dat_phong;
         }
     }
 }

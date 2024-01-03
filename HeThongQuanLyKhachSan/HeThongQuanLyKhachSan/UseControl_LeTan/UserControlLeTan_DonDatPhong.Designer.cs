@@ -526,6 +526,7 @@
             this.userControlLeTan_CapNhatDonDatPhong1.Size = new System.Drawing.Size(799, 494);
             this.userControlLeTan_CapNhatDonDatPhong1.TabIndex = 11;
             this.userControlLeTan_CapNhatDonDatPhong1.Visible = false;
+            this.userControlLeTan_CapNhatDonDatPhong1.Load += new System.EventHandler(this.userControlLeTan_CapNhatDonDatPhong1_Load);
             // 
             // useControlLeTan_DonDatPhong
             // 

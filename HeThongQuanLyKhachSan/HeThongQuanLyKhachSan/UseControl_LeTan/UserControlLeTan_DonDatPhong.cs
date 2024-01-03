@@ -60,7 +60,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
             dateTimePickerDonDatPhong_NgayNhanPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayNhanPhong"].Value.ToString();
             dateTimePickerDonDatPhong_NgayTraPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_NgayTraPhong"].Value.ToString();
             textBoxDonDatPhong_SoLuongPhong.Text = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_SoLuongPhong"].Value.ToString();
-            trang_thai_don = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_TrangThaiDon"].Value.ToString();
+            trang_thai_don = dataGridViewDonDatPhong.Rows[e.RowIndex].Cells["ColumnDonDatPhong_TrangThaiDon"].Value.ToString() + "";
         }
 
         private void buttonNhanPhong_Click(object sender, EventArgs e)
@@ -140,6 +140,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
         private void buttonDonDatPhong_HuyDon_Click(object sender, EventArgs e)
         {
             // dùng để thực hiện chức năng hủy đơn đặt phòng
+            ChucNangHeThong.GSLeTan.huyDonDatPhong(ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong);
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
@@ -241,6 +242,11 @@ namespace HeThongQuanLyKhachSan.All_user_control
         }
 
         private void userControlLeTan_HoaDon1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControlLeTan_CapNhatDonDatPhong1_Load(object sender, EventArgs e)
         {
 
         }
