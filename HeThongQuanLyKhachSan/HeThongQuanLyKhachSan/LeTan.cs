@@ -428,6 +428,13 @@ namespace HeThongQuanLyKhachSan
         {
             string St_Id_don_dat_phong = Convert.ToString(ID_don_dat_phong);
             string truy_van = "update don_dat_phong set trang_thai_don = 'Đã hủy' where ID_don_dat_phong = " + St_Id_don_dat_phong;
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            truy_van = "update phong set trang_thai_phong = 'Trống' where ID_phong IN (select ID_phong from chi_tiet_don_dat_phong where ID_don_dat_phong = " + St_Id_don_dat_phong + ")";
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            MessageBox.Show("Hủy đơn đặt phòng thành công!");
         }
     }
 }
