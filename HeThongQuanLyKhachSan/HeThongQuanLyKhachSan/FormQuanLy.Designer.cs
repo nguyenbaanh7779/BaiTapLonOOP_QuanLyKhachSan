@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonThongTinCaNhan = new System.Windows.Forms.Button();
             this.buttonQuanLy_DangXuat = new System.Windows.Forms.Button();
             this.labelQuanLy_TaiKhoan = new System.Windows.Forms.Label();
             this.buttonKhachHang = new System.Windows.Forms.Button();
@@ -41,12 +43,14 @@
             this.buttonPhong_Them = new System.Windows.Forms.Button();
             this.userControlQuanLy_ThemPhong1 = new HeThongQuanLyKhachSan.UserControl_QuanLy.UserControlQuanLy_ThemPhong();
             this.buttonThemPhong_QuayLai = new System.Windows.Forms.Button();
-            this.buttonThongTinCaNhan = new System.Windows.Forms.Button();
+            this.userControlQuanLy_BaoCaoThongKe1 = new HeThongQuanLyKhachSan.UserControl_QuanLy.UserControlQuanLy_BaoCaoThongKe();
+            this.userControlQuanLy_ThongTinCaNhan1 = new HeThongQuanLyKhachSan.UserControl_QuanLy.UserControlQuanLy_ThongTinCaNhan();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonThongTinCaNhan);
             this.panel1.Controls.Add(this.buttonQuanLy_DangXuat);
             this.panel1.Controls.Add(this.labelQuanLy_TaiKhoan);
@@ -56,6 +60,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(141, 497);
             this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 36);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Báo cáo thống kê";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // buttonThongTinCaNhan
+            // 
+            this.buttonThongTinCaNhan.Location = new System.Drawing.Point(3, 42);
+            this.buttonThongTinCaNhan.Name = "buttonThongTinCaNhan";
+            this.buttonThongTinCaNhan.Size = new System.Drawing.Size(135, 36);
+            this.buttonThongTinCaNhan.TabIndex = 15;
+            this.buttonThongTinCaNhan.Text = "Thông tin cá nhân";
+            this.buttonThongTinCaNhan.UseVisualStyleBackColor = true;
+            this.buttonThongTinCaNhan.Click += new System.EventHandler(this.buttonThongTinCaNhan_Click);
             // 
             // buttonQuanLy_DangXuat
             // 
@@ -108,7 +132,7 @@
             // 
             // userControlQuanLy_themNhanVien
             // 
-            this.userControlQuanLy_themNhanVien.Location = new System.Drawing.Point(159, 13);
+            this.userControlQuanLy_themNhanVien.Location = new System.Drawing.Point(156, 12);
             this.userControlQuanLy_themNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userControlQuanLy_themNhanVien.Name = "userControlQuanLy_themNhanVien";
             this.userControlQuanLy_themNhanVien.Size = new System.Drawing.Size(799, 497);
@@ -117,7 +141,7 @@
             // 
             // buttonNhanVien_Them
             // 
-            this.buttonNhanVien_Them.Location = new System.Drawing.Point(196, 57);
+            this.buttonNhanVien_Them.Location = new System.Drawing.Point(187, 44);
             this.buttonNhanVien_Them.Name = "buttonNhanVien_Them";
             this.buttonNhanVien_Them.Size = new System.Drawing.Size(90, 28);
             this.buttonNhanVien_Them.TabIndex = 4;
@@ -139,7 +163,7 @@
             // 
             // userControlQuanLy_Phong
             // 
-            this.userControlQuanLy_Phong.Location = new System.Drawing.Point(159, 16);
+            this.userControlQuanLy_Phong.Location = new System.Drawing.Point(159, 12);
             this.userControlQuanLy_Phong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userControlQuanLy_Phong.Name = "userControlQuanLy_Phong";
             this.userControlQuanLy_Phong.Size = new System.Drawing.Size(799, 494);
@@ -159,7 +183,7 @@
             // 
             // userControlQuanLy_ThemPhong1
             // 
-            this.userControlQuanLy_ThemPhong1.Location = new System.Drawing.Point(159, 13);
+            this.userControlQuanLy_ThemPhong1.Location = new System.Drawing.Point(159, 12);
             this.userControlQuanLy_ThemPhong1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userControlQuanLy_ThemPhong1.Name = "userControlQuanLy_ThemPhong1";
             this.userControlQuanLy_ThemPhong1.Size = new System.Drawing.Size(799, 494);
@@ -178,20 +202,30 @@
             this.buttonThemPhong_QuayLai.Visible = false;
             this.buttonThemPhong_QuayLai.Click += new System.EventHandler(this.buttonThemPhong_QuayLai_Click);
             // 
-            // buttonThongTinCaNhan
+            // userControlQuanLy_BaoCaoThongKe1
             // 
-            this.buttonThongTinCaNhan.Location = new System.Drawing.Point(3, 42);
-            this.buttonThongTinCaNhan.Name = "buttonThongTinCaNhan";
-            this.buttonThongTinCaNhan.Size = new System.Drawing.Size(135, 36);
-            this.buttonThongTinCaNhan.TabIndex = 15;
-            this.buttonThongTinCaNhan.Text = "Thông tin cá nhân";
-            this.buttonThongTinCaNhan.UseVisualStyleBackColor = true;
+            this.userControlQuanLy_BaoCaoThongKe1.Location = new System.Drawing.Point(159, 11);
+            this.userControlQuanLy_BaoCaoThongKe1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlQuanLy_BaoCaoThongKe1.Name = "userControlQuanLy_BaoCaoThongKe1";
+            this.userControlQuanLy_BaoCaoThongKe1.Size = new System.Drawing.Size(799, 494);
+            this.userControlQuanLy_BaoCaoThongKe1.TabIndex = 10;
+            this.userControlQuanLy_BaoCaoThongKe1.Visible = false;
+            // 
+            // userControlQuanLy_ThongTinCaNhan1
+            // 
+            this.userControlQuanLy_ThongTinCaNhan1.Location = new System.Drawing.Point(159, 15);
+            this.userControlQuanLy_ThongTinCaNhan1.Name = "userControlQuanLy_ThongTinCaNhan1";
+            this.userControlQuanLy_ThongTinCaNhan1.Size = new System.Drawing.Size(799, 494);
+            this.userControlQuanLy_ThongTinCaNhan1.TabIndex = 17;
+            this.userControlQuanLy_ThongTinCaNhan1.Visible = false;
             // 
             // FormQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 519);
+            this.Controls.Add(this.userControlQuanLy_ThongTinCaNhan1);
+            this.Controls.Add(this.userControlQuanLy_BaoCaoThongKe1);
             this.Controls.Add(this.buttonThemPhong_QuayLai);
             this.Controls.Add(this.userControlQuanLy_ThemPhong1);
             this.Controls.Add(this.buttonPhong_Them);
@@ -226,5 +260,8 @@
         private UserControl_QuanLy.UserControlQuanLy_ThemPhong userControlQuanLy_ThemPhong1;
         private Button buttonThemPhong_QuayLai;
         private Button buttonThongTinCaNhan;
+        private Button button1;
+        private UserControl_QuanLy.UserControlQuanLy_BaoCaoThongKe userControlQuanLy_BaoCaoThongKe1;
+        private UserControl_QuanLy.UserControlQuanLy_ThongTinCaNhan userControlQuanLy_ThongTinCaNhan1;
     }
 }

@@ -70,5 +70,10 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
             textBoxNhanVien_TaiKhoan.Text = dataGridViewNhanVien.Rows[e.RowIndex].Cells["ColumnNhanVien_TaiKhoan"].Value.ToString();
             textBoxNhanVien_MatKhau.Text = dataGridViewNhanVien.Rows[e.RowIndex].Cells["ColumnNhanVien_MatKhau"].Value.ToString();
         }
+
+        private void checkBoxQuanLy_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

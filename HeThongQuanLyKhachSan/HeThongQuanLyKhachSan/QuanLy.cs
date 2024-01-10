@@ -178,5 +178,71 @@ namespace HeThongQuanLyKhachSan
                 MessageBox.Show("Mật khẩu cũ không đúng!");
             }
         }
+        public string tinhDoanhThu(string ngayBatDau, string ngayKetThuc)
+        {
+            long tong_tien = 0;
+            string truy_van = "select ID_don_dat_phong from don_dat_phong join hoa_don on don_dat_phong.ID_don_dat_phong = hoa_don.ID_don_dat_phong where ngay_thanh_toan >= '" + ngayBatDau + "' and ngay_thanh_toan <= '" + ngayKetThuc + "'";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            if (reader.Read())
+            {
+                do
+                {
+                    DonDatPhong donDatPhong = new DonDatPhong(Convert.ToString(reader.GetInt32("ID_don_dat_phong")));
+                    tong_tien += donDatPhong.Tong_tien_phong;
+                } 
+                while (reader.Read());
+                return Convert.ToString(tong_tien);
+            }
+            else
+            {
+            return "0";
+            }
+        }
+        public string tinhSoDonDatPhong(string ngayBatDau, string ngayKetThuc)
+        {
+            string truy_van = "select count(ID_hoa_don) as so_don_dat_phong from hoa_don where ngay_thanh_toan >= '" + ngayBatDau + "' and ngay_thanh_toan <= '" + ngayKetThuc + "'";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            if (reader.Read())
+            {
+                return Convert.ToString(reader.GetInt32("so_don_dat_phong"));
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        public string tinhSoDonBiHuy(string ngayBatDau, string ngayKetThuc)
+        {
+            string truy_van = "select count(ID_don_dat_phong) as so_don_dat_phong from don_dat_phong where ngay_nhan_phong >= '" + ngayBatDau + "' and ngay_nhan_phong <= '" + ngayKetThuc + "' and trang_thai_don = 'Đã hủy'";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            if (reader.Read())
+            {
+                return Convert.ToString(reader.GetInt32("so_don_dat_phong"));
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        public DataSet hienThiThuTuPhongTheoDonDatPhong(string ngayBatDau, string ngayKetThuc)
+        {
+            string truy_van = "select ID_phong, so_phong, count(ID_Don_dat_phong) as so_don_dat_phong from phong join chi_tiet_don_dat_phong on phong.ID_phong = chi_tiet_don_dat_phong.ID_phong join don_dat_phong on chi_tiet_don_dat_phong.ID_don_dat_phong = don_dat_phong.ID_don_dat_phong where ngay_nhan_phong >= '" + ngayBatDau + "' and ngay_nhan_phong <= '" + ngayKetThuc + "' and trang_thai_don = 'Đã thanh toán' group by ID_phong order by so_don_dat_phong desc";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            return thaoTacVoiSQL.layDuLieuChoGridView();
+        }
+        public DataSet xepHangKhachHangTheoSoLanDatPhong(string ngayBatDau, string ngayKetThuc)
+        {
+            string truy_van = "select ho_ten, so_dien_thoai, count(ID_don_dat_phong) as so_lan_dat_phong from khach_hang join don_dat_phong on khach_hang.ID_khach_hang = don_dat_phong.ID_khach_hang where ngay_nhan_phong >= '" + ngayBatDau + "' and ngay_nhan_phong <= '" + ngayKetThuc + "' and trang_thai_don = 'Đã thanh toán' group by ID_khach_hang order by so_lan_dat_phong desc";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            return thaoTacVoiSQL.layDuLieuChoGridView();
+        }
     }
 }

@@ -28,6 +28,9 @@
     <Compile Update="UseControl_LeTan\UserControlLeTan_ThongTinCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControl_QuanLy\UserControlQuanLy_BaoCaoThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControl_QuanLy\UserControlQuanLy_Phong.cs">
       <SubType>UserControl</SubType>
     </Compile>
