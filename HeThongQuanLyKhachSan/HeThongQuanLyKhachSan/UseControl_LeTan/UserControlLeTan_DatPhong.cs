@@ -22,6 +22,7 @@ namespace HeThongQuanLyKhachSan.All_user_control
 
         private void useControlLeTan_DatPhong_Load(object sender, EventArgs e)
         {
+            comboBoxDatPhong_TrangThai.Text = "Trống";
             dataGridViewDatPhong_ChonPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinPhong(textBoxDatPhong_SoPhong.Text, comboBoxDatPhong_SoGiuong.Text, comboBoxDatPhong_LoaiPhong.Text, comboBoxDatPhong_TrangThai.Text).Tables[0];
         }
 

@@ -46,7 +46,7 @@
             // 
             this.labelDonDatPhong.AutoSize = true;
             this.labelDonDatPhong.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDonDatPhong.Location = new System.Drawing.Point(313, 0);
+            this.labelDonDatPhong.Location = new System.Drawing.Point(304, 19);
             this.labelDonDatPhong.Name = "labelDonDatPhong";
             this.labelDonDatPhong.Size = new System.Drawing.Size(168, 37);
             this.labelDonDatPhong.TabIndex = 27;

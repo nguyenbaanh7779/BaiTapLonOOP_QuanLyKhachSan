@@ -81,21 +81,25 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(21, 54);
+            this.panel3.Location = new System.Drawing.Point(25, 78);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(753, 140);
+            this.panel3.Size = new System.Drawing.Size(347, 206);
             this.panel3.TabIndex = 13;
             // 
             // dateTimePickerChiTietDonDatPhong_NgayTraPhong
             // 
-            this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.Location = new System.Drawing.Point(538, 44);
+            this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.CustomFormat = "dd/MM/yyy";
+            this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.Location = new System.Drawing.Point(154, 157);
             this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.Name = "dateTimePickerChiTietDonDatPhong_NgayTraPhong";
             this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.Size = new System.Drawing.Size(187, 23);
             this.dateTimePickerChiTietDonDatPhong_NgayTraPhong.TabIndex = 19;
             // 
             // dateTimePickerChiTietDonDatPhong_NgayNhanPhong
             // 
-            this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.Location = new System.Drawing.Point(538, 15);
+            this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.CustomFormat = "dd/MM/yyy";
+            this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.Location = new System.Drawing.Point(154, 128);
             this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.Name = "dateTimePickerChiTietDonDatPhong_NgayNhanPhong";
             this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.Size = new System.Drawing.Size(187, 23);
             this.dateTimePickerChiTietDonDatPhong_NgayNhanPhong.TabIndex = 18;
@@ -115,7 +119,7 @@
             // textBoxChiTietDonDatPhong_MaDon
             // 
             this.textBoxChiTietDonDatPhong_MaDon.Enabled = false;
-            this.textBoxChiTietDonDatPhong_MaDon.Location = new System.Drawing.Point(176, 15);
+            this.textBoxChiTietDonDatPhong_MaDon.Location = new System.Drawing.Point(154, 12);
             this.textBoxChiTietDonDatPhong_MaDon.Name = "textBoxChiTietDonDatPhong_MaDon";
             this.textBoxChiTietDonDatPhong_MaDon.Size = new System.Drawing.Size(187, 23);
             this.textBoxChiTietDonDatPhong_MaDon.TabIndex = 16;
@@ -123,7 +127,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 18);
+            this.label7.Location = new System.Drawing.Point(3, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 15);
             this.label7.TabIndex = 13;
@@ -131,21 +135,21 @@
             // 
             // textBoxChiTietDonDatPhong_HoTen
             // 
-            this.textBoxChiTietDonDatPhong_HoTen.Location = new System.Drawing.Point(176, 44);
+            this.textBoxChiTietDonDatPhong_HoTen.Location = new System.Drawing.Point(154, 41);
             this.textBoxChiTietDonDatPhong_HoTen.Name = "textBoxChiTietDonDatPhong_HoTen";
             this.textBoxChiTietDonDatPhong_HoTen.Size = new System.Drawing.Size(187, 23);
             this.textBoxChiTietDonDatPhong_HoTen.TabIndex = 11;
             // 
             // textBoxChiTietDonDatPhong_SoDienThoai
             // 
-            this.textBoxChiTietDonDatPhong_SoDienThoai.Location = new System.Drawing.Point(176, 102);
+            this.textBoxChiTietDonDatPhong_SoDienThoai.Location = new System.Drawing.Point(154, 99);
             this.textBoxChiTietDonDatPhong_SoDienThoai.Name = "textBoxChiTietDonDatPhong_SoDienThoai";
             this.textBoxChiTietDonDatPhong_SoDienThoai.Size = new System.Drawing.Size(187, 23);
             this.textBoxChiTietDonDatPhong_SoDienThoai.TabIndex = 8;
             // 
             // textBoxChiTietDonDatPhong_SoCanCuocCongDan
             // 
-            this.textBoxChiTietDonDatPhong_SoCanCuocCongDan.Location = new System.Drawing.Point(176, 73);
+            this.textBoxChiTietDonDatPhong_SoCanCuocCongDan.Location = new System.Drawing.Point(154, 70);
             this.textBoxChiTietDonDatPhong_SoCanCuocCongDan.Name = "textBoxChiTietDonDatPhong_SoCanCuocCongDan";
             this.textBoxChiTietDonDatPhong_SoCanCuocCongDan.Size = new System.Drawing.Size(187, 23);
             this.textBoxChiTietDonDatPhong_SoCanCuocCongDan.TabIndex = 7;
@@ -153,7 +157,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 47);
+            this.label6.Location = new System.Drawing.Point(3, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 15);
             this.label6.TabIndex = 6;
@@ -162,7 +166,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 105);
+            this.label5.Location = new System.Drawing.Point(3, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 15);
             this.label5.TabIndex = 5;
@@ -171,7 +175,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 47);
+            this.label4.Location = new System.Drawing.Point(3, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 15);
             this.label4.TabIndex = 4;
@@ -180,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(376, 17);
+            this.label3.Location = new System.Drawing.Point(3, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 15);
             this.label3.TabIndex = 3;
@@ -189,7 +193,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 76);
+            this.label8.Location = new System.Drawing.Point(3, 73);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 15);
             this.label8.TabIndex = 2;
@@ -200,7 +204,7 @@
             this.labelDatPhong_ChonPhong.AutoSize = true;
             this.labelDatPhong_ChonPhong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelDatPhong_ChonPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.labelDatPhong_ChonPhong.Location = new System.Drawing.Point(21, 206);
+            this.labelDatPhong_ChonPhong.Location = new System.Drawing.Point(397, 54);
             this.labelDatPhong_ChonPhong.Name = "labelDatPhong_ChonPhong";
             this.labelDatPhong_ChonPhong.Size = new System.Drawing.Size(102, 21);
             this.labelDatPhong_ChonPhong.TabIndex = 18;
@@ -217,11 +221,11 @@
             this.CollumnQuanLy_SoGiuong,
             this.CollumnQuanLy_LoaiPhong,
             this.CollumnQuanLy__DonGia});
-            this.dataGridViewChiTietDonDatPhong_PhongDaDat.Location = new System.Drawing.Point(21, 240);
+            this.dataGridViewChiTietDonDatPhong_PhongDaDat.Location = new System.Drawing.Point(397, 78);
             this.dataGridViewChiTietDonDatPhong_PhongDaDat.Name = "dataGridViewChiTietDonDatPhong_PhongDaDat";
             this.dataGridViewChiTietDonDatPhong_PhongDaDat.RowHeadersWidth = 51;
             this.dataGridViewChiTietDonDatPhong_PhongDaDat.RowTemplate.Height = 25;
-            this.dataGridViewChiTietDonDatPhong_PhongDaDat.Size = new System.Drawing.Size(384, 185);
+            this.dataGridViewChiTietDonDatPhong_PhongDaDat.Size = new System.Drawing.Size(384, 343);
             this.dataGridViewChiTietDonDatPhong_PhongDaDat.TabIndex = 19;
             this.dataGridViewChiTietDonDatPhong_PhongDaDat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewChiTietDonDatPhong_PhongDaDat_CellClick);
             // 
@@ -332,5 +336,7 @@
         private Button buttonDatPhong_DatPhong;
         private DateTimePicker dateTimePickerChiTietDonDatPhong_NgayNhanPhong;
         private Button button_QuayLai;
+        private Label label11;
+        private Label label2;
     }
 }

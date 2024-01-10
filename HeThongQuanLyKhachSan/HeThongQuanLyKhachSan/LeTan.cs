@@ -184,16 +184,23 @@ namespace HeThongQuanLyKhachSan
         public void taoDonDatPhong(string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, string ngay_nhan_phong, string ngay_tra_phong)
         {
             // tạo đơn đặt phòng
-            string truy_van = "select ID_khach_hang from khach_hang where so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' and ho_ten = '" + ho_ten + "'";
+            string truy_van = "select ID_khach_hang, ho_ten from khach_hang where so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "'";
             ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
             thaoTacVoiSQL.Truy_van = truy_van;
             MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
             if (reader.Read())
             {
-                string ID_khach_hang = reader.GetString("ID_khach_hang");
-                truy_van = "insert into don_dat_phong(ID_khach_hang, ngay_nhan_phong, ngay_tra_phong, so_dien_thoai, trang_thai_don) values("+ ID_khach_hang + ", '" + ngay_nhan_phong + "', '" + ngay_tra_phong + "', '" + so_dien_thoai + "', 'Đã đặt')";
-                thaoTacVoiSQL.Truy_van = truy_van;
-                thaoTacVoiSQL.capNhatDuLieu();
+                if (ho_ten != reader.GetString("ho_ten"))
+                {
+                    MessageBox.Show("Số căn cước công dân không hợp lệ!");
+                }
+                else
+                {
+                    string ID_khach_hang = reader.GetString("ID_khach_hang");
+                    truy_van = "insert into don_dat_phong(ID_khach_hang, ngay_nhan_phong, ngay_tra_phong, so_dien_thoai, trang_thai_don) values("+ ID_khach_hang + ", '" + ngay_nhan_phong + "', '" + ngay_tra_phong + "', '" + so_dien_thoai + "', 'Đã đặt')";
+                    thaoTacVoiSQL.Truy_van = truy_van;
+                    thaoTacVoiSQL.capNhatDuLieu();
+                }
             }
             else
             {
@@ -218,6 +225,10 @@ namespace HeThongQuanLyKhachSan
                 {
                     ID_khach_hang = reader.GetString("ID_khach_hang");
                 }
+                else
+                {
+                    return;
+                }
                 truy_van = "select ID_don_dat_phong from don_dat_phong where ID_khach_hang = " + ID_khach_hang + " and ngay_nhan_phong = '" + ngay_nhan_phong_string + "' and ngay_tra_phong = '" + ngay_tra_phong_string + "' and so_dien_thoai = '" + so_dien_thoai + "' and trang_thai_don = 'Đã đặt'";
                 thaoTacVoiSQL.Truy_van = truy_van;
                 reader = thaoTacVoiSQL.layDuLieuChoClass();
@@ -229,7 +240,6 @@ namespace HeThongQuanLyKhachSan
                 {
                     // thêm đơn dữ liệu cho chi tiết đơn đặt phòng
                     truy_van = "insert into chi_tiet_don_dat_phong(ID_phong, ID_don_dat_phong) values(" + Convert.ToString(ID) + ", " + ID_don_dat_phong + ")";
-                    MessageBox.Show(truy_van);
                     thaoTacVoiSQL.Truy_van = truy_van;
                     thaoTacVoiSQL.capNhatDuLieu();
                     // thay đổi trạng thái phòng
@@ -312,7 +322,6 @@ namespace HeThongQuanLyKhachSan
                 ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
                 thaoTacVoiSQL.Truy_van = truy_van;
                 thaoTacVoiSQL.capNhatDuLieu();
-                MessageBox.Show("hihi");
                 truy_van = "update khach_hang set ho_ten = '" + ho_ten + "', so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' where ID_khach_hang IN (select ID_khach_hang from don_dat_phong where ID_don_dat_phong = " + Convert.ToString(ID_don_dat_phong) + ")";
                 thaoTacVoiSQL.Truy_van = truy_van;
                 thaoTacVoiSQL.capNhatDuLieu();

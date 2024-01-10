@@ -17,6 +17,8 @@ namespace HeThongQuanLyKhachSan
         private string gioi_tinh = "";
         private DateTime ngay_sinh = new DateTime();
         private long tien_luong;
+        private string tai_khoan = "";
+        private string mat_khau = "";
         public int ID_Nhan_vien
         {
             get { return ID_nhan_vien; }
@@ -51,6 +53,16 @@ namespace HeThongQuanLyKhachSan
         {
             get { return tien_luong; }
             set { tien_luong = value; }
+        }
+        public string Tai_Khoan
+        {
+            get { return tai_khoan; }
+            set { tai_khoan = value; }
+        }
+        public string Mat_Khau
+        {
+            get { return mat_khau; }
+            set { mat_khau = value; }
         }
         public QuanLy(string ID_nhan_vien)
         {
@@ -142,6 +154,29 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             thaoTacVoiSQL.capNhatDuLieu();
             MessageBox.Show("Cập nhật phòng thành công!");
+        }
+        public void doiMatKhau(string matKhauCu, string MatKhauMoi, string NhapLaiMatKhau)
+        {
+            // thực hiện chức năng đổi mật khẩu
+            if (matKhauCu == this.mat_khau)
+            {
+                if (MatKhauMoi == NhapLaiMatKhau)
+                {
+                    string truy_van = "update nhan_vien set mat_khau = '" + MatKhauMoi + "' where ID_nhan_vien = " + Convert.ToString(this.ID_nhan_vien);
+                    ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+                    thaoTacVoiSQL.Truy_van = truy_van;
+                    thaoTacVoiSQL.capNhatDuLieu();
+                    MessageBox.Show("Đổi mật khẩu thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu mới không khớp!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu cũ không đúng!");
+            }
         }
     }
 }

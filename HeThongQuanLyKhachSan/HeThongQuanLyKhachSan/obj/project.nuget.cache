@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UknyCLcTkPbpH+6A+P41+lDn/8zEML7lX+kNuodQOr1CZijQfZyZXexlr7O0bBzGjANM2drsqyXx80jcUZHJGA==",
+  "dgSpecHash": "SKkY70kwri9drfH3IZ9b4MgHX37tM1KEvAetmVMVQvIxJHDJb3vsyjyBfeUoe+bMo/IxgO3Jz/DFWPvlYxZDjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Documents\\Tài liệu kì 20231\\Lập trình hướng đối tượng\\Bài tập cuối kỳ\\CodeOOP\\HeThongQuanLyKhachSan\\HeThongQuanLyKhachSan\\HeThongQuanLyKhachSan.csproj",
   "expectedPackageFiles": [
@@ -42,10 +42,10 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\zstdsharp.port\\0.7.1\\zstdsharp.port.0.7.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

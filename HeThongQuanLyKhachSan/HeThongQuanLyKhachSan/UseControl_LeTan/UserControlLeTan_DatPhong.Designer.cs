@@ -376,6 +376,8 @@
             // 
             // dateTimePickerDatPhong_NgayTraPhong
             // 
+            this.dateTimePickerDatPhong_NgayTraPhong.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerDatPhong_NgayTraPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDatPhong_NgayTraPhong.Location = new System.Drawing.Point(174, 117);
             this.dateTimePickerDatPhong_NgayTraPhong.Name = "dateTimePickerDatPhong_NgayTraPhong";
             this.dateTimePickerDatPhong_NgayTraPhong.Size = new System.Drawing.Size(187, 23);

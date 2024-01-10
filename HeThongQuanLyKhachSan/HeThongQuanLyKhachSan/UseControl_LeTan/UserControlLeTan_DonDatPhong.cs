@@ -140,7 +140,22 @@ namespace HeThongQuanLyKhachSan.All_user_control
         private void buttonDonDatPhong_HuyDon_Click(object sender, EventArgs e)
         {
             // dùng để thực hiện chức năng hủy đơn đặt phòng
-            ChucNangHeThong.GSLeTan.huyDonDatPhong(ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong);
+            if (textBoxDonDatPhong_MaDon.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn đơn đặt phòng!");
+            }
+            else
+            {
+                if (trang_thai_don == "Đã đặt")
+                {
+                    ChucNangHeThong.GSLeTan.huyDonDatPhong(ChucNangHeThong.GSDonDatPhong.ID_Don_Dat_Phong);
+                    dataGridViewDonDatPhong.DataSource = ChucNangHeThong.GSLeTan.timKiemThongTinDonDatPhong(textBoxDonDatPhong_TimKiem.Text, radioButton_SoDienThoai.Text, DS_trangThaiDon).Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thực hiện hủy đơn đặt phòng! Vui lòng xem lại trạng thái đơn");
+                }
+            }
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
