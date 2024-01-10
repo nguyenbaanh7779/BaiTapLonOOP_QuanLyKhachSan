@@ -37,7 +37,7 @@ namespace HeThongQuanLyKhachSan.UserControl_QuanLy
             textBoxSoDonDatPhong.Text = ChucNangHeThong.GSQuanLy.tinhSoDonDatPhong(ngatBatDau, ngayKetThuc);
             textBoxSoDonBiHuy.Text = ChucNangHeThong.GSQuanLy.tinhSoDonBiHuy(ngatBatDau, ngayKetThuc);
             dataGridViewXepHangPhong.DataSource = ChucNangHeThong.GSQuanLy.hienThiThuTuPhongTheoDonDatPhong(ngatBatDau, ngayKetThuc).Tables[0];
-            dataGridViewXepHangKhachHang.DataSource = ChucNangHeThong.GSQuanLy.xepHangKhachHangTheoSoLanDatPhong(ngatBatDau, ngayKetThuc).Tables[1];
+            dataGridViewXepHangKhachHang.DataSource = ChucNangHeThong.GSQuanLy.xepHangKhachHangTheoSoLanDatPhong(ngatBatDau, ngayKetThuc).Tables[0];
         }
     }
 }

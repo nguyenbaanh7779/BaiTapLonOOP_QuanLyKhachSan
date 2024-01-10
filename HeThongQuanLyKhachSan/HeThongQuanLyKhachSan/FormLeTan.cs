@@ -20,7 +20,7 @@ namespace HeThongQuanLyKhachSan
 
         private void FormLeTan_Load(object sender, EventArgs e)
         {
-
+            labelTaiKhoan.Text = ChucNangHeThong.GSLeTan.Ho_Ten;
         }
         private void buttonDonDatPhong_Click(object sender, EventArgs e)
         {
@@ -73,6 +73,11 @@ namespace HeThongQuanLyKhachSan
             // form thông tin cá nhân
             userControlLeTan_ThongTinCaNhan1.Visible = true;
             /////////////////////////
+        }
+
+        private void buttonDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

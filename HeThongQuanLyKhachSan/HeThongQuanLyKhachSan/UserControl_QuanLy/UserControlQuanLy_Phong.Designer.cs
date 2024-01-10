@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textBoxNhanVien_TimKiem = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.buttonNhanVien_TimKiem = new System.Windows.Forms.Button();
             this.comboBoxPhong_So_Giuong = new System.Windows.Forms.ComboBox();
             this.textBoxPhong_DonGia = new System.Windows.Forms.TextBox();
@@ -50,30 +49,31 @@
             this.ColumnPhong_LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPhong_DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelDonDatPhong = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLy_Phong)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxNhanVien_TimKiem
             // 
-            this.textBoxNhanVien_TimKiem.Location = new System.Drawing.Point(10, 5);
+            this.textBoxNhanVien_TimKiem.Location = new System.Drawing.Point(6, 22);
             this.textBoxNhanVien_TimKiem.Name = "textBoxNhanVien_TimKiem";
-            this.textBoxNhanVien_TimKiem.Size = new System.Drawing.Size(194, 23);
+            this.textBoxNhanVien_TimKiem.Size = new System.Drawing.Size(161, 23);
             this.textBoxNhanVien_TimKiem.TabIndex = 20;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.buttonNhanVien_TimKiem);
-            this.panel1.Controls.Add(this.textBoxNhanVien_TimKiem);
-            this.panel1.Location = new System.Drawing.Point(259, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 35);
-            this.panel1.TabIndex = 26;
             // 
             // buttonNhanVien_TimKiem
             // 
-            this.buttonNhanVien_TimKiem.Location = new System.Drawing.Point(210, 1);
+            this.buttonNhanVien_TimKiem.Location = new System.Drawing.Point(173, 20);
             this.buttonNhanVien_TimKiem.Name = "buttonNhanVien_TimKiem";
             this.buttonNhanVien_TimKiem.Size = new System.Drawing.Size(94, 28);
             this.buttonNhanVien_TimKiem.TabIndex = 3;
@@ -114,9 +114,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(585, 91);
+            this.panel2.Location = new System.Drawing.Point(572, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 364);
+            this.panel2.Size = new System.Drawing.Size(200, 389);
             this.panel2.TabIndex = 25;
             // 
             // textBoxPhong_MaSoPhong
@@ -212,11 +212,11 @@
             this.ColumnPhong_SoGiuong,
             this.ColumnPhong_LoaiPhong,
             this.ColumnPhong_DonGia});
-            this.dataGridViewQuanLy_Phong.Location = new System.Drawing.Point(17, 91);
+            this.dataGridViewQuanLy_Phong.Location = new System.Drawing.Point(17, 119);
             this.dataGridViewQuanLy_Phong.Name = "dataGridViewQuanLy_Phong";
             this.dataGridViewQuanLy_Phong.RowHeadersWidth = 51;
             this.dataGridViewQuanLy_Phong.RowTemplate.Height = 25;
-            this.dataGridViewQuanLy_Phong.Size = new System.Drawing.Size(549, 364);
+            this.dataGridViewQuanLy_Phong.Size = new System.Drawing.Size(549, 336);
             this.dataGridViewQuanLy_Phong.TabIndex = 24;
             this.dataGridViewQuanLy_Phong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQuanLy_Phong_CellClick);
             // 
@@ -255,28 +255,118 @@
             // 
             this.labelDonDatPhong.AutoSize = true;
             this.labelDonDatPhong.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDonDatPhong.Location = new System.Drawing.Point(353, 0);
+            this.labelDonDatPhong.Location = new System.Drawing.Point(366, 0);
             this.labelDonDatPhong.Name = "labelDonDatPhong";
             this.labelDonDatPhong.Size = new System.Drawing.Size(94, 37);
             this.labelDonDatPhong.TabIndex = 23;
             this.labelDonDatPhong.Text = "Phòng";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonNhanVien_TimKiem);
+            this.groupBox1.Controls.Add(this.textBoxNhanVien_TimKiem);
+            this.groupBox1.Location = new System.Drawing.Point(293, 59);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(273, 54);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Nhập số phòng";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Location = new System.Drawing.Point(17, 66);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(115, 39);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Số giường";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(79, 19);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(32, 19);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "3";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(41, 19);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(32, 19);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(32, 19);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.checkBox4);
+            this.groupBox3.Controls.Add(this.checkBox6);
+            this.groupBox3.Location = new System.Drawing.Point(138, 66);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(149, 39);
+            this.groupBox3.TabIndex = 22;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Loại phòng";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(74, 19);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(69, 19);
+            this.checkBox4.TabIndex = 2;
+            this.checkBox4.Text = "Cao cấp";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(3, 19);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(67, 19);
+            this.checkBox6.TabIndex = 0;
+            this.checkBox6.Text = "Thường";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
             // UserControlQuanLy_Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridViewQuanLy_Phong);
             this.Controls.Add(this.labelDonDatPhong);
             this.Name = "UserControlQuanLy_Phong";
             this.Size = new System.Drawing.Size(799, 494);
             this.Load += new System.EventHandler(this.UserControlQuanLy_Phong_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuanLy_Phong)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +375,6 @@
         #endregion
 
         private TextBox textBoxNhanVien_TimKiem;
-        private Panel panel1;
         private Button buttonNhanVien_TimKiem;
         private ComboBox comboBoxPhong_So_Giuong;
         private TextBox textBoxPhong_DonGia;
@@ -306,5 +395,13 @@
         private DataGridViewTextBoxColumn ColumnPhong_SoGiuong;
         private DataGridViewTextBoxColumn ColumnPhong_LoaiPhong;
         private DataGridViewTextBoxColumn ColumnPhong_DonGia;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
+        private GroupBox groupBox3;
+        private CheckBox checkBox4;
+        protected internal CheckBox checkBox6;
     }
 }

@@ -236,7 +236,7 @@
             this.Controls.Add(this.userControlQuanLy_NhanVien);
             this.Controls.Add(this.panel1);
             this.Name = "FormQuanLy";
-            this.Text = "FormQuanLy";
+            this.Text = "Quản lý";
             this.Load += new System.EventHandler(this.FormQuanLy_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

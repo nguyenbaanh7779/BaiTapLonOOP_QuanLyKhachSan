@@ -47,7 +47,6 @@
             this.buttonDonDatPhong_CapNhat = new System.Windows.Forms.Button();
             this.buttonTraPhong = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.userControlLeTan_CapNhatDonDatPhong1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_CapNhatDonDatPhong();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDonDatPhong_SoLuongPhong = new System.Windows.Forms.TextBox();
             this.dateTimePickerDonDatPhong_NgayTraPhong = new System.Windows.Forms.DateTimePicker();
@@ -63,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.userControlLeTan_CapNhatDonDatPhong1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_CapNhatDonDatPhong();
             this.userControlLeTan_ChiTietDonDatPhong1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_ChiTietDonDatPhong();
             this.groupBox_TieuChiTimKiem = new System.Windows.Forms.GroupBox();
             this.radioButton_MaSoDon = new System.Windows.Forms.RadioButton();
@@ -285,16 +285,6 @@
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // userControlLeTan_CapNhatDonDatPhong1
-            // 
-            this.userControlLeTan_CapNhatDonDatPhong1.Location = new System.Drawing.Point(0, 0);
-            this.userControlLeTan_CapNhatDonDatPhong1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.userControlLeTan_CapNhatDonDatPhong1.Name = "userControlLeTan_CapNhatDonDatPhong1";
-            this.userControlLeTan_CapNhatDonDatPhong1.Size = new System.Drawing.Size(799, 494);
-            this.userControlLeTan_CapNhatDonDatPhong1.TabIndex = 11;
-            this.userControlLeTan_CapNhatDonDatPhong1.Visible = false;
-            this.userControlLeTan_CapNhatDonDatPhong1.Load += new System.EventHandler(this.userControlLeTan_CapNhatDonDatPhong1_Load);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -423,6 +413,16 @@
             this.label2.Size = new System.Drawing.Size(127, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số căn cước công dân:";
+            // 
+            // userControlLeTan_CapNhatDonDatPhong1
+            // 
+            this.userControlLeTan_CapNhatDonDatPhong1.Location = new System.Drawing.Point(0, 0);
+            this.userControlLeTan_CapNhatDonDatPhong1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userControlLeTan_CapNhatDonDatPhong1.Name = "userControlLeTan_CapNhatDonDatPhong1";
+            this.userControlLeTan_CapNhatDonDatPhong1.Size = new System.Drawing.Size(799, 494);
+            this.userControlLeTan_CapNhatDonDatPhong1.TabIndex = 11;
+            this.userControlLeTan_CapNhatDonDatPhong1.Visible = false;
+            this.userControlLeTan_CapNhatDonDatPhong1.Load += new System.EventHandler(this.userControlLeTan_CapNhatDonDatPhong1_Load);
             // 
             // userControlLeTan_ChiTietDonDatPhong1
             // 

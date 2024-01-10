@@ -108,6 +108,7 @@
             // 
             // textBoxHoaDon_SoDienThoai
             // 
+            this.textBoxHoaDon_SoDienThoai.Enabled = false;
             this.textBoxHoaDon_SoDienThoai.Location = new System.Drawing.Point(116, 32);
             this.textBoxHoaDon_SoDienThoai.Name = "textBoxHoaDon_SoDienThoai";
             this.textBoxHoaDon_SoDienThoai.Size = new System.Drawing.Size(184, 23);
@@ -115,6 +116,7 @@
             // 
             // textBoxHoaDon_KhachHang
             // 
+            this.textBoxHoaDon_KhachHang.Enabled = false;
             this.textBoxHoaDon_KhachHang.Location = new System.Drawing.Point(116, 3);
             this.textBoxHoaDon_KhachHang.Name = "textBoxHoaDon_KhachHang";
             this.textBoxHoaDon_KhachHang.Size = new System.Drawing.Size(184, 23);
@@ -141,6 +143,9 @@
             // 
             // dateTimePickerHoaDon_NgayTraPhong
             // 
+            this.dateTimePickerHoaDon_NgayTraPhong.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerHoaDon_NgayTraPhong.Enabled = false;
+            this.dateTimePickerHoaDon_NgayTraPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHoaDon_NgayTraPhong.Location = new System.Drawing.Point(116, 87);
             this.dateTimePickerHoaDon_NgayTraPhong.Name = "dateTimePickerHoaDon_NgayTraPhong";
             this.dateTimePickerHoaDon_NgayTraPhong.Size = new System.Drawing.Size(184, 23);
@@ -148,6 +153,9 @@
             // 
             // dateTimePickerHoaDon_NgayNhanPhong
             // 
+            this.dateTimePickerHoaDon_NgayNhanPhong.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerHoaDon_NgayNhanPhong.Enabled = false;
+            this.dateTimePickerHoaDon_NgayNhanPhong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHoaDon_NgayNhanPhong.Location = new System.Drawing.Point(116, 61);
             this.dateTimePickerHoaDon_NgayNhanPhong.Name = "dateTimePickerHoaDon_NgayNhanPhong";
             this.dateTimePickerHoaDon_NgayNhanPhong.Size = new System.Drawing.Size(184, 23);
@@ -155,6 +163,7 @@
             // 
             // textBoxHoaDon_LeTan
             // 
+            this.textBoxHoaDon_LeTan.Enabled = false;
             this.textBoxHoaDon_LeTan.Location = new System.Drawing.Point(548, 32);
             this.textBoxHoaDon_LeTan.Name = "textBoxHoaDon_LeTan";
             this.textBoxHoaDon_LeTan.Size = new System.Drawing.Size(183, 23);
@@ -171,6 +180,7 @@
             // 
             // textBoxHoaDon_MaHoaDon
             // 
+            this.textBoxHoaDon_MaHoaDon.Enabled = false;
             this.textBoxHoaDon_MaHoaDon.Location = new System.Drawing.Point(547, 3);
             this.textBoxHoaDon_MaHoaDon.Name = "textBoxHoaDon_MaHoaDon";
             this.textBoxHoaDon_MaHoaDon.Size = new System.Drawing.Size(184, 23);
@@ -293,6 +303,8 @@
             // 
             // dateTimePickerHoaDon_NgayThanhToan
             // 
+            this.dateTimePickerHoaDon_NgayThanhToan.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerHoaDon_NgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerHoaDon_NgayThanhToan.Location = new System.Drawing.Point(117, 78);
             this.dateTimePickerHoaDon_NgayThanhToan.Name = "dateTimePickerHoaDon_NgayThanhToan";
             this.dateTimePickerHoaDon_NgayThanhToan.Size = new System.Drawing.Size(149, 23);
