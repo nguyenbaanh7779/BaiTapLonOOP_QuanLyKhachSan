@@ -11,6 +11,7 @@ namespace HeThongQuanLyKhachSan
 {
     internal class ChucNangHeThong
     {
+        
         private static DonDatPhong donDatPhong = new DonDatPhong("-1");
         public static DonDatPhong GSDonDatPhong // get set DonDatPhong
         {

@@ -34,6 +34,10 @@ namespace HeThongQuanLyKhachSan
             useControlLeTan_DatPhong1.Visible = false;
             /////////////////
 
+            // form đặt phòng
+            useControlLeTan_DatPhong1.Visible = false;
+            /////////////////
+
             // form đơn đặt phòng
             useControlLeTan_DonDatPhong1.Visible = true;
             /////////////////////
@@ -56,6 +60,10 @@ namespace HeThongQuanLyKhachSan
             /////////////////////////
 
             // form đặt phòng
+            useControlLeTan_DatPhong1.Visible = false;
+            /////////////////
+
+            // form đặt phòng
             useControlLeTan_DatPhong1.Visible = true;
         }
 
@@ -69,6 +77,11 @@ namespace HeThongQuanLyKhachSan
 
             // form đặt phòng
             useControlLeTan_DatPhong1.Visible = false;
+            /////////////////
+
+            // form dịch vụ
+            userControlLeTan_DichVu1.Visible = false;
+            ///////////////
 
             // form thông tin cá nhân
             userControlLeTan_ThongTinCaNhan1.Visible = true;
@@ -78,6 +91,27 @@ namespace HeThongQuanLyKhachSan
         private void buttonDangXuat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonDichVu_Click(object sender, EventArgs e)
+        {
+            // dùng để hiện thị form dịch vụ
+
+            // form đơn đặt phòng
+            useControlLeTan_DonDatPhong1.Visible = false;
+            /////////////////////
+
+            // form đặt phòng
+            useControlLeTan_DatPhong1.Visible = false;
+            /////////////////
+
+            // form thông tin cá nhân
+            userControlLeTan_ThongTinCaNhan1.Visible = false;
+            /////////////////////////
+
+            // form dịch vụ
+            userControlLeTan_DichVu1.Visible = true;
+            ///////////////
         }
     }
 }

@@ -92,7 +92,7 @@
             this.textBoxMatKhau.Name = "textBoxMatKhau";
             this.textBoxMatKhau.Size = new System.Drawing.Size(151, 23);
             this.textBoxMatKhau.TabIndex = 4;
-            this.textBoxMatKhau.Text = "0123456789";
+            this.textBoxMatKhau.Text = "11111";
             this.textBoxMatKhau.UseSystemPasswordChar = true;
             this.textBoxMatKhau.TextChanged += new System.EventHandler(this.textBoxMatKhau_TextChanged);
             // 
@@ -103,7 +103,7 @@
             this.textBoxTaiKhoan.Name = "textBoxTaiKhoan";
             this.textBoxTaiKhoan.Size = new System.Drawing.Size(151, 23);
             this.textBoxTaiKhoan.TabIndex = 3;
-            this.textBoxTaiKhoan.Text = "0123456789";
+            this.textBoxTaiKhoan.Text = "111";
             // 
             // label4
             // 

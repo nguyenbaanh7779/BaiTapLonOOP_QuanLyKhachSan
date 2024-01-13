@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDichVu = new System.Windows.Forms.Button();
             this.labelTaiKhoan = new System.Windows.Forms.Label();
             this.buttonDangXuat = new System.Windows.Forms.Button();
             this.buttonThongTinCaNhan = new System.Windows.Forms.Button();
@@ -37,11 +39,16 @@
             this.useControlLeTan_DonDatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DonDatPhong();
             this.useControlLeTan_DatPhong1 = new HeThongQuanLyKhachSan.All_user_control.useControlLeTan_DatPhong();
             this.userControlLeTan_ThongTinCaNhan1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_ThongTinCaNhan();
+            this.userControlLeTan_DichVu1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_DichVu();
+            this.userControlLeTan_HoaDonDichVu1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlLeTan_HoaDonDichVu();
+            this.userControlDanhMucHoaDon1 = new HeThongQuanLyKhachSan.UseControl_LeTan.UserControlDanhMucHoaDon();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonDichVu);
             this.panel1.Controls.Add(this.labelTaiKhoan);
             this.panel1.Controls.Add(this.buttonDangXuat);
             this.panel1.Controls.Add(this.buttonThongTinCaNhan);
@@ -51,6 +58,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(142, 494);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(4, 218);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 36);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Hóa đơn";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // buttonDichVu
+            // 
+            this.buttonDichVu.Location = new System.Drawing.Point(3, 176);
+            this.buttonDichVu.Name = "buttonDichVu";
+            this.buttonDichVu.Size = new System.Drawing.Size(135, 36);
+            this.buttonDichVu.TabIndex = 17;
+            this.buttonDichVu.Text = "Dịch vụ";
+            this.buttonDichVu.UseVisualStyleBackColor = true;
+            this.buttonDichVu.Click += new System.EventHandler(this.buttonDichVu_Click);
             // 
             // labelTaiKhoan
             // 
@@ -126,11 +152,36 @@
             this.userControlLeTan_ThongTinCaNhan1.TabIndex = 13;
             this.userControlLeTan_ThongTinCaNhan1.Visible = false;
             // 
+            // userControlLeTan_DichVu1
+            // 
+            this.userControlLeTan_DichVu1.Location = new System.Drawing.Point(160, 12);
+            this.userControlLeTan_DichVu1.Name = "userControlLeTan_DichVu1";
+            this.userControlLeTan_DichVu1.Size = new System.Drawing.Size(799, 494);
+            this.userControlLeTan_DichVu1.TabIndex = 14;
+            this.userControlLeTan_DichVu1.Visible = false;
+            // 
+            // userControlLeTan_HoaDonDichVu1
+            // 
+            this.userControlLeTan_HoaDonDichVu1.Location = new System.Drawing.Point(156, 12);
+            this.userControlLeTan_HoaDonDichVu1.Name = "userControlLeTan_HoaDonDichVu1";
+            this.userControlLeTan_HoaDonDichVu1.Size = new System.Drawing.Size(799, 494);
+            this.userControlLeTan_HoaDonDichVu1.TabIndex = 15;
+            // 
+            // userControlDanhMucHoaDon1
+            // 
+            this.userControlDanhMucHoaDon1.Location = new System.Drawing.Point(156, 12);
+            this.userControlDanhMucHoaDon1.Name = "userControlDanhMucHoaDon1";
+            this.userControlDanhMucHoaDon1.Size = new System.Drawing.Size(799, 494);
+            this.userControlDanhMucHoaDon1.TabIndex = 16;
+            // 
             // FormLeTan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 519);
+            this.Controls.Add(this.userControlDanhMucHoaDon1);
+            this.Controls.Add(this.userControlLeTan_HoaDonDichVu1);
+            this.Controls.Add(this.userControlLeTan_DichVu1);
             this.Controls.Add(this.userControlLeTan_ThongTinCaNhan1);
             this.Controls.Add(this.useControlLeTan_DatPhong1);
             this.Controls.Add(this.useControlLeTan_DonDatPhong1);
@@ -155,5 +206,10 @@
         private UseControl_LeTan.UserControlLeTan_ThongTinCaNhan userControlLeTan_ThongTinCaNhan1;
         private Button buttonDangXuat;
         private Label labelTaiKhoan;
+        private Button buttonDichVu;
+        private UseControl_LeTan.UserControlLeTan_DichVu userControlLeTan_DichVu1;
+        private UseControl_LeTan.UserControlLeTan_HoaDonDichVu userControlLeTan_HoaDonDichVu1;
+        private Button button1;
+        private UseControl_LeTan.UserControlDanhMucHoaDon userControlDanhMucHoaDon1;
     }
 }

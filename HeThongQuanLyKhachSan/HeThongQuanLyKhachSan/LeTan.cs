@@ -432,7 +432,6 @@ namespace HeThongQuanLyKhachSan
                 MessageBox.Show("Mật khẩu cũ không đúng!");
             }
         }
-
         public void huyDonDatPhong (int ID_don_dat_phong)
         {
             string St_Id_don_dat_phong = Convert.ToString(ID_don_dat_phong);
@@ -444,6 +443,111 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             thaoTacVoiSQL.capNhatDuLieu();
             MessageBox.Show("Hủy đơn đặt phòng thành công!");
+        }
+        public void taoHoaDonDichVu(string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, int ID_le_tan)
+        {
+            string truy_van = "select ID_khach_hang, ho_ten from khach_hang where so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "'";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van; 
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            if (reader.Read())
+            {
+                string ID_khach_hang = reader.GetString("ID_khach_hang");
+                truy_van = "insert into hoa_don_dich_vu(ID_khach_hang, ID_nhan_vien, ngay_thanh_toan, so_dien_thoai) values(" + ID_khach_hang + ", " + Convert.ToString(ID_le_tan) + ", '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '" + so_dien_thoai + "')";
+                thaoTacVoiSQL.Truy_van = truy_van;
+                thaoTacVoiSQL.capNhatDuLieu();
+            }
+            else
+            {
+                themKhachHang(ho_ten, so_can_cuoc_cong_dan);
+                taoHoaDonDichVu(ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ID_le_tan);
+            }
+        }
+        public void datDichVu (string ho_ten, string so_can_cuoc_cong_dan, string so_dien_thoai, int ID_le_tan, List<int> DS_ID_dich_vu, List<int> DS_so_luong)
+        {
+            taoHoaDonDichVu(ho_ten, so_can_cuoc_cong_dan, so_dien_thoai, ID_le_tan);
+            string truy_van = "select ID_khach_hang from khach_hang where so_can_cuoc_cong_dan = '" + so_can_cuoc_cong_dan + "' and ho_ten = '" + ho_ten + "'";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            MySqlDataReader reader = thaoTacVoiSQL.layDuLieuChoClass();
+            string ID_khach_hang = "";
+            if (reader.Read())
+            {
+                ID_khach_hang = reader.GetString("ID_khach_hang");
+            }
+            else
+            {
+                return;
+            }
+            truy_van = "select ID_hoa_don_dich_vu from hoa_don_dich_vu where ID_khach_hang = " + ID_khach_hang + " and ngay_thanh_toan = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and ID_nhan_vien = " + Convert.ToString(ID_le_tan) + " and so_dien_thoai = '" + so_dien_thoai + "'";
+            thaoTacVoiSQL.Truy_van = truy_van;
+            reader = thaoTacVoiSQL.layDuLieuChoClass();
+            string ID_hoa_don_dich_vu = "";
+            if (reader.Read())
+            {
+                ID_hoa_don_dich_vu = reader.GetString("ID_hoa_don_dich_vu");
+            }
+            else
+            {
+                return;
+            }
+            for (int i = 0; i < DS_ID_dich_vu.Count; i++)
+            {
+                truy_van = "insert into hoa_don_dich_vu_chi_tiet(ID_hoa_don_dich_vu, ID_dich_vu, so_luong) values(" + ID_hoa_don_dich_vu + ", " + Convert.ToString(DS_ID_dich_vu[i]) + ", " + Convert.ToString(DS_so_luong[i]) + ")";
+                thaoTacVoiSQL.Truy_van = truy_van;
+                thaoTacVoiSQL.capNhatDuLieu();
+            }
+            MessageBox.Show("Đặt dịch vụ thành công!");
+        }
+        public DataSet timKiemDichVu(string ten_dich_vu, List<string> ds_loai_dich_vu)
+        {
+            string truy_van = "select * from dich_vu";
+            if (ten_dich_vu != "")
+            {
+                truy_van = " where ";
+                truy_van += "ten_dich_vu like '%" + ten_dich_vu + "%'";
+            }
+            if (ds_loai_dich_vu.Count != 0)
+            {
+                truy_van += " and (";
+                for (int i = 0; i < ds_loai_dich_vu.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        truy_van += "loai_dich_vu = '" + ds_loai_dich_vu[i] + "'";
+                    }
+                    else
+                    {
+                        truy_van += " or loai_dich_vu = '" + ds_loai_dich_vu[i] + "'";
+                    }
+                }
+                truy_van += ")";
+            }
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            return thaoTacVoiSQL.layDuLieuChoGridView();
+        }
+        public DataSet hienThiDichVuDaChon(List<int> DS_ma_dich_vu, List<int> DS_so_luong_dich_vu)
+        {
+            string truy_van = "select ID_dich_vu, ten, don_gia from dich_vu where ID_dich_vu in (";
+            for (int i = 0; i < DS_ma_dich_vu.Count; i++)
+            {
+                truy_van += Convert.ToString(DS_ma_dich_vu[i]);
+                if (i != DS_ma_dich_vu.Count - 1)
+                {
+                    truy_van += ",";
+                }
+            }
+            truy_van += ")";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            DataSet dataSet = thaoTacVoiSQL.layDuLieuChoGridView();
+            dataSet.Tables[0].Columns.Add("so_luong");
+            for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+            {
+                dataSet.Tables[0].Rows[i]["so_luong"] = DS_so_luong_dich_vu[i];
+            }
+            return dataSet;
         }
     }
 }

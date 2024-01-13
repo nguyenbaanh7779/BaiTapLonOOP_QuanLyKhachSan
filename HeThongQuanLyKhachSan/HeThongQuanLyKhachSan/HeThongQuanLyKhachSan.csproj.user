@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="UseControl_LeTan\UserControlDanhMucHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UseControl_LeTan\UserControlLeTan_CapNhatDonDatPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UseControl_LeTan\UserControlLeTan_ChiTietDonDatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UseControl_LeTan\UserControlLeTan_DichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UseControl_LeTan\UserControlLeTan_HoaDon.cs">
@@ -25,10 +31,19 @@
     <Compile Update="FormQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UseControl_LeTan\UserControlLeTan_HoaDonDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UseControl_LeTan\UserControlLeTan_ThongTinCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControl_QuanLy\UserControlLeTan_ThemDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControl_QuanLy\UserControlQuanLy_BaoCaoThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControl_QuanLy\UserControlQuanLy_DichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControl_QuanLy\UserControlQuanLy_Phong.cs">

@@ -44,6 +44,10 @@ namespace HeThongQuanLyKhachSan
             userControlQuanLy_BaoCaoThongKe1.Visible = false;
             ///////////////////////
 
+            //form dịch vụ
+            userControlQuanLy_DichVu1.Visible = false;
+            //////////////
+
             //form nhan vien
             buttonNhanVien_Them.Visible = true;
             userControlQuanLy_NhanVien.Visible = true;
@@ -123,6 +127,10 @@ namespace HeThongQuanLyKhachSan
             userControlQuanLy_BaoCaoThongKe1.Visible = false;
             ///////////////////////
 
+            //form dịch vụ
+            userControlQuanLy_DichVu1.Visible = false;
+            //////////////
+
             //form phòng
             buttonPhong_Them.Visible = true;
             userControlQuanLy_Phong.Visible = true;
@@ -191,7 +199,11 @@ namespace HeThongQuanLyKhachSan
             //form báo cáo thống kê
             userControlQuanLy_BaoCaoThongKe1.Visible = false;
             ///////////////////////
-            
+
+            //form dịch vụ
+            userControlQuanLy_DichVu1.Visible = false;
+            //////////////
+
             //form thông tin cá nhân
             userControlQuanLy_ThongTinCaNhan1.Visible = true;
             ////////////////////////
@@ -225,9 +237,50 @@ namespace HeThongQuanLyKhachSan
             userControlQuanLy_ThemPhong1.Visible = false;
             /////////////////
 
+            //form dịch vụ
+            userControlQuanLy_DichVu1.Visible = false;
+            //////////////
+
             //form báo cáo thống kê
             userControlQuanLy_BaoCaoThongKe1.Visible = true;
             ///////////////////////
+        }
+
+        private void buttonDichVu_Click(object sender, EventArgs e)
+        {
+            // dùng để hiện thi thông tin dịch vụ
+
+            //form thông tin cá nhân
+            userControlQuanLy_ThongTinCaNhan1.Visible = false;
+            ////////////////////////
+
+            //form nhan vien
+            buttonNhanVien_Them.Visible = false;
+            userControlQuanLy_NhanVien.Visible = false;
+            ////////////////
+
+            //form them nhan vien
+            buttonThemNhanVien_QuayLai.Visible = false;
+            userControlQuanLy_themNhanVien.Visible = false;
+            ////////////////
+
+            //form phòng
+            buttonPhong_Them.Visible = false;
+            userControlQuanLy_Phong.Visible = false;
+            ////////////
+
+            //form thêm phòng
+            buttonThemPhong_QuayLai.Visible = false;
+            userControlQuanLy_ThemPhong1.Visible = false;
+            /////////////////
+
+            //form báo cáo thống kê
+            userControlQuanLy_BaoCaoThongKe1.Visible = false;
+            ///////////////////////
+
+            //form dịch vụ
+            userControlQuanLy_DichVu1.Visible = true;
+            //////////////
         }
     }
 }

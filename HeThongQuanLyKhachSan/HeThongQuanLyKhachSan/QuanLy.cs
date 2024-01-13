@@ -244,5 +244,49 @@ namespace HeThongQuanLyKhachSan
             thaoTacVoiSQL.Truy_van = truy_van;
             return thaoTacVoiSQL.layDuLieuChoGridView();
         }
+        public DataSet timKiemDichVu(string ten_dich_vu, List<int> ds_loai_dich_vu)
+        {
+            string truy_van = "select * from dich_vu";
+            if (ten_dich_vu != "")
+            {
+                truy_van = " where ";
+                truy_van += "ten_dich_vu like '%" + ten_dich_vu + "%'";
+            }
+            if (ds_loai_dich_vu.Count != 0)
+            {
+                truy_van += " and (";
+                for (int i = 0; i < ds_loai_dich_vu.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        truy_van += "loai_dich_vu = '" + Convert.ToString(ds_loai_dich_vu[i]) + "'";
+                    }
+                    else
+                    {
+                        truy_van += " or loai_dich_vu = '" + Convert.ToString(ds_loai_dich_vu[i]) + "'";
+                    }
+                }
+                truy_van += ")";
+            }
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            return thaoTacVoiSQL.layDuLieuChoGridView();
+        }
+        public void capNhatDichVu(string ID_dich_vu, string ten_dich_vu, string loai_dich_vu, string don_gia)
+        {
+            string truy_van = "update dich_vu set ten = '" + ten_dich_vu + "', loai_hinh = '" + loai_dich_vu + "', don_gia = " + don_gia + " where ID_dich_vu = " + ID_dich_vu;
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            MessageBox.Show("Cập nhật dịch vụ thành công!");
+        }
+        public void themDichVu(string ten_dich_vu, string loai_dich_vu, string don_gia)
+        {
+            string truy_van = "insert into dich_vu(ten, loai_hinh, don_gia) values('" + ten_dich_vu + "', '" + loai_dich_vu + "', " + don_gia + ")";
+            ThaoTacVoiSQL thaoTacVoiSQL = new ThaoTacVoiSQL();
+            thaoTacVoiSQL.Truy_van = truy_van;
+            thaoTacVoiSQL.capNhatDuLieu();
+            MessageBox.Show("Thêm dịch vụ thành công!");
+        }
     }
 }
